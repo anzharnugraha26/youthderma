@@ -30,14 +30,14 @@
             <!-- Price -->
             @foreach ($product as $item)
                 
-           <a href=""> 
+           <a href="{{url("product-detail/$item->id")}}"> 
                <div class="col-lg-6 price_col">
                  <div class="price">
                     <div class="price_title">{{$item->name}}</div>
                     <div class="price_text">
                         <p>{{$item->description}}</p>
                     </div>
-                    <a href=""><div class="price_panel">Clik To Detail</div></a>
+                    <a href="{{url("product-detail/$item->id")}}"><div class="price_panel" style="background: #84CDEE">Click To Detail</div></a>
                  </div>
                 </div>
            </a>   
@@ -46,6 +46,9 @@
         </div>
     </div>
 </div>
+
+
+
 
 
 @endsection

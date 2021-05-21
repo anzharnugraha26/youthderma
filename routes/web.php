@@ -22,6 +22,7 @@ Route::get('/' ,'FrontEndController@index');
 Route::get('/treatment' ,'FrontEndController@treatment');
 Route::get('/doctor' ,'FrontEndController@doctor');
 Route::get('/product' ,'FrontEndController@product');
+Route::get('/product-detail/{id}' ,'FrontEndController@detailproduct');
 Route::post('/savebooking' ,'FrontEndController@saveBooking');
 
 Auth::routes();

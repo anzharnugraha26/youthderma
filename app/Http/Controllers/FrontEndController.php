@@ -23,15 +23,17 @@ class FrontEndController extends Controller
     {
         return view('front-end.doctor');
     }
+
     public function product()
     {
         $product = Product::all();
         return view('front-end.product', compact('product'));
     }
 
-    public function create()
+    public function detailproduct($id)
     {
-        //
+        $product = Product::where('id', $id)->first();
+        return view('front-end.detail-product', compact('product')); 
     }
 
     /**
