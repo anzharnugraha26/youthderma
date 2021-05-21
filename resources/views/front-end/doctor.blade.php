@@ -48,13 +48,13 @@
                     </div>
                     <div style="margin-top: 30px">
                         DOCTOR SCHEDULE 
-                        <p>Senin, Rabu, 10.00 – 16.00
-                            Kamis,
-                            10.00 – 19.00</p>
+                        <p>Monday, 10.00 – 16.00</p>
+                        <p>Wednesday, 10.00 – 16.00</p>
+                        <p>Thursday, 10.00 – 19.00</p>
                     </div>
 
                     <!-- Milestones -->
-                    <div class="milestones">
+                    {{-- <div class="milestones">
                         <div class="row milestones_row">
                         
                             <!-- Milestone -->
@@ -90,14 +90,14 @@
                             </div>
 
                         </div>
-                    </div>
+                    </div> --}}
 
                 </div>
             </div>
 
             <!-- Intro Image -->
             <div class="col-lg-4 offset-lg-1" style="margin-top: 100px">
-                <div class="team_image"><img src="{{asset('image/dr/dr-lia.jpg')}}" alt="" width="400px" height="460px"></div>
+                <div class="team_image"><img src="{{asset('image/dr/drlia1.png')}}" alt="" ></div>
             </div>
         </div>
     </div>
@@ -129,12 +129,13 @@
                     </div>
                     <div style="margin-top: 30px">
                         DOCTOR SCHEDULE 
-                        <p>Selasa, jumat, sabtu
-                            10.00-19.00 </p>
+                        <p>Tuesday, 10.00-19.00</p> 
+                        <p>Friday, 10.00-19.00</p> 
+                        <p>Saturday, 10.00-19.00</p> 
                     </div>
 
                     <!-- Milestones -->
-                    <div class="milestones">
+                    {{-- <div class="milestones">
                         <div class="row milestones_row">
                         
                             <!-- Milestone -->
@@ -170,14 +171,14 @@
                             </div>
 
                         </div>
-                    </div>
+                    </div> --}}
 
                 </div>
             </div>
 
             <!-- Intro Image -->
             <div class="col-lg-4 offset-lg-1" style="margin-top: 100px">
-                <div class="team_image"><img src="{{asset('image/dr/dr-annisa.jpg')}}" alt="" width="400px" height="460px"></div>
+                <div class="team_image"><img src="{{asset('image/dr/dranisa1.png')}}" alt="" ></div>
             </div>
         </div>
     </div>
@@ -209,12 +210,12 @@
                     </div> --}}
                     <div style="margin-top: 30px">
                         DOCTOR SCHEDULE 
-                        <p>Senin, Rabu
-                            16.00- 19.00 </p>
+                        <p>Monday, 16.00- 19.00 </p>
+                        <p>Wednesday, 16.00- 19.00 </p>
                     </div>
 
                     <!-- Milestones -->
-                    <div class="milestones">
+                    {{-- <div class="milestones">
                         <div class="row milestones_row">
                         
                             <!-- Milestone -->
@@ -250,14 +251,14 @@
                             </div>
 
                         </div>
-                    </div>
+                    </div> --}}
 
                 </div>
             </div>
 
             <!-- Intro Image -->
             <div class="col-lg-4 offset-lg-1" style="margin-top: 100px">
-                <div class="team_image"><img src="{{asset('image/dr/dr-febrina.jpg')}}" alt="" width="400px" height="460px"></div>
+                <div class="team_image"><img src="{{asset('image/dr/drfeb.png')}}" alt="" ></div>
             </div>
         </div>
     </div>

@@ -11,7 +11,6 @@
                 <div class="col">
                     <div class="home_content">
                         <div class="home_title">About US</div>
-                        <div class="home_text" style="color: black">Youthderma helps you get the best facial appearance. Using advanced technology and medical treatments by professional doctors and aesthetic treatments by experienced beauty therapists.
                         </div>
                     </div>
                 </div>
