@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Booking;
+use App\Product;
 use Illuminate\Http\Request;
 
 class FrontEndController extends Controller
@@ -24,7 +25,8 @@ class FrontEndController extends Controller
     }
     public function product()
     {
-        return view('front-end.product');
+        $product = Product::all();
+        return view('front-end.product', compact('product'));
     }
 
     public function create()

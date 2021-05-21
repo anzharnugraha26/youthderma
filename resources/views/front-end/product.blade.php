@@ -28,63 +28,21 @@
         <div class="row">
 
             <!-- Price -->
-            <div class="col-lg-6 price_col">
-                <div class="price">
-                    <div class="price_title">Daily Protection Sunscreen</div>
+            @foreach ($product as $item)
+                
+           <a href=""> 
+               <div class="col-lg-6 price_col">
+                 <div class="price">
+                    <div class="price_title">{{$item->name}}</div>
                     <div class="price_text">
-                        <p>Light textured daily sunscreen suitable for dry and oily skin types. Contains formula that gives extra protection against UVA & UVB SPF 50 PA+++</p>
+                        <p>{{$item->description}}</p>
                     </div>
-                    <div class="price_panel">20ml</div>
+                    <a href=""><div class="price_panel">Clik To Detail</div></a>
+                 </div>
                 </div>
-            </div>
-
+           </a>   
+            @endforeach
             <!-- Price -->
-            <div class="col-lg-6 price_col">
-                <div class="price">
-                    <div class="price_title">Night Radiance Cream</div>
-                    <div class="price_text">
-                        <p>Integer aliquet congue libero, eu gravida odio ultrces ut. Etiam ac erat ut enim maximus accumsan vel ac nisl.</p>
-                    </div>
-                    <div class="price_panel">20ml</div>
-                </div>
-            </div>
-
-            <!-- Price -->
-            <div class="col-lg-6 price_col">
-                <div class="price">
-                    <div class="price_title">Intense Brightening Serum</div>
-                    <div class="price_text">
-                        <p>Integer aliquet congue libero, eu gravida odio ultrces ut. Etiam ac erat ut enim maximus accumsan vel ac nisl.</p>
-                    </div>
-                    <div class="price_panel">20ml</div>
-                </div>
-            </div>
-
-            <!-- Price -->
-            <div class="col-lg-6 price_col">
-                <div class="price">
-                    <div class="price_title">Acne Care Serum</div>
-                    <div class="price_text">
-                        <p>Integer aliquet congue libero, eu gravida odio ultrces ut. Etiam ac erat ut enim maximus accumsan vel ac nisl.</p>
-                    </div>
-                    <div class="price_panel">20ml</div>
-                </div>
-            </div>
-
-            <!-- Price -->
-            <div class="col-lg-6 price_col">
-                <div class="price">
-                    <div class="price_title">Gentle Cleansing Gel</div>
-                    <div class="price_text">
-                        <p>Integer aliquet congue libero, eu gravida odio ultrces ut. Etiam ac erat ut enim maximus accumsan vel ac nisl.</p>
-                    </div>
-                    <div class="price_panel">120ml</div>
-                </div>
-            </div>
-
-            <!-- Price -->
-         
-
         </div>
     </div>
 </div>
