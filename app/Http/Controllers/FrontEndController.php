@@ -30,6 +30,11 @@ class FrontEndController extends Controller
         return view('front-end.product', compact('product'));
     }
 
+    public function about()
+    {
+        return view('front-end.about');
+    }
+
     public function detailproduct($id)
     {
         $product = Product::where('id', $id)->first();

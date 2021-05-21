@@ -53,7 +53,7 @@
                      
                     </div>
                     <div class="col-12 col-sm-6">
-                      <h3 class="my-3">{{$product->name}}</h3>
+                      <h3 class="my-3">{{$product->name}} {{$product->ml}}ml</h3>
                       <div>
                           Description
                           <p>{{$product->description}}</p>
@@ -79,10 +79,12 @@
                   <hr>
                   <div class="row" style="font-size: 20px">
                     <div class="col-12 col-sm-6" style="margin-top: 25px">
-                        Key Ingredients                      
+                        Key Ingredients
+                    {!!$product->keyingredients!!}                      
                     </div>
                     <div class="col-12 col-sm-6" style="margin-top: 25px">
-                        Ingredients      
+                        Ingredients 
+                    {!!$product->ingredients!!}       
                     </div>
                   </div>
             </div>

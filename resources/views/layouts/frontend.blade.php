@@ -55,7 +55,7 @@
 					<li class="{{ 'treatment' == request()->path()? 'active' : ''}}"><a href="{{url("/treatment")}}">TREATMENT</a></li>
 					<li class="{{ 'product' == request()->path()? 'active' : ''}}"><a href="{{url("/product")}}">PRODUCT</a></li>
 					<li class="{{ 'doctor' == request()->path()? 'active' : ''}}"><a href="{{url("/doctor")}}">DOCTOR</a></li>
-					<li><a href="contact.html">ABOUT-US</a></li>
+					<li class="{{ 'about-us' == request()->path()? 'active' : ''}}"><a href="{{url("/about-us")}}">ABOUT-US</a></li>
 				</ul>
 			</nav>
 			<div class="header_extra d-flex flex-row align-items-center justify-content-end ml-auto">
@@ -95,7 +95,7 @@
 				<li class="{{ 'treatment' == request()->path()? 'active' : ''}}"><a href="{{url("/treatment")}}">TREATMENT</a></li>
 				<li class="{{ 'product' == request()->path()? 'active' : ''}}"><a href="{{url("/product")}}">PRODUCT</a></li>
 				<li class="{{ 'doctor' == request()->path()? 'active' : ''}}"><a href="{{url("/doctor")}}">DOCTOR</a></li>
-				<li><a href="contact.html">ABOUT-US</a></li>
+				<li class="{{ 'about-us' == request()->path()? 'active' : ''}}"><a href="{{url("/about-us")}}">ABOUT-US</a></li>
 			</ul>
 		</nav>
 		<div class="menu_extra">
