@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/' ,'FrontEndController@index');
 Route::get('/treatment' ,'FrontEndController@treatment');
 Route::get('/doctor' ,'FrontEndController@doctor');
+Route::get('/product' ,'FrontEndController@product');
 Route::post('/savebooking' ,'FrontEndController@saveBooking');
 
 Auth::routes();

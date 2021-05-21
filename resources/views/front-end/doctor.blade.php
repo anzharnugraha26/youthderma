@@ -29,7 +29,7 @@
             <div class="col-lg-7">
                 <div class="intro_content">
                     <div class="section_title_container">
-                        <div class="section_subtitle">This is Dr Pro</div>
+                        {{-- <div class="section_subtitle">This is Dr Pro</div> --}}
                         <div class="section_title"><h2 style="font-size: 35px">dr. Lia Permata Sari, dipl. CIBTAC</h2></div>
                         <div class="team_title" style="font-size: 24px"> Head Doctor</div>
                     </div>
@@ -113,7 +113,7 @@
             <div class="col-lg-7">
                 <div class="intro_content">
                     <div class="section_title_container">
-                        <div class="section_subtitle">This is Dr Pro</div>
+                        {{-- <div class="section_subtitle">This is Dr Pro</div> --}}
                         <div class="section_title"><h2 style="font-size: 35px">dr. Anisa Amalia</h2></div>
                         <div class="team_title" style="font-size: 24px">Aesthetic Doctor</div>
                     </div>
@@ -193,7 +193,7 @@
             <div class="col-lg-7">
                 <div class="intro_content">
                     <div class="section_title_container">
-                        <div class="section_subtitle">This is Dr Pro</div>
+                        {{-- <div class="section_subtitle">This is Dr Pro</div> --}}
                         <div class="section_title"><h2 style="font-size: 35px">dr. Febrina Andarini,Sp.KK</h2></div>
                         <div class="team_title" style="font-size: 24px">Dermatology and Venereology Specialist</div>
                     </div>

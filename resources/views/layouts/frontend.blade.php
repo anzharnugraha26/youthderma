@@ -53,7 +53,7 @@
 				<ul class="d-flex flex-row align-items-center justify-content-start">
 					<li class="{{ '/' == request()->path()? 'active' : ''}}"><a href="{{url("/")}}">HOME</a></li>
 					<li class="{{ 'treatment' == request()->path()? 'active' : ''}}"><a href="{{url("/treatment")}}">TREATMENT</a></li>
-					<li><a href="services.html">PRODUCT</a></li>
+					<li class="{{ 'product' == request()->path()? 'active' : ''}}"><a href="{{url("/product")}}">PRODUCT</a></li>
 					<li class="{{ 'doctor' == request()->path()? 'active' : ''}}"><a href="{{url("/doctor")}}">DOCTOR</a></li>
 					<li><a href="contact.html">ABOUT-US</a></li>
 				</ul>
@@ -91,10 +91,10 @@
 		<div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
 		<nav class="menu_nav">
 			<ul>
-				<li class="active"><a href="index.html">HOME</a></li>
-				<li><a href="{{url("/treatment")}}">TREATMENT</a></li>
-				<li><a href="services.html">PRODUCT</a></li>
-				<li><a href="{{url("/doctor")}}">DOCTOR</a></li>
+				<li class="{{ '/' == request()->path()? 'active' : ''}}"><a href="{{url("/")}}">HOME</a></li>
+				<li class="{{ 'treatment' == request()->path()? 'active' : ''}}"><a href="{{url("/treatment")}}">TREATMENT</a></li>
+				<li class="{{ 'product' == request()->path()? 'active' : ''}}"><a href="{{url("/product")}}">PRODUCT</a></li>
+				<li class="{{ 'doctor' == request()->path()? 'active' : ''}}"><a href="{{url("/doctor")}}">DOCTOR</a></li>
 				<li><a href="contact.html">ABOUT-US</a></li>
 			</ul>
 		</nav>

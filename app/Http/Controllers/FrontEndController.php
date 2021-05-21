@@ -22,6 +22,10 @@ class FrontEndController extends Controller
     {
         return view('front-end.doctor');
     }
+    public function product()
+    {
+        return view('front-end.product');
+    }
 
     public function create()
     {
