@@ -27,39 +27,29 @@
     <div class="container">
         <div class="row">
 
-            <!-- Price -->
+           
             @foreach ($product as $item)
                 
            <a href="{{url("product-detail/$item->id")}}"> 
-               <div class="col-lg-6 price_col">
+               <div class="col-lg-4 price_col">
+                <div style="">
+                    <img src="{{asset('image/product/'.$item->image)}}" width="200px" height="200px" style="display:block; margin-left:  auto;
+                    margin-right: auto;">
+                </div>
                  <div class="price">
                     <div class="price_title">{{$item->name}}</div>
                     <div class="price_text">
-                        <p>{{$item->description}}</p>
+                      
                     </div>
                     <a href="{{url("product-detail/$item->id")}}"><div class="price_panel" style="background: #84CDEE">Click To Detail</div></a>
                  </div>
                 </div>
            </a>   
             @endforeach
-            <!-- Price -->
-        </div>
-    </div>
-</div>
-
-
-<div class="prices">
-    <div class="container">
-        <div class="row">
-
-            
            
         </div>
     </div>
 </div>
-
-
-
 
 
 @endsection
