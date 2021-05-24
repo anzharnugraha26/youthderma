@@ -21,8 +21,8 @@
                         <div class="col">
                             CONNECT WITH US
                             <div>
-                            <img src="{{asset('image/logo/whatsapp.png')}}">
-                            <img src="{{asset('image/logo/instagram.png')}}">
+                                <a href="https://wa.me/6282112100020?text=Hallo Youthderma Aesthetic Clinic"  target="_blank"><img src="{{asset('image/logo/whatsapp.png')}}"></a>
+                                <a href="https://www.instagram.com/youthdermaclinic/" target="_blank"><img src="{{asset('image/logo/instagram.png')}}"></a>
                             </div>
                         </div>
                     </div>
@@ -43,10 +43,7 @@
                     </div>
                 </div>
             </div>
-
-            <hr>
-
-
         </div> 
+        
     </div>
 </div>

@@ -30,14 +30,14 @@
             <div class="row">
                 <div class="col-lg-6 intro_col">
                     <div class="intro_content">
-                        <img src="{{asset('image/about/b2.jpg')}}" width="500px" height="260px">
+                        <img src="{{asset('image/about/b2.jpg')}}" width="500px" height="270px">
                     </div>
                 </div>
     
                 <!-- Intro Form -->
                 <div class="col-lg-6 intro_col">
                     <div class="intro_content">
-                        <img src="{{asset('image/about/b1.jpg')}}" width="500px" height="260px">
+                        <img src="{{asset('image/about/b1.jpg')}}" width="500px" height="270px">
                     </div>
                 </div>
     

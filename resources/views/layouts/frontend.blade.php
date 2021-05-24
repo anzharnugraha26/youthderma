@@ -34,7 +34,7 @@
       <div class="row" >
           <div class="col-md-12">
             <div style="float: right;margin-right:120px ">
-              <p style="color: white">Contact :</p>
+              <p style="color: #84CDEE;">Contact :</p>
             </div>
           </div>
       </div>

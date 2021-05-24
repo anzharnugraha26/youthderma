@@ -52,4 +52,13 @@
 </div>
 
 
+<div class="col text-center" style="margin-bottom: 50px">
+    <div class="section_title_container">
+        <div class="section_title"><h4>Look your best. Maximize the beauty of your self with youthderma skincare</h4></div>
+        <hr>
+    </div>
+</div>
+
+
+@include('front-end.include.footer')
 @endsection
