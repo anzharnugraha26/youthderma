@@ -21,7 +21,7 @@
 									</div>
 									<div class="row">
 										<div class="col-xl-4 col-md-6 " style="margin-top: 10px;width: 60%" >
-											<div class="button button_1 trans_200" style="background: #5193B1"><a href="#" style="font-size: 10px;text-align: center">Treatment</a></div>
+											<div class="button button_1 trans_200" style="background: #5193B1"><a href="{{url("")}}" style="font-size: 10px;text-align: center">Treatment</a></div>
 										</div>
 										<div class="col-xl-4 col-md-6 " style="margin-top: 10px;width: 60%">
 											<div class="button button_1 trans_200" style="background: #5193B1"><a href="#" style="font-size: 10px;text-align: center">Online-Store</a></div>
@@ -208,7 +208,7 @@
 <!-- Extra -->
 
 <div class="extra">
-	<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{{asset('pro-master/images/extra.jpg')}}" data-speed="0.8"></div>
+	<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{{asset('image/background/backbawah.jpg')}}" data-speed="0.8"></div>
 	<div class="container">
 		<div class="row">
 			<div class="col">
