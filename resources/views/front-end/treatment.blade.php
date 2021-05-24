@@ -35,12 +35,12 @@
 </div>
 
 
-<div class="before_and_after">
+{{-- <div class="before_and_after">
     <div class="container">
         <div class="row">
             <div class="col">
                 <div class="section_title_container text-center">
-                    <div class="section_subtitle">This is Dr Pro</div>
+                    
                     <div class="section_title">
                         <h2>Before & After Gallery</h2>
                     </div>
@@ -62,17 +62,27 @@
                         <span class="cd-handle"></span>
                     </figure>
                 </div>
-                <div class="ba_text text-center">
-                    <p>Nulla facilisi. Nulla egestas vel lacus sed interdum. Sed mollis, orci elementum eleifend tempor, nunc libero porttitor tellus.</p>
-                </div>
-                <div class="ba_button_container text-center">
-                    <div class="button button_1 ba_button"><a href="#">see gallery</a></div>
-                </div>
+            </div>
+        </div>
+    </div>
+</div> --}}
 
+<div class="home d-flex flex-column align-items-start justify-content-end">
+    <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{{asset('image/background/detail.jpg')}}" data-speed="0.8"></div>
+    {{-- <div class="home_overlay"><img src="{{asset('image/slider/home_overlay.png')}}" alt=""></div> --}}
+    <div class="home_container">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    {{-- <div class="home_content">
+                        <div class="home_title">Detail Product</div>
+                    </div> --}}
+                </div>
             </div>
         </div>
     </div>
 </div>
+
 
 @endsection
 @section('script')
@@ -82,8 +92,8 @@
 <link rel="stylesheet" type="text/css" href="{{asset('pro-master/styles/services_responsive.css')}}">
 
 
-<script src="{{asset('pro-master/plugins/image-comparison-slider-master/main.js')}}"></script>
-<script src="{{asset('pro-master/js/services.js')}}"></script>
+{{-- <script src="{{asset('pro-master/plugins/image-comparison-slider-master/main.js')}}"></script>
+<script src="{{asset('pro-master/js/services.js')}}"></script> --}}
     
 @endsection
 
