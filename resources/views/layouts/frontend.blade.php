@@ -4,7 +4,7 @@
 <link rel="icon" href="{{asset('image/logo/logo3.png')}}" type="image/png">
 <title>YOUTHDERMA AESTHETIC CLINIC</title>
 <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+{{-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> --}}
 <meta name="description" content="YOUTHDERMA AESTHETIC CLINIC Website">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="{{asset('pro-master/styles/bootstrap-4.1.2/bootstrap.min.css')}}">
