@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Booking;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class FrontEndController extends Controller
 {
@@ -41,58 +42,47 @@ class FrontEndController extends Controller
         return view('front-end.detail-product', compact('product')); 
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function saveBooking(Request $request)
     {
-        Booking::create($request->all());
+        $booking = Booking::create($request->all());
+        $data = array(
+            'name' => $booking->name,
+            'email' => $booking->email,
+            'date' => $booking->date,
+            'theratment' => $booking->threatment,
+            'dr' => $booking->doctor,
+            'phone' => $booking->phone
+        );
+        
+
+
+        Mail::send('email', $data  , function ($message) use($booking) {
+            $message->from($booking->email, $booking->email);
+            $message->sender($booking->email, '$request->email');
+            $message->to('youthderma@gmail.com', 'Youthderma aesthetic Clinic');
+            $message->subject('treatement :' . $booking->threatment);
+            $message->setBody('treatement :' . $booking->threatment);
+        });
         return redirect()->back()->with("with", "aaaaaaaa");
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //
