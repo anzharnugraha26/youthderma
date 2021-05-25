@@ -5,7 +5,7 @@
 <title>YOUTHDERMA AESTHETIC CLINIC</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="Dr PRO template project">
+<meta name="description" content="YOUTHDERMA AESTHETIC CLINIC Website">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="{{asset('pro-master/styles/bootstrap-4.1.2/bootstrap.min.css')}}">
 <link href="{{asset('pro-master/plugins/font-awesome-4.7.0/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
@@ -67,7 +67,7 @@
 				<div class="header_phone">+34 586 778 8892</div>
 
 				<!-- Appointment Button -->
-				<div class="button button_1 header_button" style="background: #84CDEE" ><a href="#" onclick=""  id="comingsoon"><img src="{{asset('image/iconshop.png')}}" width="30px" height="20px"> |  Online Store</a></div>
+				<div class="button button_1 header_button" style="background: #84CDEE" ><a href="{{url("/shop")}}" onclick=""  id="comingsoon"><img src="{{asset('image/iconshop.png')}}" width="30px" height="20px"> |  Online Store</a></div>
 
 				<!-- Header Social -->
 				<div class="social header_social">
@@ -101,7 +101,7 @@
 		<div class="menu_extra">
 			<div class="menu_link">Mo - Sat: 8:00am - 9:00pm</div>
 			<div class="menu_link">+34 586 778 8892</div>
-			<div class="menu_link"><a href="#">Make an appointment</a></div>
+			<div class="menu_link"><a href="{{url("/shop")}}">Online Store</a></div>
 		</div>
 		<div class="social menu_social">
 			<ul class="d-flex flex-row align-items-center justify-content-start">

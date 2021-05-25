@@ -14,7 +14,7 @@ Route::post('/savebooking' ,'FrontEndController@saveBooking');
 
 Auth::routes();
 Route::group(['prefix' => 'shop'], function () {
-    Route::get('/test', 'Shop\ShopController@index'); 
+    Route::get('/', 'Shop\ShopController@index'); 
 });
 
 Route::group(['middleware' => ['auth', 'checkRole:admin'],  'prefix' => 'admin'], function () {
