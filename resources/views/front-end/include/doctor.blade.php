@@ -13,7 +13,7 @@
 			<!-- Team Item -->
 			<div class="col-lg-4 team_col">
 				<div class="team_item text-center d-flex flex-column aling-items-center justify-content-end">
-					<div class="team_image"><img src="{{asset('image/dr/drlia.png')}}" alt=""></div>
+					<div class="team_image"><img src="{{asset('image/dr/drliab2.png')}}" alt=""></div>
 					<div class="team_content text-center">
 						<div class="team_name"><a href="#" style="font-size: 20px">dr. Lia Permata Sari, dipl. CIBTAC</a></div>
 						<div class="team_title">Head Doctor</div>

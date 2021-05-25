@@ -6,7 +6,7 @@
 
 
 <div class="home d-flex flex-column align-items-start justify-content-end">
-    <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{{asset('image/background/product.jpg')}}" data-speed="0.8"></div>
+    <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{{asset('image/product/b.jpg')}}" data-speed="0.8"></div>
     <div class="home_overlay"><img src="{{asset('image/slider/home_overlay.png')}}" alt=""></div>
     <div class="home_container">
         <div class="container">

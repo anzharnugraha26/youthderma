@@ -97,7 +97,7 @@
 
             <!-- Intro Image -->
             <div class="col-lg-4 offset-lg-1" style="margin-top: 100px">
-                <div class="team_image"><img src="{{asset('image/dr/drlia1.png')}}" alt="" ></div>
+                <div class="team_image"><img src="{{asset('image/dr/drlia22.png')}}" alt="" ></div>
             </div>
         </div>
     </div>
