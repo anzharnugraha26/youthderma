@@ -19,7 +19,9 @@ Route::group(['prefix' => 'shop'], function () {
 
 Route::group(['middleware' => ['auth', 'checkRole:admin'],  'prefix' => 'admin'], function () {
     Route::get('/', 'Admin\AdminController@index');
-    Route::get('/home', 'HomeController@index');
+    Route::get('/booking', 'Admin\AdminController@booking');
+    Route::resource('product', 'Admin\ProductController');
+    // Route::get('/home', 'HomeController@index');
 });
 
 Route::get('/logout', 'HomeController@logout');

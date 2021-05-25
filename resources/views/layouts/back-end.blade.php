@@ -82,9 +82,9 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{url("/")}}" class="brand-link"> 
+    {{-- <a href="{{url("/")}}" class="brand-link"> 
       <img src="{{asset('image/logo/logo4.png')}}" alt="" style="height: 52px; width: 141px">
-    </a>
+    </a> --}}
 
     <!-- Sidebar -->
     <div class="sidebar">
@@ -121,19 +121,10 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{url("admin/category")}}" class="nav-link  {{ 'admin/category' == request()->path()? 'active' : ''}}">
-              <i class="nav-icon fas fa-angle-double-down"></i>
-              <p>
-                Category
-              </p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="{{url("admin/jadwal-berkunjung")}}" class="nav-link  {{ 'admin/jadwal-berkunjung' == request()->path()? 'active' : ''}}">
+            <a href="{{url("admin/booking")}}" class="nav-link  {{ 'admin/booking' == request()->path()? 'active' : ''}}">
               <i class="nav-icon fas fa-address-book"></i>
               <p>
-                Jadwal Berkunjung 
+                Daftar Booking
               </p>
             </a>
           </li>
