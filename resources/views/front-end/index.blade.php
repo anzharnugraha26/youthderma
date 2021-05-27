@@ -113,7 +113,7 @@
 			</div>
 
 			<div class="owl-item">
-				<div class="background_image" style="background-image:url({{asset('image/slider/s7.jpg')}})"></div>
+				<div class="background_image" style="background-image:url({{asset('image/slider/s8.jpg')}})"></div>
 				<div class="home_container">
 					<div class="container">
 						<div class="row">
