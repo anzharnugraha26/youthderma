@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
+
+Route::get('auth/google', 'GoogleController@redirectToGoogle');
+Route::get('auth/google/callback', 'GoogleController@handleGoogleCallback');
+
 Route::get('/' ,'FrontEndController@index');
 Route::get('/treatment' ,'FrontEndController@treatment');
 Route::get('/doctor' ,'FrontEndController@doctor');

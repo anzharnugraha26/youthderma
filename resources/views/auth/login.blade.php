@@ -175,21 +175,28 @@
 						</button>
 					</div>
 					
+					
 					<div class="text-center p-t-46 p-b-20">
 						<span class="txt2">
 							or sign up using
 						</span>
 					</div>
 
-					<div class="login100-form-social flex-c-m">
-						{{-- <a href="#" class="login100-form-social-item flex-c-m bg1 m-r-5">
+					<div class="container-login100-form-btn" >
+						<a href="{{url("/auth/google")}}" class="login100-form-btn" >
+							<i class="fa fa-google" aria-hidden="true"></i>  | Login With Google
+						</a>
+					</div>
+
+					{{-- <div class="login100-form-social flex-c-m">
+						<a href="#" class="login100-form-social-item flex-c-m bg1 m-r-5">
 							<i class="fa fa-facebook-f" aria-hidden="true"></i>
-						</a> --}}
+						</a>
 
 						<a href="#" class="login100-form-social-item flex-c-m bg2 m-r-5">
 							<i class="fa fa-google" aria-hidden="true"></i>
 						</a>
-					</div>
+					</div> --}}
 				</form>
 
 				<div class="login100-more" style="background-image: url('{{asset('loggin/images/bg-01.jpg')}}');">
