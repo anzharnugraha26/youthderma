@@ -14,8 +14,8 @@
 						<div class="row">
 							<div class="col">
 								<div class="home_content" style="margin-top: 60px">
-									<div class="home_subtitle" style="color:white;">Aesthetic Clinic</div>
-									<div class="home_title">Youthderma</div>
+									{{-- <div class="home_subtitle" style="color:white;">Aesthetic Clinic</div>
+									<div class="home_title">Youthderma</div> --}}
 									<div class="home_text">
 										<p style="color: white;">A beauty and health clinic not only focuses on beautifying your face, but we can also make your dream body come true.</p>
 									</div>
@@ -66,6 +66,75 @@
 				</div>
 			</div>
 
+			<div class="owl-item">
+				<div class="background_image" style="background-image:url({{asset('image/slider/s5.jpg')}})"></div>
+				<div class="home_container">
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								{{-- <div class="home_content">
+									<div class="home_subtitle">#1 Plastic Surgery Clinic</div>
+									<div class="home_title">Love the new you</div>
+									<div class="home_text">
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
+									</div>
+									<div class="home_buttons d-flex flex-row align-items-center justify-content-start">
+										<div class="button button_1 trans_200"><a href="#">read more</a></div>
+										<div class="button button_2 trans_200"><a href="#">make an appointment</a></div>
+									</div>
+								</div> --}}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="owl-item">
+				<div class="background_image" style="background-image:url({{asset('image/slider/s6.jpg')}})"></div>
+				<div class="home_container">
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								{{-- <div class="home_content">
+									<div class="home_subtitle">#1 Plastic Surgery Clinic</div>
+									<div class="home_title">Love the new you</div>
+									<div class="home_text">
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
+									</div>
+									<div class="home_buttons d-flex flex-row align-items-center justify-content-start">
+										<div class="button button_1 trans_200"><a href="#">read more</a></div>
+										<div class="button button_2 trans_200"><a href="#">make an appointment</a></div>
+									</div>
+								</div> --}}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="owl-item">
+				<div class="background_image" style="background-image:url({{asset('image/slider/s7.jpg')}})"></div>
+				<div class="home_container">
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								{{-- <div class="home_content">
+									<div class="home_subtitle">#1 Plastic Surgery Clinic</div>
+									<div class="home_title">Love the new you</div>
+									<div class="home_text">
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
+									</div>
+									<div class="home_buttons d-flex flex-row align-items-center justify-content-start">
+										<div class="button button_1 trans_200"><a href="#">read more</a></div>
+										<div class="button button_2 trans_200"><a href="#">make an appointment</a></div>
+									</div>
+								</div> --}}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
 			<!-- Slide -->
 			
 
@@ -76,6 +145,9 @@
 		<div class="home_slider_dots">
 			<ul id="home_slider_custom_dots" class="home_slider_custom_dots d-flex flex-row align-items-center justify-content-start">
 				<li class="home_slider_custom_dot trans_200 active"></li>
+				<li class="home_slider_custom_dot trans_200"></li>
+				<li class="home_slider_custom_dot trans_200"></li>
+				<li class="home_slider_custom_dot trans_200"></li>
 				<li class="home_slider_custom_dot trans_200"></li>
 				
 			</ul>

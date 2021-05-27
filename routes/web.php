@@ -12,7 +12,7 @@ Route::get('/product-detail/{id}' ,'FrontEndController@detailproduct');
 Route::post('/savebooking' ,'FrontEndController@saveBooking');
 
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 Route::group(['prefix' => 'shop'], function () {
     Route::get('/', 'Shop\ShopController@index'); 
 });
