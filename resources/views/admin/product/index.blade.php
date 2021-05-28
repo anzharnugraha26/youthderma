@@ -37,6 +37,7 @@
                 <tr>
                   <th>No</th>
                   <th>Name</th>       
+                  <th>Price</th>       
                   <th>image</th>
                   <th>action</th>
                 </tr>
@@ -46,6 +47,7 @@
                 <tr>
                   <td>{{$loop->iteration}}</td>
                   <td>{{$item->name}}</td>
+                  <td>{{ 'Rp.' . number_format($item->price) }}</td>
                  
                   <td><img src="{{asset('image/product/'. $item->image)}}" style="width: 100px;height: 100px;"></td>
                   <td>

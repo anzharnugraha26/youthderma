@@ -14,7 +14,7 @@ class ShopController extends Controller
      */
     public function index()
     {
-        return view("home")->with("coming-soon", "test");
+        return view("shop.index")->with("coming-soon", "test");
     }
 
     /**
