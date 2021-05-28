@@ -182,9 +182,7 @@
 						<div class="section_title"><h2>Why choose us?</h2></div>
 					</div>
 					<div class="why_text">
-						<p>Present as a solution to meet the needs and desires to appear confident of all ages, both men and 
-							women. Youthderma Clinic is a trusted beauty clinic which is part of PT. Citra Utama Andalan, a subsidiary 
-							of Stay Beauty Clinic Alam Sutera.</p>
+						<p>Youthderma Clinic is a beauty and health clinic that provides effective medical beauty treatments with the latest technology. We maintain the quality and safety of the products provided so that everyone can combine a healthy and beautiful lifestyle in their daily life. Your satisfaction is our priority. We are committed to providing effective services according to your treatment needs.</p>
 					</div>
 					<div class="why_list">
 						<ul>
