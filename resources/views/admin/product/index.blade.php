@@ -49,7 +49,7 @@
                  
                   <td><img src="{{asset('image/product/'. $item->image)}}" style="width: 100px;height: 100px;"></td>
                   <td>
-                    <a class="btn btn-info btn-sm" href="{{url('admin/product/edit/'.$item->id )}}" style="margin-top: 10px"> <i class="fas fa-pencil-alt edit"></i> Edit</a>  <a class="btn btn-info btn-sm" href="{{url("/product/$item->id")}}" style="background:blue;margin-top: 10px"  target="_blank"><i class="fas fa-eye"></i> View</a>
+                    <a class="btn btn-info btn-sm" href="{{url('admin/product/edit/'.$item->id )}}" style="margin-top: 10px"> <i class="fas fa-pencil-alt edit"></i> Edit</a>  <a class="btn btn-info btn-sm" href="{{url("/product-detail/$item->id")}}" style="background:blue;margin-top: 10px"  target="_blank"><i class="fas fa-eye"></i> View</a>
                     <a class="btn btn-danger btn-sm delete" href="{{url('admin/product/destroy/'.$item->id)}}" onclick="return confirm('Anda Yakin akan menghapus data ini ?')" style="margin-top: 10px" id="{{$item->id}}"><i class="far fa-trash-alt" ></i> Delete</a>
                   </td>
                 </tr>
