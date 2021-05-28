@@ -15,4 +15,16 @@
     })
     </script>
 @endif
+
+@if(Session::has('delete'))
+<script>
+    Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'Data Anda Sudah terhapus',
+    showConfirmButton: false,
+    timer: 1500
+})
+</script>
+@endif
     

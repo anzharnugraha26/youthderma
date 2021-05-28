@@ -23,9 +23,13 @@ Route::group(['prefix' => 'shop'], function () {
 
 Route::group(['middleware' => ['auth', 'checkRole:admin'],  'prefix' => 'admin'], function () {
     Route::get('/', 'Admin\AdminController@index');
+    
     Route::get('/booking', 'Admin\AdminController@booking');
+
+    //product
     Route::resource('product', 'Admin\ProductController');
     Route::post('product/store', 'Admin\ProductController@store');
+    Route::get('product/destroy/{id}', 'Admin\ProductController@destroy');
     // Route::get('/home', 'HomeController@index');
 });
 
