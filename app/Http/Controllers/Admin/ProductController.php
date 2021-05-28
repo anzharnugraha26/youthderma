@@ -8,11 +8,10 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-  
     public function index()
     {
         $product = Product::all();
-        return view('admin.product.index' , compact('product'));
+        return view('admin.product.index', compact('product'));
     }
 
   
@@ -30,7 +29,7 @@ class ProductController extends Controller
             $fileName = date('mYdHs') . rand(1, 999) . '_' . $file;
             $request->image->move('image/product', $fileName);
         }
-        $product = Product::create(array_merge($request->all(),[
+        $product = Product::create(array_merge($request->all(), [
             'image' => $fileName
         ]));
         return redirect('admin/product')->with('simpan', "hhh");
@@ -45,13 +44,31 @@ class ProductController extends Controller
    
     public function edit($id)
     {
-        //
+        $product = Product::where('id', $id)->first();
+        return view('admin.product.edit', compact('product'));
     }
 
    
     public function update(Request $request, $id)
     {
-        //
+        $product = Product::find($id);
+        if ($request->hasFile('image')) {
+            if (file_exists('image/product/' . $product->image)) {
+                unlink('image/product/' . $product->image);
+            }
+            $file = str_replace(' ', '', $request->image->getClientOriginalName());
+            $fileName = date('mYdHs') . rand(1, 999) . '_' . $file;
+            $request->image->move('image/product/', $fileName);
+        } else {
+            $fileName = $request->input('image_old');
+        }
+        Product::find($id)->update(array_merge(
+            $request->all(),
+            [
+            'image'=> $fileName
+            ]
+        ));
+        return redirect("/admin/product")->with('update', "a");
     }
 
    

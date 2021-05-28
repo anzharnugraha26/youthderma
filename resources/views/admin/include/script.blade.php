@@ -27,4 +27,16 @@
 })
 </script>
 @endif
+
+@if(Session::has('update'))
+<script>
+    Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'Data Anda Sudah berhasil di Update',
+    showConfirmButton: false,
+    timer: 1500
+})
+</script>
+@endif
     

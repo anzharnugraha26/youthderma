@@ -30,6 +30,8 @@ Route::group(['middleware' => ['auth', 'checkRole:admin'],  'prefix' => 'admin']
     Route::resource('product', 'Admin\ProductController');
     Route::post('product/store', 'Admin\ProductController@store');
     Route::get('product/destroy/{id}', 'Admin\ProductController@destroy');
+    Route::get('product/edit/{id}', 'Admin\ProductController@edit');
+    Route::post('product/update/{id}', 'Admin\ProductController@update');
     // Route::get('/home', 'HomeController@index');
 });
 
