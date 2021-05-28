@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="icon" href="{{asset('image/logo/logo2.png')}}">
+  <link rel="icon" href="{{asset('image/logo/logo3.png')}}" type="image/png">
+
   <title>Admin | @yield('title')</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -53,7 +54,7 @@
     </ul>
 
     <!-- SEARCH FORM -->
-    <form class="form-inline ml-3">
+    {{-- <form class="form-inline ml-3">
       <div class="input-group input-group-sm">
         <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
         <div class="input-group-append">
@@ -62,7 +63,7 @@
           </button>
         </div>
       </div>
-    </form>
+    </form> --}}
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
@@ -80,21 +81,22 @@
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <aside class="main-sidebar sidebar-light-primary elevation-4">
     <!-- Brand Logo -->
     {{-- <a href="{{url("/")}}" class="brand-link"> 
       <img src="{{asset('image/logo/logo4.png')}}" alt="" style="height: 52px; width: 141px">
     </a> --}}
 
     <!-- Sidebar -->
-    <div class="sidebar">
+    <div class="sidebar" >
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="{{asset('lte/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
+          <img src="{{asset('image/logo/logo3.png')}}" class="img-circle " alt="User Image">
         </div>
+        
         <div class="info">
-          <a href="#" class="d-block">{{Auth::user()->name}}</a>
+          <a href="{{url("/admin")}}" class="d-block">{{Auth::user()->name}} </a>
         </div>
       </div>
 
@@ -113,7 +115,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{url("admin/product")}}" class="nav-link  {{ 'admin/product' == request()->path()? 'active' : ''}}">
+            <a href="{{url("admin/product")}}" class="nav-link  {{ 'admin/product' == request()->path()? 'active' : ''}} {{ 'admin/product/create' == request()->path()? 'active' : ''}}">
               <i class="nav-icon fas fa-sort-amount-up-alt"></i>
               <p>
                 Products
@@ -129,36 +131,38 @@
             </a>
           </li>
          
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a href="{{url("admin/subscribe-contactus")}}" class="nav-link  {{ 'admin/subscribe-contactus' == request()->path()? 'active' : ''}} ">
               <i class="nav-icon far fa-comments"></i>
               <p>
                 Subscribe and Contact US
               </p>
             </a>
-          </li>
+          </li> --}}
 
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a href="{{url("admin/blog")}}" class="nav-link  {{ 'admin/blog' == request()->path()? 'active' : ''}} {{'admin/blog/create-content-blog' == request()->path()? 'active' : ''}}">
               <i class="nav-icon fab fa-blogger"></i>
               <p>
                 Blog
               </p>
             </a>
-          </li>
-          <li class="nav-item">
+          </li> --}}
+
+          {{-- <li class="nav-item">
             <a href="{{url("admin/gallery")}}" class="nav-link  {{ 'admin/gallery' == request()->path()? 'active' : ''}} ">
               <i class="nav-icon far fa-image"></i>
               <p>
                 Gallery
               </p>
             </a>
-          </li>
+          </li> --}}
+
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fas fa-keyboard"></i>
               <p>
-                  Input Pesonapedia
+                  Input 
                 <i class="fas fa-angle-left right"></i>
                
               </p>
@@ -198,7 +202,7 @@
 
 @yield('content')
 <footer class="main-footer">
-    <strong>Copyright &copy; 2021 <a href="{{url("/")}}">Pesona Mahameru Website </a></strong>
+    <strong>Copyright &copy; 2021 <a href="{{url("/")}}">Youthderma Aesthectic Clinic Website </a></strong>
   </footer>
 
   <!-- Control Sidebar -->

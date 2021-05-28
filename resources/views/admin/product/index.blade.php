@@ -27,7 +27,7 @@
           <div class="card">
             <div class="card-header">
               <div class="card-body pad table-responsive">
-              <a href="{{url("/admin/input-product")}}" class="btn block btn-primary btn-lg" style="margin-top: 20px">Tambah Product</a>
+              <a href="{{url("/admin/product/create")}}" class="btn block btn-primary btn-lg" style="margin-top: 20px">Tambah Product</a>
               </div>
             </div>
             <div class="card-body">
