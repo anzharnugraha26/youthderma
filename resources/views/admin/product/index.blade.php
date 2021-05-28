@@ -95,12 +95,12 @@ $(document).ready(function() {
 
 </script>
 
-@if(Session::has('deleteproduk'))
+@if(Session::has('simpanproduk'))
 <script>
     Swal.fire({
     position: 'top-end',
     icon: 'success',
-    title: 'Data Anda Sudah terhapus',
+    title: 'Data Anda Berhasil Disimpan',
     showConfirmButton: false,
     timer: 1500
 })

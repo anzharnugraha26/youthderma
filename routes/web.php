@@ -25,6 +25,7 @@ Route::group(['middleware' => ['auth', 'checkRole:admin'],  'prefix' => 'admin']
     Route::get('/', 'Admin\AdminController@index');
     Route::get('/booking', 'Admin\AdminController@booking');
     Route::resource('product', 'Admin\ProductController');
+    Route::post('product/store', 'Admin\ProductController@store');
     // Route::get('/home', 'HomeController@index');
 });
 

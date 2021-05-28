@@ -24,7 +24,16 @@ class ProductController extends Controller
    
     public function store(Request $request)
     {
-        //
+        $fileName = '';
+        if ($request->image->getClientOriginalName()) {
+            $file = str_replace(' ', '', $request->image->getClientOriginalName());
+            $fileName = date('mYdHs') . rand(1, 999) . '_' . $file;
+            $request->image->move('image/product', $fileName);
+        }
+        $product = Product::create(array_merge($request->all(),[
+            'image' => $fileName
+        ]));
+        return redirect('admin/product')->with('simpanproduk', "hhh");
     }
 
    

@@ -27,7 +27,7 @@
                     <h3>Input Product</h3>
                 </div>
                 <div class="card-body">
-                    <form action="{{url('admin/product/store')}}" method="POST">
+                    <form action="{{url('admin/product/store')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                     <div class="row">
                       
@@ -103,8 +103,8 @@
                       <!-- /.col -->
                     </div>
                     
-                    <div>
-                        <button type="submit">Save</button>
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-primary">Save</button>
                     </div>
                 </form>
 
