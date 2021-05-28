@@ -27,7 +27,7 @@ Daftar Booking
           <div class="card">
             <div class="card-body">
               <div class="box-body table-responsive no-padding">
-              <table id="tbl_order" class="table table-bordered table-striped">
+              <table id="tbl" class="table table-bordered table-striped">
                 <thead>
                 <tr>
                   <th>No</th>
@@ -59,35 +59,7 @@ Daftar Booking
 </div>
 @endsection
 @section('script')
-<script>
-$(document).ready(function() {
-  $('#tbl_order').DataTable();
-});
-
-$(document).ready(function() {
-  $('.delete').click(function() {
-    var karyawan_id = $(this).attr('id');
-    swal({
-    title: "Are you sure?",
-    text: "Are you sure you want to delete this data?",
-    icon: "warning",
-    buttons: true,
-    dangerMode: true,
-    })
-      .then((willDelete) => {
-        if (willDelete) {
-          window.location = "/delete-produk/" + karyawan_id  ;
-          swal("Poof! Your imaginary file has been deleted!", {
-          icon: "success",
-          });
-         } else {
-          swal("Your imaginary file is safe!");
-           }
-           });
-          });
-});
-
-</script>
+@include('admin.include.script')
 
 @if(Session::has('deleteproduk'))
 <script>

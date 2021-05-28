@@ -33,7 +33,7 @@ class ProductController extends Controller
         $product = Product::create(array_merge($request->all(),[
             'image' => $fileName
         ]));
-        return redirect('admin/product')->with('simpanproduk', "hhh");
+        return redirect('admin/product')->with('simpan', "hhh");
     }
 
    
