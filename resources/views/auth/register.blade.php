@@ -1,6 +1,8 @@
-@extends('layouts.app')
-
-@section('content')
+<link rel="stylesheet" href="{{asset('shop-new/assets/css/style.css')}}">
+<link rel="stylesheet" href="{{asset('shop-new/assets/css/responsive.css')}}">
+<link rel="stylesheet" href="{{asset('shop-new/assets/css/plugins.css')}}">
+<!-- Bootstap CSS -->
+<link rel="stylesheet" href="{{asset('shop-new/assets/css/bootstrap.min.css')}}">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -74,4 +76,6 @@
         </div>
     </div>
 </div>
-@endsection
+
+
+

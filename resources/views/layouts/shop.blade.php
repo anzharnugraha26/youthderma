@@ -74,11 +74,11 @@
                 	<span class="user-menu d-block d-lg-none"><i class="anm anm-user-al" aria-hidden="true"></i></span>
                     <ul class="customer-links list-inline">
                         @if (Auth::check()) 
-                        <li><a href="register.html">Log-Out</a></li>
+                        <li><a href="{{url('logout')}}">Log-Out</a></li>
                         <li><a href="wishlist.html">Wishlist</a></li>
                         @else
-                        <li><a href="login.html">Login</a></li>
-                        <li><a href="register.html">Create Account</a></li>
+                        <li><a href="{{url('login')}}">Login</a></li>
+                        <li><a href="{{url('register')}}">Create Account</a></li>
                         @endif
                     </ul>
                 </div>
@@ -107,7 +107,7 @@
                 	<!--Desktop Menu-->
                 	<nav class="grid__item" id="AccessibleNav"><!-- for mobile -->
                         <ul id="siteNav" class="site-nav medium center hidearrow">
-                          <li class="lvl-2"><a href="index.html" class="site-nav lvl-2">Home </a></li>
+                          <li class="lvl-2"><a href="{{url("/shop")}}" class="site-nav lvl-2">Home </a></li>
                           <li class="lvl-2"><a href="index.html" class="site-nav lvl-2">Cart</a></li>
                           <li class="lvl1"><a href="#"><b>Buy Now!</b> <i class="anm anm-angle-down-l"></i></a></li>
                       </ul>
@@ -206,7 +206,7 @@
     <div class="mobile-nav-wrapper" role="navigation">
 		<div class="closemobileMenu"><i class="icon anm anm-times-l pull-right"></i> Close Menu</div>
         <ul id="MobileNav" class="mobile-nav">
-          <li class="lvl-2"><a href="index.html" class="site-nav lvl-2">Home </a></li>
+          <li class="lvl-2"><a href="{{url("/shop")}}" class="site-nav lvl-2">Home </a></li>
             <li class="lvl-2"><a href="index.html" class="site-nav lvl-2">Cart</a></li>
         	  <li class="lvl1"><a href="#"><b>Buy Now!</b></a>
         </ul>
