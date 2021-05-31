@@ -24,11 +24,11 @@ class GoogleController extends Controller
         $find = User::where('google_id', $user->getId())->first();
         if($duplicate){
             Auth::login($duplicate);
-            return redirect('/')->with('login', 'zz');
+            return redirect('/shop')->with('login', 'zz');
         }else{
         if ($find) {
             Auth::login($find);
-            return redirect('/')->with('with','aa');
+            return redirect('/shop')->with('with','aa');
         } else{
              $new = User::create([
                      'name' => $user->name,
@@ -37,7 +37,7 @@ class GoogleController extends Controller
                      'password' => bcrypt('${1:my-secret-password')
             ]);
             Auth::login($new);
-            return redirect('/')->with('with','aa');
+            return redirect('/shop')->with('with','aa');
         }
         }
     }
