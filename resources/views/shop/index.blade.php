@@ -55,7 +55,7 @@
                            <!-- start product image -->
                            <div class="product-image">
                                <!-- start product image -->
-                               <a href="product-layout-1.html" class="grid-view-item__link">
+                               <a href="{{url('shop/product-detail/'. $item->id)}}" class="grid-view-item__link">
                                    <!-- image -->
                                    <img class="primary blur-up lazyload" data-src="{{asset('image/product/'.$item->image)}}" src="{{asset('image/product/'.$item->image)}}" alt="image" title="product">
                                    <!-- End image -->

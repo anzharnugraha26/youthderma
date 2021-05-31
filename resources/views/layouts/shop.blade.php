@@ -517,6 +517,9 @@
 <script src="{{asset('shop-new/assets/js/popper.min.js')}}"></script>
 <script src="{{asset('shop-new/assets/js/lazysizes.js')}}"></script>
 <script src="{{asset('shop-new/assets/js/main.js')}}"></script>
+
+<script src="{{asset('shop-new/assets/js/vendor/photoswipe.min.js')}}"></script>
+<script src="{{asset('shop-new/assets/js/vendor/photoswipe-ui-default.min.js')}}"></script>
 <!--For Newsletter Popup-->
 <script>
 jQuery(document).ready(function(){  

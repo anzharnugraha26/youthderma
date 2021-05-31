@@ -126,7 +126,7 @@
                             <p>{{$product->howtouse}}</p>
                         </div>  
                         <div style="margin-top: 30px">
-                            How To Use 
+                            Skin Feel
                             <p>{{$product->skinfeel}}</p>
                         </div>                 
                     </div>
