@@ -11,7 +11,8 @@ class ShopController extends Controller
     
     public function index()
     {
-        return view("shop.index")->with("coming-soon", "test");
+        $product = Product::all();
+        return view("shop.index", compact('product'))->with("coming-soon", "test");
     }
 
     

@@ -1,320 +1,295 @@
 @extends('layouts.shop')
 @section('content')
-    
-<!-- End header area -->
-    
- <!-- End mainmenu area -->
-    
-    <div class="slider-area">
-        	<!-- Slider -->
-			<div class="block-slider block-slider4">
-				<ul class="" id="bxslider-home4">
-					<li>
-						<img src="{{asset('shop-master/img/h4-slide.png')}}" alt="Slide">
-						<div class="caption-group">
-							<h2 class="caption title">
-								iPhone <span class="primary">6 <strong>Plus</strong></span>
-							</h2>
-							<h4 class="caption subtitle">Dual SIM</h4>
-							<a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
-						</div>
-					</li>
-					<li><img src="{{asset('shop-master/img/h4-slide2.png')}}" alt="Slide">
-						<div class="caption-group">
-							<h2 class="caption title">
-								by one, get one <span class="primary">50% <strong>off</strong></span>
-							</h2>
-							<h4 class="caption subtitle">school supplies & backpacks.*</h4>
-							<a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
-						</div>
-					</li>
-					<li><img src="{{asset('shop-master/img/h4-slide3.png')}}" alt="Slide">
-						<div class="caption-group">
-							<h2 class="caption title">
-								Apple <span class="primary">Store <strong>Ipod</strong></span>
-							</h2>
-							<h4 class="caption subtitle">Select Item</h4>
-							<a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
-						</div>
-					</li>
-					<li><img src="{{asset('shop-master/img/h4-slide4.png')}}" alt="Slide">
-						<div class="caption-group">
-						  <h2 class="caption title">
-								Apple <span class="primary">Store <strong>Ipod</strong></span>
-							</h2>
-							<h4 class="caption subtitle">& Phone</h4>
-							<a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
-						</div>
-					</li>
-				</ul>
-			</div>
-			<!-- ./Slider -->
-    </div> <!-- End slider area -->
-    
-    <div class="promo-area">
-        <div class="zigzag-bottom"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-promo promo1">
-                        <i class="fa fa-refresh"></i>
-                        <p>30 Days return</p>
+<div id="page-content">
+    <!--Home slider-->
+    <div class="slideshow slideshow-wrapper pb-section">
+        <div class="home-slideshow">
+            <div class="slide">
+                <div class="blur-up lazyload">
+                    <img class="blur-up lazyload" data-src="{{asset('image/background/backbawah.jpg')}}" src="{{asset('image/background/backbawah.jpg')}}" alt="Shop Our New Collection" title="Shop Our New Collection" />
+                    <div class="slideshow__text-wrap slideshow__overlay classic middle">
+                        <div class="slideshow__text-content middle">
+                            <div class="container">
+                                <div class="wrap-caption right">
+                                    <h2 class="h1 mega-title slideshow__title">Our New Collection</h2>
+                                    <span class="mega-subtitle slideshow__subtitle">Save up to 50% Off</span>
+                                    <span class="btn">Shop now</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-promo promo2">
-                        <i class="fa fa-truck"></i>
-                        <p>Free shipping</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-promo promo3">
-                        <i class="fa fa-lock"></i>
-                        <p>Secure payments</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-promo promo4">
-                        <i class="fa fa-gift"></i>
-                        <p>New products</p>
+            </div>
+            <div class="slide">
+                <div class="blur-up lazyload">
+                    <img class="blur-up lazyload" data-src="{{asset('image/background/detail.jpg')}}" src="{{asset('image/background/detail.jpg')}}" alt="Summer Bikini Collection" title="Summer Bikini Collection" />
+                    <div class="slideshow__text-wrap slideshow__overlay classic middle">
+                        <div class="slideshow__text-content middle">
+                            <div class="container">
+                                <div class="wrap-caption center">
+                                    <h2 class="h1 mega-title slideshow__title">Fashion &amp; Show</h2>
+                                    <span class="mega-subtitle slideshow__subtitle">A World Fashion and Trendy Fashion Clother's</span>
+                                    <span class="btn">Shop now</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div> <!-- End promo area -->
-    
-    <div class="maincontent-area">
-        <div class="zigzag-bottom"></div>
+    </div>
+    <!--End Home slider-->
+    <!--Weekly Bestseller-->
+    <div class="section">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="latest-product">
-                        <h2 class="section-title">Latest Products</h2>
-                        <div class="product-carousel">
-                            <?php $product = DB::table('products')->get();?>
-                            @foreach ($product as $item)
-                                
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="{{asset('image/product/'.$item->image)}}" alt="">
-                                    <div class="product-hover">
-                                        <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="{{url('shop/product-detail/'.$item->id)}}" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                    </div>
-                                </div>
-                                
-                                <h2><a href="single-product.html">{{$item->name}}</a></h2>
-                                
-                                <div class="product-carousel-price">
-                                    <ins>{{ 'Rp.' . number_format($item->price) }}</ins> 
-                                </div> 
-                            </div>
-                            
-                            @endforeach
-{{-- 
-                            @foreach ($product as $item) --}}
-                                
-                            {{-- <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="{{asset('image/product/'.$item->image)}}" alt="">
-                                    <div class="product-hover">
-                                        <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single-product.html" class="view-details-link" style="margin-top: 200px"><i class="fa fa-link"></i> See details</a>
-                                    </div>
-                                </div>
-                                
-                                <h2><a href="single-product.html">{{$item->name}}</a></h2>
-                                
-                                <div class="product-carousel-price">
-                                    <ins>$700.00</ins> <del>$100.00</del>
-                                </div> 
-                            </div>
-                            
-                            @endforeach --}}
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="section-header text-center">
+                        <h2 class="h2">All Products</h2>
+                        <p>Our most popular products based on sales</p>
+                    </div>
+                    <div class="productSlider grid-products">
+                       @foreach ($product as $item)
+                       
+                       <div class="col-12 item">
+                           <!-- start product image -->
+                           <div class="product-image">
+                               <!-- start product image -->
+                               <a href="product-layout-1.html" class="grid-view-item__link">
+                                   <!-- image -->
+                                   <img class="primary blur-up lazyload" data-src="{{asset('image/product/'.$item->image)}}" src="{{asset('image/product/'.$item->image)}}" alt="image" title="product">
+                                   <!-- End image -->
+                                   <!-- Hover image -->
+                                   <img class="hover blur-up lazyload" data-src="{{asset('image/product/'.$item->image)}}" src="{{asset('image/product/'.$item->image)}}" alt="image" title="product">
+                                   <!-- End hover image -->
+                                   <!-- Variant Image-->
+                                   <img class="grid-view-item__image hover variantImg" src="{{asset('image/product/'.$item->image)}}" alt="image" title="product">
+                                   <!-- Variant Image-->
+                                   <!-- product label -->
+                                   {{-- <div class="product-labels rounded"><span class="lbl on-sale">Sale</span> <span class="lbl pr-label1">new</span></div> --}}
+                                   <!-- End product label -->
+                               </a>
+                               <!-- end product image -->
+                               
+                               <!-- countdown start -->
+                               {{-- <div class="saleTime desktop" data-countdown="2022/03/01"></div> --}}
+                               <!-- countdown end -->
 
-                        </div>
+                               <!-- Start product button -->
+                               <form class="variants add" action="#" onclick="window.location.href='cart.html'"method="post">
+                                   <button class="btn btn-addto-cart" type="button" tabindex="0">Add To Cart</button>
+                               </form>
+                               <div class="button-set">
+                                   <a href="javascript:void(0)" title="Quick View" class="quick-view-popup quick-view" data-toggle="modal" data-target="#content_quickview">
+                                       <i class="icon anm anm-search-plus-r"></i>
+                                   </a>
+                                   <div class="wishlist-btn">
+                                       <a class="wishlist add-to-wishlist" href="wishlist.html">
+                                           <i class="icon anm anm-heart-l"></i>
+                                       </a>
+                                   </div>
+                                   <div class="compare-btn">
+                                       <a class="compare add-to-compare" href="compare.html" title="Add to Compare">
+                                           <i class="icon anm anm-random-r"></i>
+                                       </a>
+                                   </div>
+                               </div>
+                               <!-- end product button -->
+                           </div>
+                           <!-- end product image -->
+                           <!--start product details -->
+                           <div class="product-details text-center">
+                               <!-- product name -->
+                               <div class="product-name">
+                                   <a href="product-layout-1.html">{{$item->name}}</a>
+                               </div>
+                               <!-- End product name -->
+                               <!-- product price -->
+                               <div class="product-price">
+                                   {{-- <span class="old-price">$500.00</span> --}}
+                                   <span class="price">{{ 'Rp.' . number_format($item->price) }}</span>
+                               </div>
+                               <!-- End product price -->
+                               <!-- Color Variant -->
+                               <ul class="swatches">
+                                   <li class="swatch small rounded navy" rel="assets/images/product-images/product-image-stw1.jpg"></li>
+                                   <li class="swatch small rounded green" rel="assets/images/product-images/product-image-stw1-1.jpg"></li>
+                                   <li class="swatch small rounded gray" rel="assets/images/product-images/product-image-stw1-2.jpg"></li>
+                                   <li class="swatch small rounded aqua" rel="assets/images/product-images/product-image-stw1-3.jpg"></li>
+                                   <li class="swatch small rounded orange" rel="assets/images/product-images/product-image-stw1-4.jpg"></li>
+                               </ul>
+                               <!-- End Variant -->
+                           </div>
+                           <!-- End product details -->
+                       </div>
+                       
+                       @endforeach
+
+
+
+                    </div>
+                </div>
+            </div>    
+        </div>
+    </div>
+    <!--Weekly Bestseller-->
+    <!--Parallax Section-->
+    <div class="section">
+        <div class="hero hero--large hero__overlay bg-size">
+            <img class="bg-img" src="{{asset('image/background/detail.jpg')}}" alt="" />
+            <div class="hero__inner">
+                <div class="container">
+                    <div class="wrap-text left text-small font-bold">
+                        <h2 class="h2 mega-title">Belle <br> The best choice for your store</h2>
+                        <div class="rte-setting mega-subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</div>
+                        <a href="#" class="btn">Purchase Now</a>
                     </div>
                 </div>
             </div>
         </div>
-    </div> <!-- End main content area -->
-    
-    <div class="brands-area">
-        <div class="zigzag-bottom"></div>
+    </div>
+    <!--End Parallax Section-->
+    <!--New Arrivals-->
+    <div class="product-rows section">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="brand-wrapper">
-                        <div class="brand-list">
-                            <img src="img/brand1.png" alt="">
-                            <img src="img/brand2.png" alt="">
-                            <img src="img/brand3.png" alt="">
-                            <img src="img/brand4.png" alt="">
-                            <img src="img/brand5.png" alt="">
-                            <img src="img/brand6.png" alt="">
-                            <img src="img/brand1.png" alt="">
-                            <img src="img/brand2.png" alt="">                            
-                        </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="section-header text-center">
+                        <h2 class="h2">New Arrivals</h2>
+                        <p>Grab these new items before they are gone!</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </div> <!-- End brands area -->
+            <div class="grid-products">
+                <div class="row">
+                    @foreach ($product as $item)
+                    <div class="col-6 col-sm-2 col-md-4  item">
+                        <!-- start product image -->
+                        <div class="product-image">
+                            <!-- start product image -->
+                            <a href="product-layout-1.html" class="grid-view-item__link">
+                                <!-- image -->
+                                <img class="primary blur-up lazyload" data-src="{{asset('image/product/'.$item->image)}}" src="{{asset('image/product/'.$item->image)}}" alt="image" title="product">
+                                <!-- End image -->
+                                <!-- Hover image -->
+                                <img class="hover blur-up lazyload" data-src="{{asset('image/product/'.$item->image)}}" src="{{asset('image/product/'.$item->image)}}" alt="image" title="product">
+                                <!-- End hover image -->
+                                <!-- Variant Image-->
+                                <img class="grid-view-item__image hover variantImg" src="{{asset('image/product/'.$item->image)}}" alt="image" title="product">
+                                <!-- Variant Image-->
+                                <!-- product label -->
+                                {{-- <div class="product-labels rounded"><span class="lbl on-sale">Sale</span> <span class="lbl pr-label1">new</span></div> --}}
+                                <!-- End product label -->
+                            </a>
+                            <!-- end product image -->
+                            
+                            <!-- countdown start -->
+                            {{-- <div class="saleTime desktop" data-countdown="2022/03/01"></div> --}}
+                            <!-- countdown end -->
+
+                            <!-- Start product button -->
+                            <form class="variants add" action="#" onclick="window.location.href='cart.html'"method="post">
+                                <button class="btn btn-addto-cart" type="button" tabindex="0">Add To Cart</button>
+                            </form>
+                            <div class="button-set">
+                                <a href="javascript:void(0)" title="Quick View" class="quick-view-popup quick-view" data-toggle="modal" data-target="#content_quickview">
+                                    <i class="icon anm anm-search-plus-r"></i>
+                                </a>
+                                <div class="wishlist-btn">
+                                    <a class="wishlist add-to-wishlist" href="wishlist.html">
+                                        <i class="icon anm anm-heart-l"></i>
+                                    </a>
+                                </div>
+                                <div class="compare-btn">
+                                    <a class="compare add-to-compare" href="compare.html" title="Add to Compare">
+                                        <i class="icon anm anm-random-r"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- end product button -->
+                        </div>
+                        <!-- end product image -->
+                        <!--start product details -->
+                        <div class="product-details text-center">
+                            <!-- product name -->
+                            <div class="product-name">
+                                <a href="product-layout-1.html">{{$item->name}}</a>
+                            </div>
+                            <!-- End product name -->
+                            <!-- product price -->
+                            <div class="product-price">
+                                {{-- <span class="old-price">$500.00</span> --}}
+                                <span class="price">{{ 'Rp.' . number_format($item->price) }}</span>
+                            </div>
+                            <!-- End product price -->
+                            <!-- Color Variant -->
+                            {{-- <ul class="swatches">
+                                <li class="swatch small rounded navy" rel="assets/images/product-images/product-image-stw1.jpg"></li>
+                                <li class="swatch small rounded green" rel="assets/images/product-images/product-image-stw1-1.jpg"></li>
+                                <li class="swatch small rounded gray" rel="assets/images/product-images/product-image-stw1-2.jpg"></li>
+                                <li class="swatch small rounded aqua" rel="assets/images/product-images/product-image-stw1-3.jpg"></li>
+                                <li class="swatch small rounded orange" rel="assets/images/product-images/product-image-stw1-4.jpg"></li>
+                            </ul> --}}
+                            <!-- End Variant -->
+                        </div>
+                        <!-- End product details -->
+                    </div>
+                    @endforeach
+                   
+                </div>
+                </div>
+                {{-- <div class="row">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                        <a href="shop-left-sidebar.html" class="btn">View all</a>
+                    </div>
+                </div> --}}
+            </div>
+       </div>
+    </div>	
+    <!--End Featured Product-->
     
-    <div class="product-widget-area">
-        <div class="zigzag-bottom"></div>
+    <!--Logo Slider-->
+
+    {{-- <div class="section logo-section">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
-                    <div class="single-product-widget">
-                        <h2 class="product-wid-title">Top Sellers</h2>
-                        <a href="" class="wid-view-more">View All</a>
-                        <div class="single-wid-product">
-                            <a href="single-product.html"><img src="img/product-thumb-1.jpg" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.html">Sony Smart TV - 2015</a></h2>
-                            <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
-                            </div>                            
-                        </div>
-                        <div class="single-wid-product">
-                            <a href="single-product.html"><img src="img/product-thumb-2.jpg" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.html">Apple new mac book 2015</a></h2>
-                            <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
-                            </div>                            
-                        </div>
-                        <div class="single-wid-product">
-                            <a href="single-product.html"><img src="img/product-thumb-3.jpg" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.html">Apple new i phone 6</a></h2>
-                            <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
-                            </div>                            
-                        </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="section-header text-center">
+                        <h2 class="h2">The Most Loved Brands</h2>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="single-product-widget">
-                        <h2 class="product-wid-title">Recently Viewed</h2>
-                        <a href="#" class="wid-view-more">View All</a>
-                        <div class="single-wid-product">
-                            <a href="single-product.html"><img src="img/product-thumb-4.jpg" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.html">Sony playstation microsoft</a></h2>
-                            <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
-                            </div>                            
+                    <div class="logo-bar">
+                        <div class="logo-bar__item">
+                            <img src="assets/images/logo/brandlogo1.png" alt="" title="" />
                         </div>
-                        <div class="single-wid-product">
-                            <a href="single-product.html"><img src="img/product-thumb-1.jpg" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.html">Sony Smart Air Condtion</a></h2>
-                            <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
-                            </div>                            
+                        <div class="logo-bar__item">
+                            <img src="assets/images/logo/brandlogo2.png" alt="" title="" />
                         </div>
-                        <div class="single-wid-product">
-                            <a href="single-product.html"><img src="img/product-thumb-2.jpg" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.html">Samsung gallaxy note 4</a></h2>
-                            <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
-                            </div>                            
+                        <div class="logo-bar__item">
+                            <img src="assets/images/logo/brandlogo3.png" alt="" title="" />
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="single-product-widget">
-                        <h2 class="product-wid-title">Top New</h2>
-                        <a href="#" class="wid-view-more">View All</a>
-                        <div class="single-wid-product">
-                            <a href="single-product.html"><img src="img/product-thumb-3.jpg" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.html">Apple new i phone 6</a></h2>
-                            <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
-                            </div>                            
+                        <div class="logo-bar__item">
+                            <img src="assets/images/logo/brandlogo4.png" alt="" title="" />
                         </div>
-                        <div class="single-wid-product">
-                            <a href="single-product.html"><img src="img/product-thumb-4.jpg" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.html">Samsung gallaxy note 4</a></h2>
-                            <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
-                            </div>                            
+                        <div class="logo-bar__item">
+                            <img src="assets/images/logo/brandlogo5.png" alt="" title="" />
                         </div>
-                        <div class="single-wid-product">
-                            <a href="single-product.html"><img src="img/product-thumb-1.jpg" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.html">Sony playstation microsoft</a></h2>
-                            <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
-                            </div>                            
+                        <div class="logo-bar__item">
+                            <img src="assets/images/logo/brandlogo6.png" alt="" title="" />
                         </div>
-                    </div>
+                        </div>
                 </div>
             </div>
         </div>
-    </div> <!-- End product widget area -->
-    
-    @include('shop.include.footer')
-    <!-- End footer top area -->
-    
-  
+    </div> --}}
+
+    <!--End Logo Slider-->
+</div>  
 @endsection
+	<!--End Mobile Menu-->
+    
+    <!--Body Content-->
+  
+    <!--End Body Content-->
+    
+    <!--Footer-->
+    
