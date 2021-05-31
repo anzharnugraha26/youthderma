@@ -1,8 +1,6 @@
-<link rel="stylesheet" href="{{asset('shop-new/assets/css/style.css')}}">
-<link rel="stylesheet" href="{{asset('shop-new/assets/css/responsive.css')}}">
-<link rel="stylesheet" href="{{asset('shop-new/assets/css/plugins.css')}}">
-<!-- Bootstap CSS -->
-<link rel="stylesheet" href="{{asset('shop-new/assets/css/bootstrap.min.css')}}">
+{{-- @extends('layouts.shop')
+
+@section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -76,6 +74,83 @@
         </div>
     </div>
 </div>
+@endsection --}}
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Youthderma Aesthetic </title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{{asset('regis-master/fonts/material-icon/css/material-design-iconic-font.min.css')}}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{{asset('regis-master/css/style.css')}}">
+</head>
+<body>
+
+    <div class="main">
+
+        <section class="signup">
+            <!-- <img src="images/signup-bg.jpg" alt=""> -->
+            <div class="container">
+                <div class="signup-content">
+                    <form method="POST" action="{{ route('register') }}">
+                        @csrf
+                        <h2 class="form-title">Create account</h2>
+                        <div class="form-group">
+                            <input type="text" class="form-input @error('name') is-invalid @enderror" name="name"" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus id="name" placeholder="Your Name"/>
+                            @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" id="email" placeholder="Your Email"/>
+                            @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-input @error('password') is-invalid @enderror" name="password" id="password" placeholder="Password" required autocomplete="new-password"/>
+                            <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+                            @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <input id="password-confirm" type="password" class="form-input" name="password_confirmation" required autocomplete="new-password" placeholder="Confirm Your Password">
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                            <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="submit" id="submit" class="form-submit" value="Sign up"/>
+                        </div>
+                    </form>
+                    <p class="loginhere">
+                        Have already an account ? <a href="{{url("/login")}}" class="loginhere-link">Login here</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- JS -->
+    <script src="{{asset('regis-master/vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('regis-master/js/main.js')}}"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
 
 
