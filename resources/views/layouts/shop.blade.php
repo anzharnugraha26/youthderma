@@ -108,7 +108,7 @@
                 	<nav class="grid__item" id="AccessibleNav"><!-- for mobile -->
                         <ul id="siteNav" class="site-nav medium center hidearrow">
                           <li class="lvl-2"><a href="{{url("/shop")}}" class="site-nav lvl-2">Home </a></li>
-                          <li class="lvl-2"><a href="index.html" class="site-nav lvl-2">Cart</a></li>
+                          <li class="lvl-2"><a href="{{url("shop/carts")}}" class="site-nav lvl-2">Cart</a></li>
                           <li class="lvl1"><a href="#"><b>Buy Now!</b> <i class="anm anm-angle-down-l"></i></a></li>
                       </ul>
                     </nav>
@@ -125,12 +125,12 @@
                 <!--Mobile Logo-->
                 <div class="col-4 col-sm-3 col-md-3 col-lg-2">
                 	<div class="site-cart">
-                    	<a href="#" class="site-header__cart" title="Cart">
+                    	<a href="{{url("shop/carts")}}" class="site-header__cart" title="Cart">
                         	<i class="icon anm anm-bag-l"></i>
-                            <span id="CartCount" class="site-header__cart-count" data-cart-render="item_count">2</span>
+                            {{-- <span id="CartCount" class="site-header__cart-count" data-cart-render="item_count">2</span> --}}
                         </a>
                         <!--Minicart Popup-->
-                        <div id="header-cart" class="block block-cart">
+                        {{-- <div id="header-cart" class="block block-cart">
                         	<ul class="mini-products-list">
                                 <li class="item">
                                 	<a class="product-image" href="#">
@@ -190,7 +190,7 @@
                                     <a href="checkout.html" class="btn btn-secondary btn--small">Checkout</a>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <!--End Minicart Popup-->
                     </div>
                     <div class="site-header__search">
@@ -207,7 +207,7 @@
 		<div class="closemobileMenu"><i class="icon anm anm-times-l pull-right"></i> Close Menu</div>
         <ul id="MobileNav" class="mobile-nav">
           <li class="lvl-2"><a href="{{url("/shop")}}" class="site-nav lvl-2">Home </a></li>
-            <li class="lvl-2"><a href="index.html" class="site-nav lvl-2">Cart</a></li>
+            <li class="lvl-2"><a href="{{url("shop/carts")}}" class="site-nav lvl-2">Cart</a></li>
         	  <li class="lvl1"><a href="#"><b>Buy Now!</b></a>
         </ul>
 	</div>

@@ -88,13 +88,17 @@
                             <div class="product-single__description rte">
                                 <p>{{$product->description}}</p>
                             </div>
-                            <form method="post" action="http://annimexweb.com/cart/add" id="product_form_10508262282" accept-charset="UTF-8" class="product-form product-form-product-template hidedropdown" enctype="multipart/form-data">
+                            <form method="post" action="{{url("/shop/carts")}}"  class="product-form product-form-product-template hidedropdown" enctype="multipart/form-data">
                                 {{-- <p class="infolinks"><a href="#sizechart" class="sizelink btn"> Size Guide</a> <a href="#productInquiry" class="emaillink btn"> Ask About this Product</a></p> --}}
                                 <!-- Product Action -->
+                                @csrf
                                 <div class="product-action clearfix">
                                     <div class="product-form__item--quantity">
                                         <div class="wrapQtyBtn">
                                             <div class="qtyField">
+                                                <input type="hidden" value="{{$product->id}}" name="product_id">
+                                                <input type="hidden" value="{{$product->name}}" name="product_name">
+                                                <input type="hidden" value="{{$product->price}}" name="product_price">
                                                 <a class="qtyBtn minus" href="javascript:void(0);"><i class="fa anm anm-minus-r" aria-hidden="true"></i></a>
                                                 <input type="text" id="Quantity" name="quantity" value="1" class="product-form__input qty">
                                                 <a class="qtyBtn plus" href="javascript:void(0);"><i class="fa anm anm-plus-r" aria-hidden="true"></i></a>
@@ -102,7 +106,7 @@
                                         </div>
                                     </div>                                
                                     <div class="product-form__item--submit">
-                                        <button type="button" name="add" class="btn product-form__cart-submit">
+                                        <button type="button" name="add" class="btn product">
                                             <span>Add to cart</span>
                                         </button>
                                     </div>
@@ -110,6 +114,7 @@
                                         <button type="button" class="shopify-payment-button__button shopify-payment-button__button--unbranded">Buy it now</button>
                                     </div>
                                 </div>
+                                <button>submit</button>
                                 <!-- End Product Action -->
                             </form>
                             <div class="display-table shareRow">
