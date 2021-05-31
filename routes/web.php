@@ -18,7 +18,13 @@ Route::post('/savebooking' ,'FrontEndController@saveBooking');
 
 Auth::routes(['verify' => true]);
 Route::group(['prefix' => 'shop'], function () {
-    Route::get('/', 'Shop\ShopController@index'); 
+    Route::get('/', 'Shop\ShopController@index');
+    Route::get('/product-detail/{id}', 'Shop\ShopController@productDetail');
+
+
+    Route::get('/carts' , 'Shop\CartController@index');
+    Route::get('carts/remove/{id}', 'Shop\CartController@destroy'); 
+    Route::post('carts', 'Shop\CartController@store'); 
 });
 
 Route::group(['middleware' => ['auth', 'checkRole:admin'],  'prefix' => 'admin'], function () {
