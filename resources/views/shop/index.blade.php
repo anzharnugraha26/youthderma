@@ -101,7 +101,7 @@
                            <div class="product-details text-center">
                                <!-- product name -->
                                <div class="product-name">
-                                   <a href="product-layout-1.html">{{$item->name}}</a>
+                                   <a href="{{url('shop/product-detail/'. $item->id)}}">{{$item->name}}</a>
                                </div>
                                <!-- End product name -->
                                <!-- product price -->
@@ -167,7 +167,7 @@
                         <!-- start product image -->
                         <div class="product-image">
                             <!-- start product image -->
-                            <a href="product-layout-1.html" class="grid-view-item__link">
+                            <a href="{{url('shop/product-detail/'. $item->id)}}" class="grid-view-item__link">
                                 <!-- image -->
                                 <img class="primary blur-up lazyload" data-src="{{asset('image/product/'.$item->image)}}" src="{{asset('image/product/'.$item->image)}}" alt="image" title="product">
                                 <!-- End image -->
@@ -213,7 +213,7 @@
                         <div class="product-details text-center">
                             <!-- product name -->
                             <div class="product-name">
-                                <a href="product-layout-1.html">{{$item->name}}</a>
+                                <a href="{{url('shop/product-detail/'. $item->id)}}">{{$item->name}}</a>
                             </div>
                             <!-- End product name -->
                             <!-- product price -->

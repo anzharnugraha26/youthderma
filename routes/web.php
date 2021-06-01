@@ -23,8 +23,9 @@ Route::group(['prefix' => 'shop'], function () {
 
 
     Route::get('/carts' , 'Shop\CartController@index');
-    Route::get('carts/remove/{id}', 'Shop\CartController@destroy'); 
+    Route::get('/cart/remove/{id}', 'Shop\CartController@destroy'); 
     Route::post('carts', 'Shop\CartController@store'); 
+    Route::post('/carts/update', 'Shop\CartController@update');
 });
 
 Route::group(['middleware' => ['auth', 'checkRole:admin'],  'prefix' => 'admin'], function () {

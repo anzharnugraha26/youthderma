@@ -106,15 +106,15 @@
                                         </div>
                                     </div>                                
                                     <div class="product-form__item--submit">
-                                        <button type="button" name="add" class="btn product">
-                                            <span>Add to cart</span>
+                                        <button class="btn product">
+                                            Add to cart
                                         </button>
                                     </div>
                                     <div class="shopify-payment-button" data-shopify="payment-button">
                                         <button type="button" class="shopify-payment-button__button shopify-payment-button__button--unbranded">Buy it now</button>
                                     </div>
                                 </div>
-                                <button>submit</button>
+                                
                                 <!-- End Product Action -->
                             </form>
                             <div class="display-table shareRow">

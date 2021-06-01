@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
-
     public function index()
     {
         if (Auth::check()) {
@@ -25,7 +24,6 @@ class CartController extends Controller
    
     public function create()
     {
-        
     }
 
 
@@ -56,13 +54,22 @@ class CartController extends Controller
     }
 
  
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $userId = auth()->user()->id; // or any string represents user identifier
+        \Cart::session($userId)->update(456, array(
+            'quantity' => array(
+                'relative' => false,
+                'value' => $request->quantity
+            ),
+          ));
+        return redirect()->back();
     }
 
     public function destroy($id)
     {
-        //
+        $userId = auth()->user()->id;
+        \Cart::session($userId)->remove($id);
+        return redirect()->back();
     }
 }

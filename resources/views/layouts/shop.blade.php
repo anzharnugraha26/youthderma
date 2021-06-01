@@ -125,10 +125,17 @@
                 <!--Mobile Logo-->
                 <div class="col-4 col-sm-3 col-md-3 col-lg-2">
                 	<div class="site-cart">
+                        @if (Auth::check()) 
                     	<a href="{{url("shop/carts")}}" class="site-header__cart" title="Cart">
+                        	<i class="icon anm anm-bag-l"></i><span id="CartCount" class="site-header__cart-count" data-cart-render="item_count">{{count(\Cart::session(Auth::user()->id)->getContent())}}</span>
+                            {{-- <span id="CartCount" class="site-header__cart-count" data-cart-render="item_count">2</span> --}}
+                        </a>
+                        @else
+                        <a href="{{url("shop/carts")}}" class="site-header__cart" title="Cart">
                         	<i class="icon anm anm-bag-l"></i>
                             {{-- <span id="CartCount" class="site-header__cart-count" data-cart-render="item_count">2</span> --}}
                         </a>
+                        @endif
                         <!--Minicart Popup-->
                         {{-- <div id="header-cart" class="block block-cart">
                         	<ul class="mini-products-list">

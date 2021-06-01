@@ -15,8 +15,9 @@
         <div class="container">
         	<div class="row">
                 <div class="col-12 col-sm-12 col-md-8 col-lg-8 main-col">
-                	<form action="#" method="post" class="cart style2">
-                		<table>
+                	<form action="{{url('shop/carts/update')}}" method="post" class="cart style2">
+                		@csrf
+                        <table>
                             <thead class="cart__row cart__header">
                                 <tr>
                                     <th colspan="2" class="text-center">Product</th>
@@ -51,15 +52,16 @@
                                         <div class="cart__qty text-center">
                                             <div class="qtyField">
                                                 <a class="qtyBtn minus" href="javascript:void(0);"><i class="icon icon-minus"></i></a>
-                                                <input class="cart__qty-input qty" type="text" name="updates[]" id="qty" value="{{$item->quantity}}" pattern="[0-9]*">
+                                                <input class="cart__qty-input qty" type="text" name="quantity" id="qty" value="{{$item->quantity}}" pattern="[0-9]*">
                                                 <a class="qtyBtn plus" href="javascript:void(0);"><i class="icon icon-plus"></i></a>
                                             </div>
                                         </div>
+                                        
                                     </td>
                                     <td class="text-right small--hide cart-price">
-                                        <div><span class="money">{{ 'Rp.' . number_format($item->price * $item->quantity) }}</span></div>
+                                        <div><span class="money">{{ 'Rp.' . number_format($item->price * $item->quantity) }} </span></div>
                                     </td>
-                                    <td class="text-center small--hide"><a href="#" class="btn btn--secondary cart__remove" title="Remove tem"><i class="icon icon anm anm-times-l"></i></a></td>
+                                    <td class="text-center small--hide"><a href="{{url('shop/cart/remove/'. $item->id)}}" class="btn btn--secondary cart__remove" title="Remove tem" onclick="return confirm('Anda Yakin akan menghapus daftar belanja ini ?')"><i class="icon icon anm anm-times-l"></i></a></td>
                                 </tr>
                              
                                 @endforeach
@@ -88,7 +90,7 @@
                     <div class="solid-border">
                       <div class="row">
                       	<span class="col-12 col-sm-6 cart__subtotal-title"><strong>Subtotal</strong></span>
-                        <span class="col-12 col-sm-6 cart__subtotal-title cart__subtotal text-right"><span class="money">{{ number_format(\Cart::getSubTotal()) }}</span></span>
+                        <span class="col-12 col-sm-6 cart__subtotal-title cart__subtotal text-right"><span class="money">{{ 'Rp.' . number_format(\Cart::getSubTotal()) }}</span></span>
                       </div>
                       <div class="cart__shipping">Shipping &amp; taxes calculated at checkout</div>
                       <p class="cart_tearm">
