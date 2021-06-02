@@ -221,8 +221,10 @@
 
     @yield('content')
 
+    <a href="https://wa.me/6282112100020?text=Hallo Youthderma Aesthetic Clinic" class="float" target="_blank">						
+        <i class="fa fa-whatsapp my-float"></i></a>
 
-    <div class="footer-bottom-area">
+    {{-- <div class="footer-bottom-area">
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
@@ -241,7 +243,7 @@
                 </div>
             </div>
         </div>
-    </div> <!-- End footer bottom area -->
+    </div> <!-- End footer bottom area --> --}}
    
     <!-- Latest jQuery form server -->
     <script src="https://code.jquery.com/jquery.min.js"></script>
@@ -265,23 +267,24 @@
   </body>
 </html>
 <footer id="footer" class="footer-2">
+    
   <div class="newsletter-section">
       <div class="container">
           <div class="row">
                   <div class="col-12 col-sm-12 col-md-12 col-lg-7 w-100 d-flex justify-content-start align-items-center">
                       <div class="display-table">
                           <div class="display-table-cell footer-newsletter">
-                              <div class="section-header text-center">
+                              {{-- <div class="section-header text-center">
                                   <label class="h2"><span>sign up for </span>newsletter</label>
-                              </div>
-                              <form action="#" method="post">
+                              </div> --}}
+                              {{-- <form action="#" method="post">
                                   <div class="input-group">
                                       <input type="email" class="input-group__field newsletter__input" name="EMAIL" value="" placeholder="Email address" required="">
                                       <span class="input-group__btn">
                                           <button type="submit" class="btn newsletter__submit" name="commit" id="Subscribe"><span class="newsletter__submit-text--large">Subscribe</span></button>
                                       </span>
                                   </div>
-                              </form>
+                              </form> --}}
                           </div>
                       </div>
                   </div>
@@ -305,7 +308,7 @@
     <div class="container">
      <!--Footer Links-->
         <div class="footer-top">
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
                     <h4 class="h4">Quick Shop</h4>
                       <ul>
@@ -345,13 +348,13 @@
                       </ul>
                   </div>
               </div>
-          </div>
+            </div> --}}
           <!--End Footer Links-->
           <hr>
           <div class="footer-bottom">
             <div class="row">
                 <!--Footer Copyright-->
-              <div class="col-12 col-sm-12 col-md-12 col-lg-12 order-1 order-md-0 order-lg-0 order-sm-1 copyright text-center"><span></span> <a href="templateshub.net">Templates Hub</a></div>
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12 order-1 order-md-0 order-lg-0 order-sm-1 copyright text-center"><span></span> &copy; 2021 . All Rights Reserved. <a href="{{url("/")}}" target="_blank">Youthderma Aesthetic Clinic</a></div>
                   <!--End Footer Copyright-->
               </div>
           </div>
@@ -365,6 +368,7 @@
 
 <!--Quick View popup-->
 <div class="modal fade quick-view-popup" id="content_quickview">
+
 <div class="modal-dialog">
     <div class="modal-content">
         <div class="modal-body">
@@ -482,7 +486,7 @@
 
 <!-- Newsletter Popup -->
 <div class="newsletter-wrap" id="popup-container">
-<div id="popup-window">
+{{-- <div id="popup-window">
   <a class="btn closepopup"><i class="icon icon anm anm-times-l"></i></a>
   <!-- Modal content-->
   <div class="display-table splash-bg">
@@ -509,7 +513,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> --}}
 </div>
 <!-- End Newsletter Popup -->
 

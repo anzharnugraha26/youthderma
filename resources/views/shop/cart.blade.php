@@ -98,8 +98,8 @@
                           <input type="checkbox" name="tearm" id="cartTearm" class="checkbox" value="tearm" required="">
                            I agree with the terms and conditions</label>
                       </p>
-                      <input type="submit" name="checkout" id="cartCheckout" class="btn btn--small-wide checkout" value="Checkout" disabled="disabled">
-                      <div class="paymnet-img"><img src="assets/images/payment-img.jpg" alt="Payment"></div>
+                      <a href="{{url('shop/check-out')}}" type="submit"  class="btn btn--small-wide checkout" >Check Out</a>
+                      <div class="paymnet-img"><img src="{{asset('shop-new/assets/images/payment-img.jpg')}}" alt="Payment"></div>
                     </div>
 
                 </div>

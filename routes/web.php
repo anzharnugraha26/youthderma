@@ -21,11 +21,12 @@ Route::group(['prefix' => 'shop'], function () {
     Route::get('/', 'Shop\ShopController@index');
     Route::get('/product-detail/{id}', 'Shop\ShopController@productDetail');
 
-
     Route::get('/carts' , 'Shop\CartController@index');
     Route::get('/cart/remove/{id}', 'Shop\CartController@destroy'); 
     Route::post('carts', 'Shop\CartController@store'); 
     Route::post('/carts/update', 'Shop\CartController@update');
+
+    Route::get('check-out', 'Shop\CheckOutController@index');
 });
 
 Route::group(['middleware' => ['auth', 'checkRole:admin'],  'prefix' => 'admin'], function () {
