@@ -7,6 +7,10 @@ use Illuminate\Support\Facades\Auth;
 Route::get('auth/google', 'GoogleController@redirectToGoogle');
 Route::get('auth/google/callback', 'GoogleController@handleGoogleCallback');
 
+Route::get('getProvince', 'OngkirController@index');
+Route::get('getCity', 'OngkirController@create');
+Route::get('cekShiping', 'OngkirController@check');
+
 Route::get('/' ,'FrontEndController@index');
 Route::get('/treatment' ,'FrontEndController@treatment');
 Route::get('/doctor' ,'FrontEndController@doctor');

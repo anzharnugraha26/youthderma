@@ -25,10 +25,13 @@
 </div>
 <div class="pageWrapper">
 	<!--Promotion Bar-->
+    @if(Auth::Check())
 	<div class="notification-bar mobilehide">
-    	<a href="#" class="notification-bar__message">20% off your very first purchase, use promo code: belle fashion</a>
+    	<a href="#" class="notification-bar__message">Welcome {{Auth::user()->name}}</a>
         <span class="close-announcement">×</span>
     </div>
+    @else 
+    @endif
     <!--End Promotion Bar-->
 	<!--Search Form Drawer-->
 	<div class="search">
@@ -116,17 +119,19 @@
                 </div>
                 <!--Mobile Logo-->
                 <div class="col-6 col-sm-6 col-md-6 col-lg-2 d-block d-lg-none mobile-logo">
-                	<div class="logo">
-                        <a href="{{url("/shop")}}">
+                    <a href="{{url("/shop")}}">
+                    <div class="logo">
+
                             <img src="{{asset('image/logo/logo.png')}}" alt="Youthderma Aesthetic Clinic" title="Youthderma Aesthetic Clinic" />
-                        </a>
+                        
                     </div>
+                    </a>
                 </div>
                 <!--Mobile Logo-->
                 <div class="col-4 col-sm-3 col-md-3 col-lg-2">
                 	<div class="site-cart">
                         @if (Auth::check()) 
-                    	<a href="{{url("shop/carts")}}" class="site-header__cart" title="Cart">
+                    	<a href="{{url("shop/carts")}}" class="site-header__cart" >
                         	<i class="icon anm anm-bag-l"></i><span id="CartCount" class="site-header__cart-count" data-cart-render="item_count">{{count(\Cart::session(Auth::user()->id)->getContent())}}</span>
                             {{-- <span id="CartCount" class="site-header__cart-count" data-cart-render="item_count">2</span> --}}
                         </a>

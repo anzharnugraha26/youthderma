@@ -177,42 +177,27 @@
                                     <tr>
                                         <th class="text-left">Product Name</th>
                                         <th>Price</th>
-                                        <th>Size</th>
                                         <th>Qty</th>
                                         <th>Subtotal</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($items as $item)
+                                        
                                     <tr>
-                                        <td class="text-left">Spike Jacket</td>
-                                        <td>$99</td>
-                                        <td>S</td>
-                                        <td>1</td>
-                                        <td>$99</td>
+                                        <td class="text-left">{{$item->name}}</td>
+                                        <td>{{ 'Rp.' . number_format($item->price) }}</td>
+                                        <td>{{$item->quantity}}</td>
+                                        <td>{{ 'Rp.' . number_format($item->price * $item->quantity) }}</td>
                                     </tr>
-                                    <tr>
-                                        <td class="text-left">Argon Sweater</td>
-                                        <td>$199</td>
-                                        <td>M</td>
-                                        <td>2</td>
-                                        <td>$298</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-left">Babydoll Bow Dress</td>
-                                        <td>$299</td>
-                                        <td>XL</td>
-                                        <td>3</td>
-                                        <td>$398</td>
-                                    </tr>
+                                    
+                                    @endforeach
+
                                 </tbody>
                                 <tfoot class="font-weight-600">
                                     <tr>
-                                        <td colspan="4" class="text-right">Shipping </td>
-                                        <td>$50.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="4" class="text-right">Total</td>
-                                        <td>$845.00</td>
+                                        <td colspan="3" class="text-right">Total</td>
+                                        <td>{{ 'Rp.' . number_format(\Cart::getSubTotal()) }}</td>
                                     </tr>
                                 </tfoot>
                             </table>
