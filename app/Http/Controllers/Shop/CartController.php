@@ -2,21 +2,26 @@
 
 namespace App\Http\Controllers\Shop;
 
+use App\Alamat;
 use App\Http\Controllers\Controller;
 use Darryldecode\Cart\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
     public function index()
     {
+        $userId = auth()->user()->id;
+        $alamat = DB::table('alamats')->where('user_id',$userId)->count();
+
         if (Auth::check()) {
-            $userId = auth()->user()->id;
+            
             $items = \Cart::session($userId)->getContent();
             //    $items = \Cart::getContent();
             //    return $items;
-            return view('shop.cart', compact('items'));
+            return view('shop.cart', compact('items', 'alamat'));
         }
         return redirect('/login');
     }

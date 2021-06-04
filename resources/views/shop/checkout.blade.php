@@ -103,12 +103,23 @@
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-6 col-lg-6 col-xl-6">
-                                    <label for="input-address-2">Apartment <span class="required-f">*</span></label>
-                                    <input name="address_2" value="" id="input-address-2" type="text">
+                                    <label for="input-address-2">Courier <span class="required-f">*</span></label>
+                                    <select  name="courier">
+                                        <option value="0">-- pilih jasa kurir --</option>
+                                        <option value="jne">JNE</option>
+                                        <option value="pos">POS</option>
+                                        <option value="tiki">TIKI</option>
+                                        
+                                    </select>
                                 </div>
                                 <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
-                                    <label for="input-city">City <span class="required-f">*</span></label>
-                                    <input name="city" value="" id="input-city" type="text">
+                                    <label for="input-city">Province <span class="required-f">*</span></label>
+                                    <select  name="province_destination">
+                                        <option value="0">-- pilih provinsi asal --</option>
+                                        @foreach ($provinces as $province => $value)
+                                            <option value="{{ $province  }}">{{ $value }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                             <div class="row">
@@ -117,17 +128,14 @@
                                     <input name="postcode" value="" id="input-postcode" type="text">
                                 </div>
                                 <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
-                                    <label for="input-country">Country <span class="required-f">*</span></label>
-                                    <select name="country_id" id="input-country">
+                                    <label for="input-country">City <span class="required-f">*</span></label>
+                                    <select name="city_destination" id="input-country">
                                         <option value=""> --- Please Select --- </option>
-                                        <option value="244">Aaland Islands</option>
-                                        <option value="1">Afghanistan</option>
-                                        <option value="2">Albania</option>
-                                        <option value="3">Algeria</option>
-                                        <option value="4">American Samoa</option>
-                                        <option value="5">Andorra</option>
-                                        <option value="6">Angola</option>
+                            
                                     </select>
+                                </div>
+                                <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
+                                    <button class="btn btn-md btn-primary btn-block btn-check">CEK ONGKOS KIRIM</button>
                                 </div>
                             </div>
                             <div class="row">
@@ -296,10 +304,114 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <div class="card d-none ongkir">
+                                <div class="card-body">
+                                    <ul class="list-group" id="ongkir"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     
 </div>
+@endsection
+@section('script-shop')
+<script>
+    $(document).ready(function(){
+        //active select2
+        $(".provinsi-asal , .kota-asal, .provinsi-tujuan, .kota-tujuan").select2({
+            theme:'bootstrap4',width:'style',
+        });
+        //ajax select kota asal
+        $('select[name="province_origin"]').on('change', function () {
+            let provindeId = $(this).val();
+            if (provindeId) {
+                jQuery.ajax({
+                    url: '/cities/'+provindeId,
+                    type: "GET",
+                    dataType: "json",
+                    success: function (response) {
+                        $('select[name="city_origin"]').empty();
+                        $('select[name="city_origin"]').append('<option value="">-- pilih kota asal --</option>');
+                        $.each(response, function (key, value) {
+                            $('select[name="city_origin"]').append('<option value="' + key + '">' + value + '</option>');
+                        });
+                    },
+                });
+            } else {
+                $('select[name="city_origin"]').append('<option value="">-- pilih kota asal --</option>');
+            }
+        });
+        //ajax select kota tujuan
+        $('select[name="province_destination"]').on('change', function () {
+            let provindeId = $(this).val();
+            if (provindeId) {
+                jQuery.ajax({
+                    url: '/shop/check-out/getcities/'+provindeId,
+                    type: "GET",
+                    dataType: "json",
+                    success: function (response) {
+                        $('select[name="city_destination"]').empty();
+                        $('select[name="city_destination"]').append('<option value="">-- pilih kota tujuan --</option>');
+                        $.each(response, function (key, value) {
+                            $('select[name="city_destination"]').append('<option value="' + key + '">' + value + '</option>');
+                        });
+                    },
+                });
+            } else {
+                $('select[name="city_destination"]').append('<option value="">-- pilih kota tujuan --</option>');
+            }
+        });
+
+
+        //ajax check ongkir
+        let isProcessing = false;
+        $('.btn-check').click(function (e) {
+            e.preventDefault();
+
+            let token            = $("meta[name='csrf-token']").attr("content");
+            let city_origin      = $('select[name=city_origin]').val();
+            let city_destination = $('select[name=city_destination]').val();
+            let courier          = $('select[name=courier]').val();
+            let weight           = $('#weight').val();
+
+            if(isProcessing){
+                return;
+            }
+
+            isProcessing = true;
+            jQuery.ajax({
+                url: "/ongkir",
+                data: {
+                    _token:              token,
+                    city_origin:         city_origin,
+                    city_destination:    city_destination,
+                    courier:             courier,
+                    weight:              weight,
+                },
+                dataType: "JSON",
+                type: "POST",
+                success: function (response) {
+                    isProcessing = false;
+                    if (response) {
+                        $('#ongkir').empty();
+                        $('.ongkir').addClass('d-block');
+                        $.each(response[0]['costs'], function (key, value) {
+                            $('#ongkir').append('<li class="list-group-item">'+response[0].code.toUpperCase()+' : <strong>'+value.service+'</strong> - Rp. '+value.cost[0].value+' ('+value.cost[0].etd+' hari)</li>')
+                        });
+
+                    }
+                }
+            });
+
+        });
+
+    });
+</script>
 @endsection

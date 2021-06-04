@@ -11,6 +11,12 @@ Route::get('getProvince', 'OngkirController@index');
 Route::get('getCity', 'OngkirController@create');
 Route::get('cekShiping', 'OngkirController@check');
 
+Route::get('/ongkir', 'CheckOngkirController@index');
+// Route::post('/ongkir', 'CheckOngkirController@check_ongkir');
+Route::post('/ongkir', 'CheckOngkirController@check_ongkir');
+Route::get('/cities/{province_id}', 'CheckOngkirController@getCities');
+
+
 Route::get('/' ,'FrontEndController@index');
 Route::get('/treatment' ,'FrontEndController@treatment');
 Route::get('/doctor' ,'FrontEndController@doctor');
@@ -30,7 +36,12 @@ Route::group(['prefix' => 'shop'], function () {
     Route::post('carts', 'Shop\CartController@store'); 
     Route::post('/carts/update', 'Shop\CartController@update');
 
+    Route::get('add-address', 'Shop\AlamatController@index');
+    Route::get('getcity/{id}', 'Shop\AlamatController@getCity');
+    Route::post('savealamat', 'Shop\AlamatController@saveAlamat');
+
     Route::get('check-out', 'Shop\CheckOutController@index');
+    Route::get('check-out/getcities/{id}', 'Shop\CheckOutController@getCities');
 });
 
 Route::group(['middleware' => ['auth', 'checkRole:admin'],  'prefix' => 'admin'], function () {

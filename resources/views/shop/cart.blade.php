@@ -98,7 +98,11 @@
                           <input type="checkbox" name="tearm" id="cartTearm" class="checkbox" value="tearm" required="">
                            I agree with the terms and conditions</label>
                       </p>
+                      @if($alamat > 0)
                       <a href="{{url('shop/check-out')}}" type="submit"  class="btn btn--small-wide checkout" >Check Out</a>
+                      @else 
+                      <a href="{{url('shop/add-address')}}" type="submit"  class="btn btn--small-wide checkout" >Add Address</a>
+                      @endif
                       <div class="paymnet-img"><img src="{{asset('shop-new/assets/images/payment-img.jpg')}}" alt="Payment"></div>
                     </div>
 
