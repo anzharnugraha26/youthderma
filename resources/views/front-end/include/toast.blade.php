@@ -14,7 +14,6 @@ Swal.fire({
 
 
 @if(Session::has('coming-soon'))
-
 <script>
 Swal.fire({
   position: 'top-end',
@@ -24,5 +23,4 @@ Swal.fire({
   timer: 1500
 })
 </script>
-
 @endif

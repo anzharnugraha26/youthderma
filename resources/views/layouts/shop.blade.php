@@ -136,7 +136,7 @@
                 	<div class="site-cart">
                         @if (Auth::check()) 
                     	<a href="{{url("shop/carts")}}" class="site-header__cart" >
-                        	<i class="icon anm anm-bag-l"></i><span id="CartCount" class="site-header__cart-count" data-cart-render="item_count">{{count(\Cart::session(Auth::user()->id)->getContent())}}</span>
+                        	<i class="icon anm anm-bag-l"></i><span id="CartCount" class="site-header__cart-count" data-cart-render="item_count"><?php $p = DB::table('keranjangs')->where('user_id', Auth::user()->id)->count(); echo $p;?></span>
                             {{-- <span id="CartCount" class="site-header__cart-count" data-cart-render="item_count">2</span> --}}
                         </a>
                         @else
@@ -145,68 +145,56 @@
                             {{-- <span id="CartCount" class="site-header__cart-count" data-cart-render="item_count">2</span> --}}
                         </a>
                         @endif
-                        <!--Minicart Popup-->
-                        {{-- <div id="header-cart" class="block block-cart">
+                        @if (Auth::check()) 
+                        <div id="header-cart" class="block block-cart">
                         	<ul class="mini-products-list">
+                                <?php $c = DB::table('keranjangs')->where('user_id', Auth::user()->id)->get();?>
+                                <?php $subtotal=0; foreach ($c as $item): ?>
+                                <?php $p = DB::table('products')->where('id', $item->products_id)->get()?>
+                                @foreach ($p as $i)
                                 <li class="item">
                                 	<a class="product-image" href="#">
-                                    	<img src="{{asset('shop-new/assets/images/product-images/cape-dress-1.jpg')}}" alt="3/4 Sleeve Kimono Dress" title="" />
+                                    	<img src="{{asset('image/product/'. $i->image)}}" alt="3/4 Sleeve Kimono Dress" title="" />
                                     </a>
                                     <div class="product-details">
                                     	<a href="#" class="remove"><i class="anm anm-times-l" aria-hidden="true"></i></a>
                                         <a href="#" class="edit-i remove"><i class="anm anm-edit" aria-hidden="true"></i></a>
-                                        <a class="pName" href="cart.html">Sleeve Kimono Dress</a>
-                                        <div class="variant-cart">Black / XL</div>
+                                        <a class="pName" href="cart.html">{{$i->name}}</a>
+
                                         <div class="wrapQtyBtn">
                                             <div class="qtyField">
                                             	<span class="label">Qty:</span>
                                                 <a class="qtyBtn minus" href="javascript:void(0);"><i class="fa anm anm-minus-r" aria-hidden="true"></i></a>
-                                                <input type="text" id="Quantity" name="quantity" value="1" class="product-form__input qty">
+                                                <input type="text" id="Quantity" name="quantity" value="{{$item->qty}}" class="product-form__input qty">
                                                 <a class="qtyBtn plus" href="javascript:void(0);"><i class="fa anm anm-plus-r" aria-hidden="true"></i></a>
                                             </div>
                                         </div>
                                         <div class="priceRow">
                                         	<div class="product-price">
-                                            	<span class="money">$59.00</span>
+                                            	<span class="money">{{ 'Rp.' . number_format($i->price * $item->qty) }}</span>
                                             </div>
                                          </div>
-									                      </div>
+									     </div>
                                 </li>
-                                <li class="item">
-                                	<a class="product-image" href="#">
-                                    	<img src="assets/images/product-images/cape-dress-2.jpg" alt="Elastic Waist Dress - Black / Small" title="" />
-                                    </a>
-                                    <div class="product-details">
-                                    	<a href="#" class="remove"><i class="anm anm-times-l" aria-hidden="true"></i></a>
-                                        <a href="#" class="edit-i remove"><i class="anm anm-edit" aria-hidden="true"></i></a>
-                                        <a class="pName" href="cart.html">Elastic Waist Dress</a>
-                                        <div class="variant-cart">Gray / XXL</div>
-                                        <div class="wrapQtyBtn">
-                                            <div class="qtyField">
-                                            	<span class="label">Qty:</span>
-                                                <a class="qtyBtn minus" href="javascript:void(0);"><i class="fa anm anm-minus-r" aria-hidden="true"></i></a>
-                                                <input type="text" id="Quantity" name="quantity" value="1" class="product-form__input qty">
-                                                <a class="qtyBtn plus" href="javascript:void(0);"><i class="fa anm anm-plus-r" aria-hidden="true"></i></a>
-                                            </div>
-                                        </div>
-                                       	<div class="priceRow">
-                                            <div class="product-price">
-                                                <span class="money">$99.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
+                                <?php
+                                $total = $i->price * $item->qty;
+                                $subtotal = $subtotal + $total;
+                                 ?> 
+                            
+                                @endforeach
+                                <?php endforeach; ?>
                             </ul>
                             <div class="total">
                             	<div class="total-in">
-                                	<span class="label">Cart Subtotal:</span><span class="product-price"><span class="money">$748.00</span></span>
+                                	<span class="label">Cart Subtotal:</span><span class="product-price"><span class="money">{{ 'Rp.' . number_format($subtotal)}}</span></span>
                                 </div>
                                  <div class="buttonSet text-center">
-                                    <a href="cart.html" class="btn btn-secondary btn--small">View Cart</a>
-                                    <a href="checkout.html" class="btn btn-secondary btn--small">Checkout</a>
+                                    <a href="{{url("shop/carts")}}" class="btn btn-secondary btn--small">View Cart</a>
+                                    <a href="{{url("shop/carts")}}" class="btn btn-secondary btn--small">Checkout</a>
                                 </div>
                             </div>
-                        </div> --}}
+                        </div>
+                        @endif
                         <!--End Minicart Popup-->
                     </div>
                     <div class="site-header__search">
@@ -542,12 +530,21 @@
 <script src="{{asset('shop-new/assets/js/vendor/photoswipe-ui-default.min.js')}}"></script>
 
 
-//cek
+{{-- cek --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" ></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
 
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+@if(Session::has('add-to'))
+<script>
+    Swal.fire(
+  'Good job!',
+  'Product Add in Carts',
+  'success')
+</script>
+@endif
 
 <!--For Newsletter Popup-->
 <script>

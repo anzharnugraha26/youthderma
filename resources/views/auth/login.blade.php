@@ -206,8 +206,18 @@
 	</div>
 	
 	
-
 	
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	@if(Session::has('chart'))
+	<script>
+		Swal.fire(
+		'Anda Belum Login ?',
+		'Silahkan Login Atau Register untuk Melanjutkan ?',
+		'question'
+		)
+	</script>
+	@endif
+		
 	
 <!--===============================================================================================-->
 	<script src="{{asset('loggin/vendor/jquery/jquery-3.2.1.min.js')}}"></script>

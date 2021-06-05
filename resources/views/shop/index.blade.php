@@ -61,12 +61,13 @@
                                    <img class="grid-view-item__image hover variantImg" src="{{asset('image/product/'.$item->image)}}" alt="image" title="product">
                                </a>
                                @if(Auth::check())
-                               <form class="variants add" action="{{url("/shop/carts")}}" method="post">
+                               <form class="variants add" action="{{url('/shop/add-carts/' .$item->id)}}" method="post">
                                 @csrf
                                         <input type="hidden" value="{{$item->id}}" name="product_id">
-                                        <input type="hidden" value="{{$item->name}}" name="product_name">
+                                        {{-- <input type="hidden" value="{{$item->name}}" name="product_name">
                                         <input type="hidden" value="{{$item->price}}" name="product_price">
-                                        <input type="hidden" value="1" name="quantity">
+                                        <input type="hidden" value="{{$item->weight}}" name="weight"> --}}
+                                        <input type="hidden" value="1" name="qty">
                                         <button class="btn btn-addto-cart" tabindex="0">Add To Cart</button>
                                </form>
                                @else
@@ -99,8 +100,11 @@
                                </div>
                             
                                <div class="product-price">
-                                  
                                    <span class="price">{{ 'Rp.' . number_format($item->price) }}</span>
+                               </div>
+
+                               <div class="product-price">
+                                   <span class="price">{{ $item->weight }}.gr</span>
                                </div>
                                
                                <ul class="swatches">
@@ -171,12 +175,10 @@
 
 
                             @if(Auth::check())
-                               <form class="variants add" action="{{url("/shop/carts")}}" method="post">
+                               <form class="variants add" action="{{url('/shop/add-carts/' .$item->id)}}" method="post">
                                 @csrf
-                                        <input type="hidden" value="{{$item->id}}" name="product_id">
-                                        <input type="hidden" value="{{$item->name}}" name="product_name">
-                                        <input type="hidden" value="{{$item->price}}" name="product_price">
-                                        <input type="hidden" value="1" name="quantity">
+                                <input type="hidden" value="{{$item->id}}" name="product_id">
+                                <input type="hidden" value="1" name="qty">
                                         <button class="btn btn-addto-cart" tabindex="0">Add To Cart</button>
                                </form>
                                @else

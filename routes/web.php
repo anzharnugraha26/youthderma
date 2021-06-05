@@ -33,7 +33,7 @@ Route::group(['prefix' => 'shop'], function () {
 
     Route::get('/carts' , 'Shop\CartController@index');
     Route::get('/cart/remove/{id}', 'Shop\CartController@destroy'); 
-    Route::post('carts', 'Shop\CartController@store'); 
+    Route::post('add-carts/{id}', 'Shop\CartController@store'); 
     Route::post('/carts/update', 'Shop\CartController@update');
 
     Route::get('add-address', 'Shop\AlamatController@index');

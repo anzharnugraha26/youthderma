@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Shop;
 
 use App\City;
 use App\Http\Controllers\Controller;
+use App\Keranjang;
 use App\Province;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -22,43 +23,42 @@ class CheckOutController extends Controller
         $province = Province::get();
         $provinces = Province::pluck('name', 'province_id');
         $city = City::get();
-        // if (Auth::check()) {
-        //     return view('shop.checkout');
-        // }
-        // return redirect('/login');
+        $keranjang = Keranjang::where('user_id', $userId)->first();
         
-        if (\Cart::session($userId)->isEmpty()) {
+        if (empty($keranjang)) {
             return redirect()->back();
         }
-        $items = \Cart::session($userId)->getContent();
-        $berat =  100 ;
-        $city = DB::table('alamats')->where('user_id', $userId)->get();
-        $city_destination =  $city[0]->cities_id;
-        $cost = RajaOngkir::ongkosKirim([
-            'origin'  => 17,
-            'destination' => $city_destination,
-            'weight' => $berat,
-            'courier' => 'jne'
-        ])->get();
-        
-        $ongkir =  $cost[0]['costs'][0]['cost'][0]['value'];
-        $alamat_user = DB::table('alamats')
-        ->join('cities', 'cities.city_id', '=', 'alamats.cities_id')
-        ->join('provinces', 'provinces.province_id', '=', 'cities.province_id')
-        ->select('alamats.*', 'cities.name as kota', 'provinces.name as prov')
-        ->where('alamats.user_id', $userId)
-        ->first();
-        
-        //buat kode invoice sesua tanggalbulantahun dan jam
-        $data = [
-            'invoice' => 'ALV'.Date('Ymdhi'),
-            'keranjangs' => \Cart::session($userId)->getContent(),
-            'ongkir' => $ongkir,
-            'alamat' => $alamat_user
-        ];
-        dd($data);
 
-        return view('shop.checkout', compact('items', 'province', 'city', 'provinces'));
+        return view('shop.checkout');
+        // $items = \Cart::session($userId)->getContent();
+        // $berat =  100 ;
+        // $city = DB::table('alamats')->where('user_id', $userId)->get();
+        // $city_destination =  $city[0]->cities_id;
+        // $cost = RajaOngkir::ongkosKirim([
+        //     'origin'  => 17,
+        //     'destination' => $city_destination,
+        //     'weight' => $berat,
+        //     'courier' => 'jne'
+        // ])->get();
+        
+        // $ongkir =  $cost[0]['costs'][0]['cost'][0]['value'];
+        // $alamat_user = DB::table('alamats')
+        // ->join('cities', 'cities.city_id', '=', 'alamats.cities_id')
+        // ->join('provinces', 'provinces.province_id', '=', 'cities.province_id')
+        // ->select('alamats.*', 'cities.name as kota', 'provinces.name as prov')
+        // ->where('alamats.user_id', $userId)
+        // ->first();
+        
+        // //buat kode invoice sesua tanggalbulantahun dan jam
+        // $data = [
+        //     'invoice' => 'ALV'.Date('Ymdhi'),
+        //     'keranjangs' => \Cart::session($userId)->getContent(),
+        //     'ongkir' => $ongkir,
+        //     'alamat' => $alamat_user
+        // ];
+        // dd($data);
+
+        // return view('shop.checkout', compact('items', 'province', 'city', 'provinces'));
     }
 
    
