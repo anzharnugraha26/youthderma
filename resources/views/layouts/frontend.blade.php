@@ -61,13 +61,13 @@
 			<div class="header_extra d-flex flex-row align-items-center justify-content-end ml-auto">
 				
 				<!-- Work Hourse -->
-				<div class="work_hours">Mo - Sat: 8:00am - 9:00pm</div>
+				{{-- <div class="work_hours">Mo - Sat: 8:00am - 9:00pm</div>
 
 				<!-- Header Phone -->
-				<div class="header_phone">+34 586 778 8892</div>
+				<div class="header_phone">+34 586 778 8892</div> --}}
 
 				<!-- Appointment Button -->
-				<div class="button button_1 header_button" style="background: #84CDEE" ><a href="{{url("/shop")}}" onclick=""  id="comingsoon"><img src="{{asset('image/iconshop.png')}}" width="30px" height="20px"> |  Online Store</a></div>
+				<div class="button button_1 header_button" style="background: #84CDEE" ><a href="#" onclick=""  id="comingsoon"><img src="{{asset('image/iconshop.png')}}" width="30px" height="20px"> |  Online Store</a></div>
 
 				<!-- Header Social -->
 				<div class="social header_social">
@@ -99,9 +99,9 @@
 			</ul>
 		</nav>
 		<div class="menu_extra">
-			<div class="menu_link">Mo - Sat: 8:00am - 9:00pm</div>
-			<div class="menu_link">+34 586 778 8892</div>
-			<div class="menu_link"><a href="{{url("/shop")}}">Online Store</a></div>
+			{{-- <div class="menu_link">Mo - Sat: 8:00am - 9:00pm</div>
+			<div class="menu_link">+34 586 778 8892</div> --}}
+			<div class="menu_link"><a href="#">Online Store</a></div>
 		</div>
 		<div class="social menu_social">
 			<ul class="d-flex flex-row align-items-center justify-content-start">

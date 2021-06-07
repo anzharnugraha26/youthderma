@@ -10,8 +10,7 @@
 						<div class="section_title"><h2 style="text-align: center">Welcome to our Clinic</h2></div>
 					</div>
 					<div>
-						<p style="text-align: center">A beauty and health clinic not only focuses on beautifying your face, but we can also make your dream body come true. Under the direct care of our professional doctors, we provide effective medical aesthetic treatments with modern technology that is popular with all ages.
-							Your comfortable and satisfaction is our main goals. We are committee to providing effective services according to your treatment needs.
+						<p style="text-align: center">Youthderma Clinic is a beauty and health clinic that provides effective medical beauty treatments with the latest technology. We maintain the quality and safety of the products provided so that everyone can combine a healthy and beautiful lifestyle in their daily life. Your satisfaction is our priority. We are committed to providing effective services according to your treatment needs.
 							</p>
 					</div>
 					{{-- <div class="milestones">

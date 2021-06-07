@@ -90,7 +90,7 @@
                             </div>
                             @if(Auth::check())
 
-                            <form method="post" action="{{url("/shop/carts")}}"  class="product-form product-form-product-template hidedropdown" enctype="multipart/form-data">
+                            <form method="post" action="{{url('/shop/add-carts/' . $product->id)}}"  class="product-form product-form-product-template hidedropdown" enctype="multipart/form-data">
                                 {{-- <p class="infolinks"><a href="#sizechart" class="sizelink btn"> Size Guide</a> <a href="#productInquiry" class="emaillink btn"> Ask About this Product</a></p> --}}
                                 <!-- Product Action -->
                                 @csrf
@@ -99,10 +99,10 @@
                                         <div class="wrapQtyBtn">
                                             <div class="qtyField">
                                                 <input type="hidden" value="{{$product->id}}" name="product_id">
-                                                <input type="hidden" value="{{$product->name}}" name="product_name">
-                                                <input type="hidden" value="{{$product->price}}" name="product_price">
+                                                {{-- <input type="hidden" value="{{$product->name}}" name="product_name">
+                                                <input type="hidden" value="{{$product->price}}" name="product_price"> --}}
                                                 <a class="qtyBtn minus" href="javascript:void(0);"><i class="fa anm anm-minus-r" aria-hidden="true"></i></a>
-                                                <input type="text" id="Quantity" name="quantity" value="1" class="product-form__input qty">
+                                                <input type="text" id="Quantity" name="qty" value="1" class="product-form__input qty">
                                                 <a class="qtyBtn plus" href="javascript:void(0);"><i class="fa anm anm-plus-r" aria-hidden="true"></i></a>
                                             </div>
                                         </div>
@@ -118,17 +118,17 @@
                             </form>
 
                             @else 
-                            <form method="get" action="{{url("/shop/carts")}}"  class="product-form product-form-product-template hidedropdown" enctype="multipart/form-data">
+                            <form method="post" action="{{url('/shop/add-carts/' . $product->id)}}"  class="product-form product-form-product-template hidedropdown" enctype="multipart/form-data">
                                 @csrf
                                 <div class="product-action clearfix">
                                     <div class="product-form__item--quantity">
                                         <div class="wrapQtyBtn">
                                             <div class="qtyField">
                                                 <input type="hidden" value="{{$product->id}}" name="product_id">
-                                                <input type="hidden" value="{{$product->name}}" name="product_name">
-                                                <input type="hidden" value="{{$product->price}}" name="product_price">
+                                                {{-- <input type="hidden" value="{{$product->name}}" name="product_name">
+                                                <input type="hidden" value="{{$product->price}}" name="product_price"> --}}
                                                 <a class="qtyBtn minus" href="javascript:void(0);"><i class="fa anm anm-minus-r" aria-hidden="true"></i></a>
-                                                <input type="text" id="Quantity" name="quantity" value="1" class="product-form__input qty">
+                                                <input type="text" id="Quantity" name="qty" value="1" class="product-form__input qty">
                                                 <a class="qtyBtn plus" href="javascript:void(0);"><i class="fa anm anm-plus-r" aria-hidden="true"></i></a>
                                             </div>
                                         </div>

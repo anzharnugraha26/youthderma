@@ -76,7 +76,7 @@
 		<div class="service text-center">
 			<div class="service">
 				<div>
-					<img src="{{asset('image/services/ultralifmmu.jpg')}}" alt="" height="300px" width="300px">
+					<img src="{{asset('image/services/ultrap.jpg')}}" alt="" height="300px" width="300px">
 				</div>
 				<div class="service_title" style="color: #5193B1">ULTRA PRP+</div>
 				<div class="service_text">
@@ -120,7 +120,7 @@
 				<div>
 					<img src="{{asset('image/services/aquapeel.jpg')}}" alt="" height="300px" width="300px">
 				</div>
-				<div class="service_title" style="color: #5193B1">AQUAPEEL FACIAL</div>
+				<div class="service_title" style="color: #5193B1">HYDRA GLOW FACIAL</div>
 				<div class="service_text">
 					<p>Hydra Facial treatment uses infused serum and natural H20 to exfoliates dead skin's outer layer. It makes skin cleansed and brighter. </p>
 				</div>

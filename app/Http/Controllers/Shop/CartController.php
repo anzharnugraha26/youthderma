@@ -32,35 +32,27 @@ class CartController extends Controller
 
     public function store(Request $request, $id)
     {
-        // $keranjang = Keranjang::get();
-        $product_id = Keranjang::where('products_id', $id)->first();
-        if (empty($product_id)) {
-            Keranjang::create([
+        if (Auth::check()) {
+            // $keranjang = Keranjang::get();
+            $product_id = Keranjang::where('user_id', Auth::user()->id)->where('products_id', $id)->first();
+            if (empty($product_id)) {
+                Keranjang::create([
                 "user_id" => Auth::user()->id,
                 "products_id" => $request->product_id,
                 "qty" => $request->qty
             ]);
-            return redirect()->back()->with('add-to', "empty");
-        } else {
-            $quantity = $product_id->qty * 1;
-            $currentquantity = $request->qty + $quantity;
-            Keranjang::where('products_id', $id)->update(array('qty' =>  $currentquantity));
-            return redirect()->back()->with('add-to', "empty");
-        }
+                return redirect()->back()->with('add-to', "empty");
+            } else {
+                $quantity = $product_id->qty * 1;
+                $currentquantity = $request->qty + $quantity;
+                Keranjang::where('user_id', Auth::user()->id)->where('products_id', $id)->update(array('qty' =>  $currentquantity));
+                return redirect()->back()->with('add-to', "empty");
+            }
   
-        return redirect()->back();
-
-        // $params  = $request->except('_token');
-        // $item = [
-        //     'id' => $params['product_id'],
-        //     'quantity' => $params['quantity'],
-        //     'name' => $params['product_name'],
-        //     'price' => $params['product_price'],
-        //     'weight' => $params['weight']
-        // ];
-        // $userId = Auth::user()->id;
-        // $cart = \Cart::session($userId)->add($item);
-        // return redirect()->back();
+            return redirect()->back();
+        } else {
+            return redirect('/login')->with('chart', "empty");
+        }
     }
 
    
