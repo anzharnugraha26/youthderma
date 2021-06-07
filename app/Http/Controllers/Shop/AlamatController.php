@@ -70,12 +70,19 @@ class AlamatController extends Controller
    
     public function edit($id)
     {
-        //
+        $alamat = DB::table('alamats')
+            ->join('cities','cities.city_id','=','alamats.cities_id')
+            ->join('provinces','provinces.province_id','=','cities.province_id')
+            ->select('provinces.name as prov', 'provinces.province_id' , 'provinces.name' ,'cities.name as kota', 'cities.city_id' , 'alamats.*')
+            ->where('alamats.user_id',$id)
+            ->first();
+        return view('shop.alamat.edit-alamat', compact('alamat'));
     }
 
        public function update(Request $request, $id)
     {
-        //
+        Alamat::find($id)->update($request->all());
+        return redirect()->back();
     }
 
    

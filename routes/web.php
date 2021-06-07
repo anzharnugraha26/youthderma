@@ -37,6 +37,9 @@ Route::group(['prefix' => 'shop'], function () {
     Route::post('/carts/update', 'Shop\CartController@update');
 
     Route::get('add-address', 'Shop\AlamatController@index');
+    Route::get('edit-address/{id}', 'Shop\AlamatController@edit');
+    Route::post('updatealamat/{id}', 'Shop\AlamatController@update');
+
     Route::get('getcity/{id}', 'Shop\AlamatController@getCity');
     Route::post('savealamat', 'Shop\AlamatController@saveAlamat');
 

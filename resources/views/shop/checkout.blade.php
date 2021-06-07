@@ -71,21 +71,21 @@
                             <div class="row">
                                 <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
                                     <label for="input-firstname"> Name <span class="required-f">*</span></label>
-                                    <input name="name" value="{{Auth::user()->name}}" id="input-firstname" type="text">
+                                    <input name="name" value="{{Auth::user()->name}}" id="input-firstname" type="text" disabled>
                                 </div>
                                 <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
-                                    <label for="input-lastname">Last Name <span class="required-f">*</span></label>
-                                    <input name="lastname" value="" id="input-lastname" type="text">
+                                    <label for="input-email">E-Mail <span class="required-f">*</span></label>
+                                    <input name="email" value="{{Auth::user()->email}}" id="input-email" type="email" disabled>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
-                                    <label for="input-email">E-Mail <span class="required-f">*</span></label>
-                                    <input name="email" value="{{Auth::user()->email}}" id="input-email" type="email">
+                                    <label for="input-telephone">Telephone <span class="required-f">*</span></label>
+                                    <input name="telephone" value="{{$alamat->phone}}" id="input-telephone" type="tel" disabled>
                                 </div>
                                 <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
-                                    <label for="input-telephone">Telephone <span class="required-f">*</span></label>
-                                    <input name="telephone" value="" id="input-telephone" type="tel">
+                                    <label for="input-telephone">Detail Address <span class="required-f">*</span></label>
+                                    <input name="telephone" value="{{$alamat->detail}}" id="input-telephone" type="tel" disabled>
                                 </div>
                             </div>
                         </fieldset>
@@ -93,16 +93,16 @@
                         <fieldset>
                             <div class="row">
                                 <div class="form-group col-md-6 col-lg-6 col-xl-6">
-                                    <label for="input-company">Company</label>
-                                    <input name="company" value="" id="input-company" type="text">
+                                    <label for="input-company">Province</label>
+                                    <input name="company" value="{{$alamat->prov}}" id="input-company" type="text">
                                 </div>
                                 <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
-                                    <label for="input-address-1">Address <span class="required-f">*</span></label>
-                                    <input name="address_1" value="" id="input-address-1" type="text">
+                                    <label for="input-address-1">City <span class="required-f">*</span></label>
+                                    <input name="address_1" value="{{$alamat->kota}}" id="input-address-1" type="text">
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="form-group col-md-6 col-lg-6 col-xl-6">
+                                {{-- <div class="form-group col-md-6 col-lg-6 col-xl-6">
                                     <label for="input-address-2">Courier <span class="required-f">*</span></label>
                                     <select  name="courier">
                                         <option value="0">-- pilih jasa kurir --</option>
@@ -111,35 +111,39 @@
                                         <option value="tiki">TIKI</option>
                                         
                                     </select>
-                                </div>
-                                <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
+                                </div> --}}
+                                {{-- <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
                                     <label for="input-city">Province <span class="required-f">*</span></label>
                                     <select  name="province_destination">
                                         <option value="0">-- pilih provinsi asal --</option>
-                                        @foreach ($provinces as $province => $value)
-                                            <option value="{{ $province  }}">{{ $value }}</option>
+                                        @foreach ($alamat as $value)
+                                            <option value="{{ $value->province_id  }}">{{ $value->prov }}</option>
                                         @endforeach
                                     </select>
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
                                     <label for="input-postcode">Post Code <span class="required-f">*</span></label>
                                     <input name="postcode" value="" id="input-postcode" type="text">
                                 </div>
-                                <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
+                                {{-- <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
                                     <label for="input-country">City <span class="required-f">*</span></label>
                                     <select name="city_destination" id="input-country">
                                         <option value=""> --- Please Select --- </option>
                             
                                     </select>
-                                </div>
+                                </div> --}}
                                 <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
-                                    <button class="btn btn-md btn-primary btn-block btn-check">CEK ONGKOS KIRIM</button>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
+                               
+                                <a href="{{url('shop/edit-address/' . Auth::user()->id)}}" class="">Edit Alamat</a>
+                               
+                            </div>
+                                {{-- <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
                                     <label for="input-zone">Region / State <span class="required-f">*</span></label>
                                     <select name="zone_id" id="input-zone">
                                         <option value=""> --- Please Select --- </option>
@@ -148,27 +152,27 @@
                                         <option value="3515">Anglesey</option>
                                         <option value="3516">Angus</option>
                                     </select>
-                                </div>
+                                </div> --}}
                             </div>
                         </fieldset>
 
                         <fieldset>
-                            <div class="row">
+                            {{-- <div class="row">
                                 <div class="form-group form-check col-md-12 col-lg-12 col-xl-12">
                                     <label class="form-check-label padding-15px-left">
                                         <input type="checkbox" class="form-check-input" value=""><strong>Create an account ?</strong>
                                     </label>
                                 </div>
-                            </div>
+                            </div> --}}
                         </fieldset>
 
                         <fieldset>
-                            <div class="row">
+                            {{-- <div class="row">
                                 <div class="form-group col-md-12 col-lg-12 col-xl-12">
                                     <label for="input-company">Order Notes <span class="required-f">*</span></label>
                                     <textarea class="form-control resize-both" rows="3"></textarea>
                                 </div>
-                            </div>
+                            </div> --}}
                         </fieldset>
                     </form>
                 </div>
@@ -190,22 +194,34 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($items as $item)
+                                    <?php $subtotal=0; foreach ($keranjangs as $item): ?>
                                         
                                     <tr>
-                                        <td class="text-left">{{$item->name}}</td>
+                                        <td class="text-left">{{$item->name_produk}}</td>
                                         <td>{{ 'Rp.' . number_format($item->price) }}</td>
-                                        <td>{{$item->quantity}}</td>
-                                        <td>{{ 'Rp.' . number_format($item->price * $item->quantity) }}</td>
+                                        <td>{{$item->qty}}</td>
+                                        <td>{{ 'Rp.' . number_format($item->price * $item->qty) }}</td>
                                     </tr>
+                                    <?php
+                                            $total = $item->price * $item->qty;
+                                            $subtotal = $subtotal + $total;
+                                    ?> 
                                     
-                                    @endforeach
+                                    <?php endforeach; ?>
 
                                 </tbody>
                                 <tfoot class="font-weight-600">
                                     <tr>
                                         <td colspan="3" class="text-right">Total</td>
-                                        <td>{{ 'Rp.' . number_format(\Cart::getSubTotal()) }}</td>
+                                        <td>{{'Rp.' . number_format($subtotal)}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3" class="text-right">Biaya Ongkir (JNE)</td>
+                                        <td>{{'Rp.' . number_format($ongkir)}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3" class="text-right">Grand Total</td>
+                                        <td>{{'Rp.' . number_format($ongkir + $subtotal)}}</td>
                                     </tr>
                                 </tfoot>
                             </table>
