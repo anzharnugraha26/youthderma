@@ -169,17 +169,17 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{url("admin/bahan-aktif")}}" class="nav-link">
+                <a href="{{url("admin/treatment")}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p> Input Bahan Aktif</p>
+                  <p> Treatmnet</p>
                 </a>
               </li>
-              <li class="nav-item">
+              {{-- <li class="nav-item">
                 <a href="{{url("admin/ingredients")}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p> Input Ingredients</p>
                 </a>
-              </li>
+              </li> --}}
             </ul>
           </li>
           

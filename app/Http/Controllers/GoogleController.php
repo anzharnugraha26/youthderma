@@ -40,7 +40,7 @@ class GoogleController extends Controller
             return redirect('/shop')->with('with','aa');
         }
         }
-    }
+     }
 
 
 

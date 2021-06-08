@@ -12,7 +12,7 @@
 				</div>
 				<div class="service_title" style="color: #5193B1">{{$item->name}}</div>
 				<div class="service_text">
-					<p>{{$item->caption}}</p>
+					<a href="{{url('detail-treatment/' . $item->id)}}"><p>{{$item->caption}}</p></a>
 				</div>
 			</div>
 		</div>

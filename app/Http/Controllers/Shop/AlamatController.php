@@ -79,7 +79,7 @@ class AlamatController extends Controller
         return view('shop.alamat.edit-alamat', compact('alamat'));
     }
 
-       public function update(Request $request, $id)
+    public function update(Request $request, $id)
     {
         Alamat::find($id)->update($request->all());
         return redirect()->back();

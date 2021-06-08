@@ -19,6 +19,8 @@ Route::get('/cities/{province_id}', 'CheckOngkirController@getCities');
 
 Route::get('/' ,'FrontEndController@index');
 Route::get('/treatment' ,'FrontEndController@treatment');
+Route::get('/detail-treatment/{id}' ,'FrontEndController@detailtreatment');
+
 Route::get('/doctor' ,'FrontEndController@doctor');
 Route::get('/product' ,'FrontEndController@product');
 Route::get('/about-us' ,'FrontEndController@about');
@@ -58,6 +60,10 @@ Route::group(['middleware' => ['auth', 'checkRole:admin'],  'prefix' => 'admin']
     Route::get('product/destroy/{id}', 'Admin\ProductController@destroy');
     Route::get('product/edit/{id}', 'Admin\ProductController@edit');
     Route::post('product/update/{id}', 'Admin\ProductController@update');
+
+    Route::get('treatment', 'Admin\TreatmentController@index');
+    Route::get('treatment/edit/{id}', 'Admin\TreatmentController@edit');
+    Route::post('treatment/update/{id}', 'Admin\TreatmentController@update');
     // Route::get('/home', 'HomeController@index');
 });
 

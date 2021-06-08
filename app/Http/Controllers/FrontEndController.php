@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Booking;
 use App\Product;
+use App\Treatment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -14,11 +15,17 @@ class FrontEndController extends Controller
         return view('front-end.index');
     }
 
-    
     public function treatment()
     {
         return view('front-end.treatment');
     }
+
+    public function detailtreatment($id)
+    {
+        $t = Treatment::where('id', $id)->first();
+        return view('front-end.detail-treatment', compact('t'));
+    }
+
 
     public function doctor()
     {
