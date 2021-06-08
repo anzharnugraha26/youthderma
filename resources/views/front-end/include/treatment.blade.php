@@ -1,22 +1,27 @@
 <div class="row services_row">
 	
 	<!-- Service -->
+	<?php $t = DB::table('treatments')->get(); ?>
+	@foreach ($t as $item)
+		
 	<div class="col-xl-6 col-md-6 service_col">
 		<div class="service text-center">
 			<div class="service">
 				<div>
-					<img src="{{asset('image/services/botox.jpg')}}" alt="" height="300px" width="300px">
+					<img src="{{asset('image/services/'. $item->image)}}" alt="" height="300px" width="300px">
 				</div>
-				<div class="service_title" style="color: #5193B1">BOTOX TREATMENT</div>
+				<div class="service_title" style="color: #5193B1">{{$item->name}}</div>
 				<div class="service_text">
-					<p>Botox treatment soften the expression lines such as crowsfeet, forehead and wrinkles around the face. Face will look smooth and less visible wrinkle. </p>
+					<p>{{$item->caption}}</p>
 				</div>
 			</div>
 		</div>
 	</div>
+	
+	@endforeach
 
 	<!-- Service -->
-	<div class="col-xl-6 col-md-6 service_col">
+	{{-- <div class="col-xl-6 col-md-6 service_col">
 		<div class="service text-center">
 			<div class="service">
 				<div>
@@ -140,7 +145,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> --}}
 
 
 </div>
