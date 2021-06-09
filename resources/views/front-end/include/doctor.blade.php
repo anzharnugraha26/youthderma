@@ -13,7 +13,7 @@
 			<!-- Team Item -->
 			<div class="col-lg-4 team_col">
 				<div class="team_item text-center d-flex flex-column aling-items-center justify-content-end">
-					<div class="team_image"><img src="{{asset('image/dr/drliab2.png')}}" alt=""></div>
+					<div class="team_image"><img src="{{asset('image/dr/lianew.png')}}" alt=""></div>
 					<div class="team_content text-center">
 						<div class="team_name"><a href="#" style="font-size: 20px">dr. Lia Permata Sari, dipl. CIBTAC</a></div>
 						<div class="team_title">Head Doctor</div>
@@ -27,7 +27,7 @@
 			<!-- Team Item -->
 			<div class="col-lg-4 team_col" style="margin-bottom:27px;">
 				<div class="team_item text-center d-flex flex-column aling-items-center justify-content-end">
-					<div class="team_image"><img src="{{asset('image/dr/drannisa.png')}}" alt=""></div>
+					<div class="team_image"><img src="{{asset('image/dr/anisanew.png')}}" alt=""></div>
 					<div class="team_content text-center">
 						<div class="team_name"><a href="#" style="font-size: 20px">dr. Anisa Amalia</a></div>
 						<div class="team_title">Aesthetic Doctor</div>
@@ -41,7 +41,7 @@
 			<!-- Team Item -->
 			<div class="col-lg-4 team_col" style="margin-bottom:27px;">
 				<div class="team_item text-center d-flex flex-column aling-items-center justify-content-end">
-					<div class="team_image"><img src="{{asset('image/dr/drfebrina.png')}}" alt=""></div>
+					<div class="team_image"><img src="{{asset('image/dr/febnew.png')}}" alt=""></div>
 					<div class="team_content text-center">
 						<div class="team_name"><a href="#" style="font-size: 20px">dr. Febrina Andarini,Sp.KK</a></div>
 						<div class="team_title">Dermatology and Venereology Specialist</div>
