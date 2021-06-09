@@ -30,7 +30,7 @@
             <div class="row">
                 <div class="col">
                     <div class="home_content">
-                        <div class="home_title">Detail Treatment</div>
+                        <div class="home_title">{{$t->name}}</div>
                     </div>
                 </div>
             </div>
@@ -47,45 +47,30 @@
                     <div class="team_image"><img src="{{asset('image/services/'.$t->image)}}" alt="" ></div>
                 </div>
                 <!-- Intro Content -->
-                <div class="col-lg-7">
+                <div class="col-lg-7" style="margin-top: 15%">
                     <div class="intro_content">
                         <div class="section_title_container">
                             {{-- <div class="section_subtitle">This is Dr Pro</div> --}}
                             <div class="section_title"><h2 style="font-size: 35px">{{$t->name}}</h2></div>
                         </div>
                         <div style="margin-top: 40px">
-                            Description
+                            <h5>Description</h5>
                             <p>{{$t->caption}}</p>
                         </div>                 
                     </div>
                 </div>
-
-                <!-- Intro Image -->
-                
-            </div>
-            
+            </div>    
 <hr>
             <div class="row">
-
                 <!-- Intro Content -->
-                <div class="col-lg-12">
+                <div class="col-lg-12" style="margin-left: 5%;margin-right: 5%">
                     <div class="intro_content">
                         <div style="margin-top: 20px">
-                            Detail Treatment
+                            <h5>Detail Treatment</h5>
                             {!!$t->detail!!} 
                         </div>             
                     </div>
                 </div>
-
-                <!-- Intro Image -->
-                {{-- <div class="col-lg-6">
-                    <div class="intro_content">
-                        <div style="margin-top: 20px">
-                            Ingredients 
-                    {!!$product->ingredients!!} 
-                        </div>
-                    </div>
-                </div> --}}
             </div>
         </div>
     </div>

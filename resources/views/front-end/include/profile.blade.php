@@ -55,18 +55,12 @@
 							<input type="text" class="intro_input" placeholder="Your Name" required="required" name="name">
 							<input type="email" class="intro_input" placeholder="Your E-mail" required="required" name="email">
 							<input type="number" class="intro_input" placeholder="Your Phone" required="required" name="phone">
+							<?php $t = DB::table('treatments')->get();?>
 							<select class="intro_select intro_input" required name="threatment">
 								<option disabled="" selected="" value="">Treatment</option>
-								<option value="BOTOX TREATMENT">BOTOX TREATMENT</option>
-								<option value="DERMAL FILLER">DERMAL FILLER</option>
-								<option value="SKIN QUALITY">SKIN QUALITY</option>
-								<option value="THREAD LIFT A">THREAD LIFT A</option>
-								<option value="GLOWING BOOSTER INFUSION">GLOWING BOOSTER INFUSION</option>
-								<option value="ULTRA PRP+">ULTRA PRP+</option>
-								<option value="FAT FREEZING">FAT FREEZING</option>
-								<option value="LASER TREATMENT">LASER TREATMENT</option>
-								<option value="HYDRA FACIAL">HYDRA FACIAL</option>
-								<option value="Ultra Layer Lift MMFU">Ultra Layer Lift MMFU</option>
+								@foreach ($t as $item)
+								<option value="{{$item->name}}">{{$item->name}}</option>
+								@endforeach
 							</select>
 							<select class="intro_select intro_input" required="required" name="doctor">
 									<option disabled="" selected="" value="">Doctor</option>
