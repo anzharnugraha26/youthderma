@@ -252,7 +252,7 @@
 <div class="why" style="margin-top: 20px">
 	<div class="container">
 	<video style="width:100%; height:100%" controls>
-		<source src="{{asset('video/video.mp4')}}" type="video/mp4">
+		<source src="{{asset('video/video2.mp4')}}" type="video/mp4">
 	</video>
 	</div>
 </div>
