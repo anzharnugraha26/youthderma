@@ -8,7 +8,10 @@
 		<div class="service text-center">
 			<div class="service">
 				<div>
-					<img src="{{asset('image/services/'. $item->image)}}" alt="" height="300px" width="300px">
+					<form action="{{url('detail-treatment/' . $item->id)}}" method="GET">
+						@csrf
+					<button><img src="{{asset('image/services/'. $item->image)}}" alt="" height="300px" width="300px"></button>
+					</form>
 				</div>
 				<div class="service_title" style="color: #5193B1">{{$item->name}}</div>
 				<div class="service_text">

@@ -1,5 +1,6 @@
 @extends('layouts.frontend')
 @section('content')	
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 <div class="home">
 
 	<!-- Home Slider -->
@@ -13,20 +14,20 @@
 					<div class="container">
 						<div class="row">
 							<div class="col">
-								<div class="home_content" style="margin-top: 60px">
+								<div class="home_content" style="margin-top: 90px">
 									{{-- <div class="home_subtitle" style="color:white;">Aesthetic Clinic</div>
 									<div class="home_title">Youthderma</div> --}}
-									<div class="home_text">
-										<p style="color: white;">A beauty and health clinic not only focuses on beautifying your face, but we can also make your dream body come true.</p>
+									<div class="home_text" style="margin-top: 10px;" >
+										<p style="color: white;font-family: 'Poppins';">Youthderma Clinic is a beauty and health clinic that provides effective medical beauty treatments with the latest technology. We maintain the quality and safety of the products provided so that everyone can combine a healthy and beautiful lifestyle in their daily life. Your satisfaction is our priority. We are committed to providing effective services according to your treatment needs.</p>
 									</div>
 									<div class="row">
-										<div class="col-xl-4 col-md-6 " style="margin-top: 10px;width: 60%" >
+										<div class="col-xl-4 col-md-6 " style="margin-top: 10px;width: 50%" >
 											<div class="button button_1 trans_200" style="background: #5193B1"><a href="{{url("")}}" style="font-size: 10px;text-align: center">Treatment</a></div>
 										</div>
-										<div class="col-xl-4 col-md-6 " style="margin-top: 10px;width: 60%">
+										<div class="col-xl-4 col-md-6 " style="margin-top: 10px;width: 50%">
 											<div class="button button_1 trans_200" style="background: #5193B1"><a href="#" style="font-size: 10px;text-align: center">Online-Store</a></div>
 										</div>
-										<div class="col-xl-4 col-md-6 " style="margin-top: 10px;width: 60%">
+										<div class="col-xl-4 col-md-6 " style="margin-top: 10px;width: 50%">
 											<div class="button button_1 trans_200" style="background: #5193B1"><a href="#" style="font-size: 10px;text-align: center">Contact Us</a></div>
 										</div>
 									</div>
@@ -67,7 +68,7 @@
 			</div>
 
 			<div class="owl-item">
-				<div class="background_image" style="background-image:url({{asset('image/slider/s5.jpg')}})"></div>
+				<div class="background_image" style="background-image:url({{asset('image/slider/new1.jpg')}})"></div>
 				<div class="home_container">
 					<div class="container">
 						<div class="row">
@@ -90,7 +91,7 @@
 			</div>
 
 			<div class="owl-item">
-				<div class="background_image" style="background-image:url({{asset('image/slider/s6.jpg')}})"></div>
+				<div class="background_image" style="background-image:url({{asset('image/slider/new2.jpg')}})"></div>
 				<div class="home_container">
 					<div class="container">
 						<div class="row">
@@ -113,7 +114,7 @@
 			</div>
 
 			<div class="owl-item">
-				<div class="background_image" style="background-image:url({{asset('image/slider/s8.jpg')}})"></div>
+				<div class="background_image" style="background-image:url({{asset('image/slider/new3.jpg')}})"></div>
 				<div class="home_container">
 					<div class="container">
 						<div class="row">
@@ -156,9 +157,10 @@
 	</div>
 </div>
 
+@include('front-end.include.profile')
+
 <!-- Intro -->
 
-@include('front-end.include.profile')
 
 <!-- Why Choose Us -->
 
@@ -182,7 +184,7 @@
 						<div class="section_title"><h2>Why choose us?</h2></div>
 					</div>
 					<div class="why_text">
-						<p>Youthderma Clinic is a beauty and health clinic that provides effective medical beauty treatments with the latest technology. We maintain the quality and safety of the products provided so that everyone can combine a healthy and beautiful lifestyle in their daily life. Your satisfaction is our priority. We are committed to providing effective services according to your treatment needs.</p>
+						<p>Youthderma Clinic is a beauty and health clinic that provides effective medical beauty treatments with the latest technology. We maintain the quality and safety of the products provided so that everyone can combine a healthy and beautiful lifestyle in their daily life. Your satisfaction is our priority. We are committed to providing effective services according to your treatment needs..</p>
 					</div>
 					<div class="why_list">
 						<ul>
@@ -246,6 +248,34 @@
 		</div>
 	</div>
 </div>
+
+<div class="why" style="margin-top: 20px">
+	<div class="container">
+	<video style="width:100%; height:100%" controls>
+		<source src="{{asset('video/video.mp4')}}" type="video/mp4">
+	</video>
+	</div>
+</div>
+
+{{-- <div class="home d-flex flex-column align-items-start justify-content-end">
+    <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{{asset('image/background/detail.jpg')}}" data-speed="0.8">
+		<video style="width:100%; height:100%" controls>
+			<source src="{{asset('video/video.mp4')}}" type="video/mp4">
+			Your browser does not support HTML video.
+		</video>
+	</div>
+    <div class="home_container">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div> --}}
+
+
 
 <!-- Services -->
 
