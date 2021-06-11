@@ -31,6 +31,7 @@ Route::post('/savebooking' ,'FrontEndController@saveBooking');
 Auth::routes(['verify' => true]);
 Route::group(['prefix' => 'shop'], function () {
     Route::get('/', 'Shop\ShopController@index');
+    Route::get('products', 'Shop\ShopController@product');
     Route::get('/product-detail/{id}', 'Shop\ShopController@productDetail');
 
     Route::get('/carts' , 'Shop\CartController@index');

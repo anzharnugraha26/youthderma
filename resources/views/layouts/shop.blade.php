@@ -29,13 +29,13 @@
 </div>
 <div class="pageWrapper">
 	<!--Promotion Bar-->
-    @if(Auth::Check())
-	<div class="notification-bar mobilehide">
-    	<a href="#" class="notification-bar__message">Welcome {{Auth::user()->name}}</a>
+    {{-- @if(Auth::Check())
+	<div class="notification-bar mobilehide" style="background: #F4EFED">
+    	<a href="#" class="notification-bar__message" style="color: black">Welcome {{Auth::user()->name}}</a>
         <span class="close-announcement">×</span>
     </div>
     @else 
-    @endif
+    @endif --}}
     <!--End Promotion Bar-->
 	<!--Search Form Drawer-->
 	<div class="search">
@@ -49,7 +49,7 @@
     </div>
     <!--End Search Form Drawer-->
     <!--Top Header-->
-    <div class="top-header">
+    <div class="top-header" style="background: white">
         <div class="container-fluid">
             <div class="row">
             	<div class="col-10 col-sm-8 col-md-5 col-lg-4">
@@ -75,7 +75,11 @@
                     <p class="phone-no"><i class="anm anm-phone-s"></i> 0821 1210 0020</p>
                 </div>
                 <div class="col-sm-4 col-md-4 col-lg-4 d-none d-lg-none d-md-block d-lg-block">
+                    @if(Auth::Check())
+                	<div class="text-center"><p class="top-header_middle-text"> Welcome {{Auth::user()->name}}</p></div>
+                    @else
                 	<div class="text-center"><p class="top-header_middle-text"> Youthderma Aesthetic Clinic</p></div>
+                    @endif
                 </div>
                 <div class="col-2 col-sm-4 col-md-3 col-lg-4 text-right">
                 	<span class="user-menu d-block d-lg-none"><i class="anm anm-user-al" aria-hidden="true"></i></span>
@@ -94,7 +98,7 @@
     </div>
     <!--End Top Header-->
     <!--Header-->
-    <div class="header-wrap animated d-flex border-bottom">
+    <div class="header-wrap animated d-flex border-bottom" style="background: #7C7C7C">
     	<div class="container-fluid">        
             <div class="row align-items-center">
             	<!--Desktop Logo-->
@@ -114,9 +118,14 @@
                 	<!--Desktop Menu-->
                 	<nav class="grid__item" id="AccessibleNav"><!-- for mobile -->
                         <ul id="siteNav" class="site-nav medium center hidearrow">
-                          <li class="lvl-2"><a href="{{url("/shop")}}" class="site-nav lvl-2">Home </a></li>
-                          <li class="lvl-2"><a href="{{url("shop/carts")}}" class="site-nav lvl-2">Cart</a></li>
-                          <li class="lvl1"><a href="#"><b>Buy Now!</b> <i class="anm anm-angle-down-l"></i></a></li>
+                          <li class="lvl-2"><a href="{{url("/shop")}}" class="site-nav lvl-2" style="color: white">Home </a></li>
+                          <li class="lvl-2"><a href="{{url("shop/products")}}" class="site-nav lvl-2" style="color: white">Produk </a></li>
+                          @if (Auth::check()) 
+                          <li class="lvl-2"><a href="{{url("shop/carts")}}" class="site-nav lvl-2" style="color: white">Carts |
+                            <span><?php $p = DB::table('keranjangs')->where('user_id', Auth::user()->id)->count(); echo $p;?></span></a></li>
+                          @endif
+                          <li class="lvl-2"><a href="" class="site-nav lvl-2" style="color: white">Gallery</a></li>
+                          <li class="lvl-2"><a href="{{url("contact-us")}}" class="site-nav lvl-2" style="color: white">Kontak</a></li>
                       </ul>
                     </nav>
                     <!--End Desktop Menu-->
@@ -125,9 +134,7 @@
                 <div class="col-6 col-sm-6 col-md-6 col-lg-2 d-block d-lg-none mobile-logo">
                     <a href="{{url("/shop")}}">
                     <div class="logo">
-
                             <img src="{{asset('image/logo/logo.png')}}" alt="Youthderma Aesthetic Clinic" title="Youthderma Aesthetic Clinic" />
-                        
                     </div>
                     </a>
                 </div>
@@ -135,12 +142,12 @@
                 <div class="col-4 col-sm-3 col-md-3 col-lg-2">
                 	<div class="site-cart">
                         @if (Auth::check()) 
-                    	<a href="{{url("shop/carts")}}" class="site-header__cart" >
+                    	<a href="{{url("carts")}}" class="site-header__cart" style="color: white">
                         	<i class="icon anm anm-bag-l"></i><span id="CartCount" class="site-header__cart-count" data-cart-render="item_count"><?php $p = DB::table('keranjangs')->where('user_id', Auth::user()->id)->count(); echo $p;?></span>
                             {{-- <span id="CartCount" class="site-header__cart-count" data-cart-render="item_count">2</span> --}}
                         </a>
                         @else
-                        <a href="{{url("shop/carts")}}" class="site-header__cart" title="Cart">
+                        <a href="{{url("check-out")}}" class="site-header__cart" title="Cart" style="color: white">
                         	<i class="icon anm anm-bag-l"></i>
                             {{-- <span id="CartCount" class="site-header__cart-count" data-cart-render="item_count">2</span> --}}
                         </a>
@@ -190,7 +197,7 @@
                                 </div>
                                  <div class="buttonSet text-center">
                                     <a href="{{url("shop/carts")}}" class="btn btn-secondary btn--small">View Cart</a>
-                                    <a href="{{url("shop/carts")}}" class="btn btn-secondary btn--small">Checkout</a>
+                                    <a href="{{url("shop/check-out")}}" class="btn btn-secondary btn--small">Checkout</a>
                                 </div>
                             </div>
                         </div>
@@ -210,9 +217,13 @@
     <div class="mobile-nav-wrapper" role="navigation">
 		<div class="closemobileMenu"><i class="icon anm anm-times-l pull-right"></i> Close Menu</div>
         <ul id="MobileNav" class="mobile-nav">
-          <li class="lvl-2"><a href="{{url("/shop")}}" class="site-nav lvl-2">Home </a></li>
-            <li class="lvl-2"><a href="{{url("shop/carts")}}" class="site-nav lvl-2">Cart</a></li>
-        	  <li class="lvl1"><a href="#"><b>Buy Now!</b></a>
+          <li class="lvl-2"><a href="{{url("shop")}}" class="site-nav lvl-2">Home </a></li>
+          <li class="lvl-2"><a href="{{url("shop/products")}}" class="site-nav lvl-2">Produk </a></li>
+          <li class="lvl-2"><a href="{{url("/")}}" class="site-nav lvl-2">Gallery </a></li>
+          <li class="lvl-2"><a href="{{url("shop/contact-us")}}" class="site-nav lvl-2">Kontak </a></li>
+          @if(Auth::check())
+          <li class="lvl-2"><a href="{{url("shop/carts")}}" class="site-nav lvl-2">Cart</a></li>
+          @endif
         </ul>
 	</div>
 

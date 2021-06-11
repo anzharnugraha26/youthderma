@@ -15,6 +15,17 @@ class ShopController extends Controller
         return view("shop.index", compact('product'))->with("coming-soon", "test");
     }
 
+    public function product()
+    {
+        $product = Product::all();
+        return view("shop.product", compact('product'));
+    }
+
+    public function kontakUs()
+    {
+        return view("shop.kontak");
+    }
+
     
     public function productDetail($id)
     {
