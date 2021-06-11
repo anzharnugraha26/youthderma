@@ -48,6 +48,14 @@ Route::group(['prefix' => 'shop'], function () {
 
     Route::get('check-out', 'Shop\CheckOutController@index');
     Route::get('check-out/getcities/{id}', 'Shop\CheckOutController@getCities');
+
+    Route::post('order-simpan', 'Shop\OrderController@store');
+    Route::get('order/konfirmasi/{id}', 'Shop\OrderController@bayar');
+    Route::get('order', 'Shop\OrderController@index');
+
+    Route::post('/bukti-bayar/{id}', 'Shop\OrderController@kirimBukti');
+    Route::get('/order-detail/{id}', 'Shop\OrderController@show');
+
 });
 
 Route::group(['middleware' => ['auth', 'checkRole:admin'],  'prefix' => 'admin'], function () {

@@ -183,7 +183,9 @@
                     <div class="your-order">
                         <h2 class="order-title mb-4">Your Order</h2>
 
-                        <div class="table-responsive-sm order-table"> 
+                        <div class="table-responsive-sm order-table">
+                            <form action="{{url("shop/order-simpan")}}" method="POST">
+                                @csrf 
                             <table class="bg-white table table-bordered table-hover text-center">
                                 <thead>
                                     <tr>
@@ -237,15 +239,21 @@
                                 <div id="accordion" class="payment-section">
                                     <div class="card mb-2">
                                         <div class="card-header">
-                                            <a class="card-link" data-toggle="collapse" href="#collapseOne">Direct Bank Transfer </a>
+                                            <a class="card-link" data-toggle="collapse" href="#collapseOne">Bank Transfer </a>
                                         </div>
                                         <div id="collapseOne" class="collapse" data-parent="#accordion">
                                             <div class="card-body">
-                                                <p class="no-margin font-15">Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won't be shipped until the funds have cleared in our account.</p>
+                                                <div class="col">
+                                                    {{-- <div>
+                                                    <img src="{{asset('image/bank/bca.png')}}" style="width: 250px;height: 150px;">
+                                                    </div> --}}
+                                                    <p>Transfer Sebesar {{'Rp.' . number_format($ongkir + $subtotal)}}  </p>
+                                                    <p>No Rek : 123121212121</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card mb-2">
+                                    {{-- <div class="card mb-2">
                                         <div class="card-header">
                                             <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">Cheque Payment</a>
                                         </div>
@@ -254,8 +262,8 @@
                                                 <p class="no-margin font-15">Please send your cheque to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="card margin-15px-bottom border-radius-none">
+                                    </div> --}}
+                                    {{-- <div class="card margin-15px-bottom border-radius-none">
                                         <div class="card-header">
                                             <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree"> PayPal </a>
                                         </div>
@@ -264,8 +272,8 @@
                                                 <p class="no-margin font-15">Pay via PayPal; you can pay with your credit card if you don't have a PayPal account.</p>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="card mb-2">
+                                    </div> --}}
+                                    {{-- <div class="card mb-2">
                                         <div class="card-header">
                                             <a class="collapsed card-link" data-toggle="collapse" href="#collapseFour"> Payment Information </a>
                                         </div>
@@ -311,15 +319,21 @@
 
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
+                            <?php ?>
 
+                            <input type="hidden" value="{{ $invoice }}" name="invoice">
+                            <input type="hidden" value="{{ $ongkir + $subtotal }}" name="subtotal">
+                            <input type="hidden" value="{{ $ongkir }}" name="ongkir">
+                            <input name="no_hp" value="{{$alamat->phone}}"  type="hidden" >
                             <div class="order-button-payment">
                                 <button class="btn" value="Place order" type="submit">Place order</button>
                             </div>
                         </div>
                     </div>
+                </form>
 
                     <div class="row mt-3">
                         <div class="col-md-12">
