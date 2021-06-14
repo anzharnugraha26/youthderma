@@ -115,38 +115,38 @@
         	<div class="row">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 main-col">
                 	<div class="alert alert-success text-uppercase" role="alert">
-						<i class="icon anm anm-truck-l icon-large"></i> &nbsp;<strong>Congratulations!</strong> You've got free shipping!
+						&nbsp;<strong>Congratulations!</strong> 
 					</div>
                 	<form action="#" method="post" class="cart style2">
                 		<table>
                             <thead class="cart__row cart__header">
                                 <tr>
-                                    <th class="text-center">Invoice</th>
-                                    <th class="text-center">Total</th>
-                                    <th class="text-center">Status</th>
-                                    <th class="action">&nbsp;</th>
+                                    <th class="text-left">Invoice</th>
+                                    <th class="text-left">Total</th>
+                                    <th class="text-right">Status</th>
+                                    <th class="text-center">&nbsp;Option</th>
                                 </tr>
                             </thead>
                     		<tbody>
-                                @foreach($order as $o)
+                                @foreach($histori as $o)
                                 <tr class="cart__row border-bottom line1 cart-flex border-top">
                                     <td class="cart__meta small--text-left cart-flex-item">
-                                        <div class="list-view-item__title">
-                                            <a href="#">Elastic Waist Dress </a>
-                                        </div>
-                                        
-                                        <div class="cart__meta-text">
-                                            Color: Navy<br>Size: Small<br>
-                                        </div>
+                                        {{ $o->invoice }}
                                     </td>
                                     <td class="cart__price-wrapper cart-flex-item">
-                                        <span class="money">$735.00</span>
+                                        @if($o->name == 'Perlu Di Cek')
+                                        Sedang Di Cek
+                                        @else
+                                        {{ $o->name }}
+                                        @endif
                                     </td>
             
                                     <td class="text-right small--hide cart-price">
-                                        <div><span class="money">$735.00</span></div>
+                                         {{ 'Rp.' . number_format($o->subtotal)}}
                                     </td>
-                                    <td class="text-center small--hide"><a href="#" class="btn btn--secondary cart__remove" title="Remove tem"><i class="icon icon anm anm-times-l"></i></a></td>
+                                    <td class="text-center small--hide">
+                                        <a href="{{url("shop/order-detail/$o->id")}}" name="clear" class="btn btn-secondary btn--small  small--hide" style="background: green">Detail</button>
+                                    	
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -154,8 +154,7 @@
                                 <tr>
                                     <td colspan="3" class="text-left"><a href="http://annimexweb.com/" class="btn btn-secondary btn--small cart-continue">Continue shopping</a></td>
                                     <td colspan="3" class="text-right">
-	                                    <button type="submit" name="clear" class="btn btn-secondary btn--small  small--hide">Clear Cart</button>
-                                    	<button type="submit" name="update" class="btn btn-secondary btn--small cart-continue ml-2">Update Cart</button>
+	                        
                                     </td>
                                 </tr>
                             </tfoot>

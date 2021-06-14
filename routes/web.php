@@ -55,6 +55,7 @@ Route::group(['prefix' => 'shop'], function () {
 
     Route::post('/bukti-bayar/{id}', 'Shop\OrderController@kirimBukti');
     Route::get('/order-detail/{id}', 'Shop\OrderController@show');
+    Route::get('/pesanan-diterima/{id}', 'Shop\OrderController@pesananditerima');
 
 });
 

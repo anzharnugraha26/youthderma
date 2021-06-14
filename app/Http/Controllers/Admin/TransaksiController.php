@@ -94,7 +94,7 @@ class TransaksiController extends Controller
         //                 'stok' => $ubahstok
         //             ]);
         // }
-        return redirect('admin/transaksi')->with('status','Berhasil Mengonfirmasi Pembayaran Pesanan');
+        return redirect('admin/transaksi-perlu-dikirim')->with('status','Berhasil Mengonfirmasi Pembayaran Pesanan');
 
     }
 

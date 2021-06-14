@@ -128,5 +128,14 @@ class OrderController extends Controller
         return view('shop.order.detail', $data);
     }
 
+    public function pesananditerima($id)
+    {
+        //function untuk menerima pesanan
+        $order = Order::findOrFail($id);
+        $order->status_order_id = 5;
+        $order->save();
+        return redirect('shop/order');
+    }
+
 
 }

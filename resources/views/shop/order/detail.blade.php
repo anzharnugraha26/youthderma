@@ -57,7 +57,7 @@
                 </div>
                 <div class="col-md-4 text-right">
                     @if($order->status_order_id == 4)
-                    <a href="" onclik="return confirm('Yakin ingin melanjutkan ?')" class="btn btn-primary">Pesanan Di Terima</a><br>
+                    <a href="{{url('shop/pesanan-diterima/'. $order->id)}}" onclik="return confirm('Yakin ingin melanjutkan ?')" class="btn btn-primary">Pesanan Di Terima</a><br>
                     <small>Jika pesanan belum datang harap jangan tekan tombol ini</small>
                     @endif
                 </div>
