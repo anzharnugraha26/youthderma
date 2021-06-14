@@ -23,7 +23,7 @@
                                 <tr>
                                     <th class="text-left">Invoice</th>
                                     <th class="text-left">Status</th>
-                                    <th class="text-right">Total</th>
+                                    <th class="text-right">Total</th> 
                                     <th class="text-center">&nbsp;Option</th>
                                 </tr>
                             </thead>
@@ -70,8 +70,8 @@
                             <thead class="cart__row cart__header">
                                 <tr>
                                     <th class="text-left">Invoice</th>
-                                    <th class="text-left">Total</th>
-                                    <th class="text-right">Status</th>
+                                    <th class="text-left">Status</th>
+                                    <th class="text-right">Total</th>
                                     <th class="text-center">&nbsp;Option</th>
                                 </tr>
                             </thead>

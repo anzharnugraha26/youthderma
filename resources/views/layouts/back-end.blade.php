@@ -161,25 +161,38 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fas fa-keyboard"></i>
               <p>
-                  Transaksi 
+                Transaksi 
                 <i class="fas fa-angle-left right"></i>
-               
+                <?php $p = DB::table('orders')->count(); ?>
+                @if($p > 0)
+                <span class="badge badge-info right"><?php echo $p ?></span>
+                @endif
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{url("admin/transaksi")}}" class="nav-link">
-                  <p> Transaksi Baru</p>
+                  <?php $a = DB::table('orders')->where('status_order_id', 1)->count();?>
+                  <p> Transaksi Baru <span class="badge badge-info right"></span>
+                    @if($a > 0)
+                    <span class="badge badge-info right"><?php echo $a ?></span>
+                     @endif
+                  </p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{url("admin/transaksi-perlu-dicek")}}" class="nav-link">
-                  <p> Transaksi Perlu Di Cek</p>
+                  <p> Transaksi Perlu Di Cek<span class="badge badge-info right"><?php $p = DB::table('orders')->where('status_order_id', 2)->count(); echo $p;?></span></p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{url("admin/transaksi-perlu-dikirim")}}" class="nav-link">
-                  <p> Transaksi Perlu Di Kirim</p>
+                  <p> Transaksi Perlu Di Kirim<span class="badge badge-info right"><?php $p = DB::table('orders')->where('status_order_id', 3)->count(); echo $p;?></span></p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url("admin/transaksi-dikirim")}}" class="nav-link">
+                  <p> Transaksi Di Kirim <span class="badge badge-info right"><?php $p = DB::table('orders')->where('status_order_id', 4)->count(); echo $p;?></span></p>
                 </a>
               </li>
 

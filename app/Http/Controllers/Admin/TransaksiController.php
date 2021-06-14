@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\DB;
 
 class TransaksiController extends Controller
 {
-
     public function index()
     {
         $order = DB::table('orders')
@@ -37,45 +36,60 @@ class TransaksiController extends Controller
             'orderbaru' => $order
         );
 
-        return view('admin.transaksi.perludicek',$data);
+        return view('admin.transaksi.perludicek', $data);
     }
 
     public function perludikirim()
     {
         //ambil data order yang status nya 3 sudah dicek dan perlu dikirim(input no resi)
         $order = DB::table('orders')
-                    ->join('status_order','status_order.id','=','orders.status_order_id')
-                    ->join('users','users.id','=','orders.user_id')
-                    ->select('orders.*','status_order.name','users.name as nama_pemesan')
-                    ->where('orders.status_order_id',3)
+                    ->join('status_order', 'status_order.id', '=', 'orders.status_order_id')
+                    ->join('users', 'users.id', '=', 'orders.user_id')
+                    ->select('orders.*', 'status_order.name', 'users.name as nama_pemesan')
+                    ->where('orders.status_order_id', 3)
                     ->get();
         $data = array(
             'orderbaru' => $order
         );
 
-        return view('admin.transaksi.perludikirim',$data);
+        return view('admin.transaksi.perludikirim', $data);
+    }
+
+    public function dikirim()
+    {
+        $order = DB::table('orders')
+                    ->join('status_order', 'status_order.id', '=', 'orders.status_order_id')
+                    ->join('users', 'users.id', '=', 'orders.user_id')
+                    ->select('orders.*', 'status_order.name', 'users.name as nama_pemesan')
+                    ->where('orders.status_order_id', 4)
+                    ->get();
+        $data = array(
+            'orderbaru' => $order
+        );
+
+        return view('admin.transaksi.dikirim', $data);
     }
 
     public function detail($id)
     {
         //ambil data detail order sesuai id
         $detail_order = DB::table('detail_orders')
-                            ->join('products','products.id','=','detail_orders.product_id')
-                            ->join('orders','orders.id','=','detail_orders.order_id')
-                            ->select('products.name as nama_produk','products.image','detail_orders.*','products.price','orders.*')
-                            ->where('detail_orders.order_id',$id)
+                            ->join('products', 'products.id', '=', 'detail_orders.product_id')
+                            ->join('orders', 'orders.id', '=', 'detail_orders.order_id')
+                            ->select('products.name as nama_produk', 'products.image', 'detail_orders.*', 'products.price', 'orders.*')
+                            ->where('detail_orders.order_id', $id)
                             ->get();
         $order = DB::table('orders')
-                    ->join('users','users.id','=','orders.user_id')
-                    ->join('status_order','status_order.id','=','orders.status_order_id')
-                    ->select('orders.*','users.name as nama_pelanggan','status_order.name as status')
-                    ->where('orders.id',$id)
+                    ->join('users', 'users.id', '=', 'orders.user_id')
+                    ->join('status_order', 'status_order.id', '=', 'orders.status_order_id')
+                    ->select('orders.*', 'users.name as nama_pelanggan', 'status_order.name as status')
+                    ->where('orders.id', $id)
                     ->first();
         $data = array(
             'detail' => $detail_order,
             'order'  => $order
         );
-        return view('admin.transaksi.detail',$data);
+        return view('admin.transaksi.detail', $data);
     }
     
     public function konfirmasi($id)
@@ -94,11 +108,10 @@ class TransaksiController extends Controller
         //                 'stok' => $ubahstok
         //             ]);
         // }
-        return redirect('admin/transaksi-perlu-dikirim')->with('status','Berhasil Mengonfirmasi Pembayaran Pesanan');
-
+        return redirect('admin/transaksi-perlu-dikirim')->with('status', 'Berhasil Mengonfirmasi Pembayaran Pesanan');
     }
 
-    public function inputresi($id,Request $request)
+    public function inputresi($id, Request $request)
     {
         //funtion untuk menginput no resi pesanan
         $order = Order::findOrFail($id);
@@ -106,6 +119,6 @@ class TransaksiController extends Controller
         $order->status_order_id = 4;
         $order->save();
         dd($order);
-       // return redirect()->route('admin.transaksi.perludikirim')->with('status','Berhasil Menginput No Resi');
+        // return redirect()->route('admin.transaksi.perludikirim')->with('status','Berhasil Menginput No Resi');
     }
 }

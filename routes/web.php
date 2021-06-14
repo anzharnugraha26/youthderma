@@ -33,10 +33,12 @@ Route::group(['prefix' => 'shop'], function () {
     Route::get('/', 'Shop\ShopController@index');
     Route::get('products', 'Shop\ShopController@product');
     Route::get('/product-detail/{id}', 'Shop\ShopController@productDetail');
-
     Route::get('/carts' , 'Shop\CartController@index');
-    Route::get('/cart/remove/{id}', 'Shop\CartController@destroy'); 
     Route::post('add-carts/{id}', 'Shop\CartController@store'); 
+});
+
+Route::group(['middleware' => ['auth'],  'prefix' => 'shop'], function () { 
+    Route::get('/cart/remove/{id}', 'Shop\CartController@destroy'); 
     Route::post('/carts/update', 'Shop\CartController@update');
 
     Route::get('add-address', 'Shop\AlamatController@index');
@@ -56,14 +58,11 @@ Route::group(['prefix' => 'shop'], function () {
     Route::post('/bukti-bayar/{id}', 'Shop\OrderController@kirimBukti');
     Route::get('/order-detail/{id}', 'Shop\OrderController@show');
     Route::get('/pesanan-diterima/{id}', 'Shop\OrderController@pesananditerima');
-
 });
 
 Route::group(['middleware' => ['auth', 'checkRole:admin'],  'prefix' => 'admin'], function () {
-    Route::get('/', 'Admin\AdminController@index');
-    
+    Route::get('/', 'Admin\AdminController@index');  
     Route::get('/booking', 'Admin\AdminController@booking');
-
     //product
     Route::resource('product', 'Admin\ProductController');
     Route::post('product/store', 'Admin\ProductController@store');
@@ -78,6 +77,7 @@ Route::group(['middleware' => ['auth', 'checkRole:admin'],  'prefix' => 'admin']
     Route::get('transaksi', 'Admin\TransaksiController@index');
     Route::get('transaksi-perlu-dicek', 'Admin\TransaksiController@perludicek');
     Route::get('transaksi-perlu-dikirim', 'Admin\TransaksiController@perludikirim');
+    Route::get('transaksi-dikirim', 'Admin\TransaksiController@dikirim');
     Route::get('transaksi-detail/{id}', 'Admin\TransaksiController@detail');
     Route::get('transaksi/konfirmasi/{id}','Admin\TransaksiController@konfirmasi');
     Route::post('/input-resi/{id}','Admin\TransaksiController@inputresi');
