@@ -33,7 +33,7 @@
                     <div class="row">
                     <div class="col-md-3"></div>
                     <div class="col-md-6">
-                        <form action="{{'/bukti-bayar/'. $order->id}}" method="POST" enctype="multipart/form-data">
+                        <form action="{{'/shop/bukti-bayar/'. $order->id}}" method="POST" enctype="multipart/form-data">
                         @csrf
                             <div class="form-group">
                             <label for="">Upload Bukti Pembayaran</label>

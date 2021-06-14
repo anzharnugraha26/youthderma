@@ -41,7 +41,7 @@
                                          {{ 'Rp.' . number_format($o->subtotal)}}
                                     </td>
                                     <td class="text-center small--hide">
-                                        <a href="{{url('/order/konfirmasi/' . $o->id)}}" class="btn btn-secondary btn--small  small--hide" style="background: green">bayar</a>
+                                        <a href="{{url('/shop/order/konfirmasi/' . $o->id)}}" class="btn btn-secondary btn--small  small--hide" style="background: green">bayar</a>
                                         <button type="submit" name="update" class="btn btn-secondary btn--small cart-continue ml-2" style="background: red">Batalkan</button>
                                 </tr>
                                 @endforeach
@@ -93,7 +93,7 @@
                                          {{ 'Rp.' . number_format($o->subtotal)}}
                                     </td>
                                     <td class="text-center small--hide">
-                                        <a href="{{url("order-detail/$o->id")}}" name="clear" class="btn btn-secondary btn--small  small--hide" style="background: green">Detail</button>
+                                        <a href="{{url("shop/order-detail/$o->id")}}" name="clear" class="btn btn-secondary btn--small  small--hide" style="background: green">Detail</button>
                                     	
                                 </tr>
                                 @endforeach

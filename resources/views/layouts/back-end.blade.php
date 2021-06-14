@@ -157,6 +157,34 @@
               </p>
             </a>
           </li> --}}
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fas fa-keyboard"></i>
+              <p>
+                  Transaksi 
+                <i class="fas fa-angle-left right"></i>
+               
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{url("admin/transaksi")}}" class="nav-link">
+                  <p> Transaksi Baru</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url("admin/transaksi-perlu-dicek")}}" class="nav-link">
+                  <p> Transaksi Perlu Di Cek</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url("admin/transaksi-perlu-dikirim")}}" class="nav-link">
+                  <p> Transaksi Perlu Di Kirim</p>
+                </a>
+              </li>
+
+            </ul>
+          </li>
 
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
