@@ -17,9 +17,9 @@
                 	<div class="alert alert-success text-uppercase" role="alert">
 						&nbsp;<strong>Congratulations!</strong> Silahkan Konfirmasi Pembayaran dengan click tombol bayar 
 					</div>
-                	<form action="#" method="post" class="cart style2">
-                		<table>
-                            <thead class="cart__row cart__header">
+                    <div class="box-body table-responsive no-padding">
+                		<table class="table table-bordered table-striped">
+                            <thead>
                                 <tr>
                                     <th class="text-left">Invoice</th>
                                     <th class="text-left">Status</th>
@@ -27,22 +27,22 @@
                                     <th class="text-center">&nbsp;Option</th>
                                 </tr>
                             </thead>
-                    		<tbody>
+                           <tbody>
                                 @foreach($order as $o)
-                                <tr class="cart__row border-bottom line1 cart-flex border-top">
-                                    <td class="cart__meta small--text-left cart-flex-item">
+                                <tr>
+                                    <td>
                                         {{ $o->invoice }}
                                     </td>
-                                    <td class="cart__price-wrapper cart-flex-item">
+                                    <td>
                                         {{ $o->name }}
                                     </td>
-            
-                                    <td class="text-right small--hide cart-price">
+                                    <td>
                                          {{ 'Rp.' . number_format($o->subtotal)}}
                                     </td>
-                                    <td class="text-center small--hide">
+                                    <td>
                                         <a href="{{url('/shop/order/konfirmasi/' . $o->id)}}" class="btn btn-secondary btn--small  small--hide" style="background: green">bayar</a>
                                         <button type="submit" name="update" class="btn btn-secondary btn--small cart-continue ml-2" style="background: red">Batalkan</button>
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -55,19 +55,23 @@
                                 </tr>
                             </tfoot>
                     </table> 
-                    </form>                   
+                    </div>                 
                	</div>
             </div>
         </div>
+
+        
+
         <div class="container">
         	<div class="row">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 main-col">
                 	<div class="alert alert-success text-uppercase" role="alert">
 						&nbsp;<strong>Congratulations!</strong> 
 					</div>
-                	<form action="#" method="post" class="cart style2">
-                		<table>
-                            <thead class="cart__row cart__header">
+                    <div class="box-body table-responsive no-padding">
+                	
+                		<table class="table table-bordered table-striped">
+                            <thead>
                                 <tr>
                                     <th class="text-left">Invoice</th>
                                     <th class="text-left">Status</th>
@@ -77,11 +81,11 @@
                             </thead>
                     		<tbody>
                                 @foreach($dicek as $o)
-                                <tr class="cart__row border-bottom line1 cart-flex border-top">
-                                    <td class="cart__meta small--text-left cart-flex-item">
+                                <tr>
+                                    <td>
                                         {{ $o->invoice }}
                                     </td>
-                                    <td class="cart__price-wrapper cart-flex-item">
+                                    <td>
                                         @if($o->name == 'Perlu Di Cek')
                                         Sedang Di Cek
                                         @else
@@ -89,12 +93,12 @@
                                         @endif
                                     </td>
             
-                                    <td class="text-right small--hide cart-price">
+                                    <td>
                                          {{ 'Rp.' . number_format($o->subtotal)}}
                                     </td>
-                                    <td class="text-center small--hide">
+                                    <td>
                                         <a href="{{url("shop/order-detail/$o->id")}}" name="clear" class="btn btn-secondary btn--small  small--hide" style="background: green">Detail</button>
-                                    	
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -107,7 +111,8 @@
                                 </tr>
                             </tfoot>
                     </table> 
-                    </form>                   
+                   
+                    </div>                   
                	</div>
             </div>
         </div>
@@ -117,9 +122,9 @@
                 	<div class="alert alert-success text-uppercase" role="alert">
 						&nbsp;<strong>Congratulations!</strong> 
 					</div>
-                	<form action="#" method="post" class="cart style2">
-                		<table>
-                            <thead class="cart__row cart__header">
+                    <div class="box-body table-responsive no-padding">
+                		<table class="table table-bordered table-striped">
+                            <thead>
                                 <tr>
                                     <th class="text-left">Invoice</th>
                                     <th class="text-left">Total</th>
@@ -129,11 +134,11 @@
                             </thead>
                     		<tbody>
                                 @foreach($histori as $o)
-                                <tr class="cart__row border-bottom line1 cart-flex border-top">
-                                    <td class="cart__meta small--text-left cart-flex-item">
+                                <tr>
+                                    <td>
                                         {{ $o->invoice }}
                                     </td>
-                                    <td class="cart__price-wrapper cart-flex-item">
+                                    <td>
                                         @if($o->name == 'Perlu Di Cek')
                                         Sedang Di Cek
                                         @else
@@ -141,13 +146,13 @@
                                         @endif
                                     </td>
             
-                                    <td class="text-right small--hide cart-price">
+                                    <td>
                                          {{ 'Rp.' . number_format($o->subtotal)}}
                                     </td>
-                                    <td class="text-center small--hide">
+                                    <td>
                                         <a href="{{url("shop/order-detail/$o->id")}}" name="clear" class="btn btn-secondary btn--small  small--hide" style="background: green">Detail</button>
-                                    	
-                                </tr>
+                                        </td>
+                                    </tr>
                                 @endforeach
                             </tbody>
                     		<tfoot>
@@ -159,7 +164,7 @@
                                 </tr>
                             </tfoot>
                     </table> 
-                    </form>                   
+                    </div>                 
                	</div>
             </div>
         </div>

@@ -182,17 +182,32 @@
               </li>
               <li class="nav-item">
                 <a href="{{url("admin/transaksi-perlu-dicek")}}" class="nav-link">
-                  <p> Transaksi Perlu Di Cek<span class="badge badge-info right"><?php $p = DB::table('orders')->where('status_order_id', 2)->count(); echo $p;?></span></p>
+                  <?php $b = DB::table('orders')->where('status_order_id', 2)->count(); ?>
+                  <p> Transaksi Perlu Di Cek
+                    @if($b > 0)
+                    <span class="badge badge-info right"><?php echo $b;?></span>
+                    @endif
+                  </p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{url("admin/transaksi-perlu-dikirim")}}" class="nav-link">
-                  <p> Transaksi Perlu Di Kirim<span class="badge badge-info right"><?php $p = DB::table('orders')->where('status_order_id', 3)->count(); echo $p;?></span></p>
+                  <?php $c = DB::table('orders')->where('status_order_id', 3)->count();?>
+                  <p> Transaksi Perlu Di Kirim
+                  @if($c > 0)  
+                  <span class="badge badge-info right"><?php echo $c;?></span>
+                  @endif
+                </p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{url("admin/transaksi-dikirim")}}" class="nav-link">
-                  <p> Transaksi Di Kirim <span class="badge badge-info right"><?php $p = DB::table('orders')->where('status_order_id', 4)->count(); echo $p;?></span></p>
+                  <?php $d = DB::table('orders')->where('status_order_id', 4)->count()?>
+                  <p> Transaksi Di Kirim 
+                    @if($d > 0)  
+                  <span class="badge badge-info right"><?php echo $d;?></span>
+                  @endif
+                  </p>
                 </a>
               </li>
 

@@ -49,7 +49,7 @@
                   <td>{{ $item->metode_pembayaran }}</td>
                   <td>{{ $item->name }}</td>
                   <td>
-                    <a class="btn btn-info btn-sm" href="{{url("admin/transaksi-detail/$item->id")}}" style="background:blue;margin-top: 10px"  target="_blank"><i class="fas fa-eye"></i> View</a>
+                    <a class="btn btn-info btn-sm" href="{{url("admin/transaksi-detail/$item->id")}}" style="background:blue;margin-top: 10px"  target="_blank"><i class="fas fa-eye"></i> Input No Resi</a>
                   </td>
                 </tr>
                 @endforeach

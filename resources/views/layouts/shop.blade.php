@@ -123,6 +123,7 @@
                           @if (Auth::check()) 
                           <li class="lvl-2"><a href="{{url("shop/carts")}}" class="site-nav lvl-2" style="color: white">Carts |
                             <span><?php $p = DB::table('keranjangs')->where('user_id', Auth::user()->id)->count(); echo $p;?></span></a></li>
+                            <li class="lvl-2"><a href="{{url("shop/order")}}" class="site-nav lvl-2" style="color: white">Order</a></li>
                           @endif
                           <li class="lvl-2"><a href="" class="site-nav lvl-2" style="color: white">Gallery</a></li>
                           <li class="lvl-2"><a href="{{url("contact-us")}}" class="site-nav lvl-2" style="color: white">Kontak</a></li>
@@ -223,6 +224,7 @@
           <li class="lvl-2"><a href="{{url("shop/contact-us")}}" class="site-nav lvl-2">Kontak </a></li>
           @if(Auth::check())
           <li class="lvl-2"><a href="{{url("shop/carts")}}" class="site-nav lvl-2">Cart</a></li>
+          <li class="lvl-2"><a href="{{url("shop/order")}}" class="site-nav lvl-2" style="color: white">Order</a></li>
           @endif
         </ul>
 	</div>
