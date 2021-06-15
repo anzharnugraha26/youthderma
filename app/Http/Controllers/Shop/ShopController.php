@@ -26,6 +26,11 @@ class ShopController extends Controller
         return view("shop.kontak");
     }
 
+    public function gallery()
+    {
+        return view("shop.gallery");
+    }
+
     
     public function productDetail($id)
     {

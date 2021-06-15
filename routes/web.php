@@ -35,6 +35,8 @@ Route::group(['prefix' => 'shop'], function () {
     Route::get('/product-detail/{id}', 'Shop\ShopController@productDetail');
     Route::get('/carts' , 'Shop\CartController@index');
     Route::post('add-carts/{id}', 'Shop\CartController@store'); 
+    Route::get('contact-us', 'Shop\ShopController@kontakUs');
+    Route::get('gallery', 'Shop\ShopController@gallery');
 });
 
 Route::group(['middleware' => ['auth'],  'prefix' => 'shop'], function () { 

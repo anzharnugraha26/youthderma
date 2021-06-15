@@ -125,8 +125,8 @@
                             <span><?php $p = DB::table('keranjangs')->where('user_id', Auth::user()->id)->count(); echo $p;?></span></a></li>
                             <li class="lvl-2"><a href="{{url("shop/order")}}" class="site-nav lvl-2" style="color: white">Order</a></li>
                           @endif
-                          <li class="lvl-2"><a href="" class="site-nav lvl-2" style="color: white">Gallery</a></li>
-                          <li class="lvl-2"><a href="{{url("contact-us")}}" class="site-nav lvl-2" style="color: white">Kontak</a></li>
+                          <li class="lvl-2"><a href="{{url("shop/gallery")}}" class="site-nav lvl-2" style="color: white">Gallery</a></li>
+                          <li class="lvl-2"><a href="{{url("shop/contact-us")}}" class="site-nav lvl-2" style="color: white">Kontak</a></li>
                       </ul>
                     </nav>
                     <!--End Desktop Menu-->
@@ -220,7 +220,7 @@
         <ul id="MobileNav" class="mobile-nav">
           <li class="lvl-2"><a href="{{url("shop")}}" class="site-nav lvl-2">Home </a></li>
           <li class="lvl-2"><a href="{{url("shop/products")}}" class="site-nav lvl-2">Produk </a></li>
-          <li class="lvl-2"><a href="{{url("/")}}" class="site-nav lvl-2">Gallery </a></li>
+          <li class="lvl-2"><a href="{{url("shop/gallery")}}" class="site-nav lvl-2">Gallery </a></li>
           <li class="lvl-2"><a href="{{url("shop/contact-us")}}" class="site-nav lvl-2">Kontak </a></li>
           @if(Auth::check())
           <li class="lvl-2"><a href="{{url("shop/carts")}}" class="site-nav lvl-2">Cart</a></li>
@@ -318,47 +318,7 @@
     <div class="container">
      <!--Footer Links-->
         <div class="footer-top">
-            {{-- <div class="row">
-                <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
-                    <h4 class="h4">Quick Shop</h4>
-                      <ul>
-                        <li><a href="#">Women</a></li>
-                          <li><a href="#">Men</a></li>
-                          <li><a href="#">Kids</a></li>
-                          <li><a href="#">Sportswear</a></li>
-                          <li><a href="#">Sale</a></li>
-                      </ul>
-                  </div>
-                  <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
-                    <h4 class="h4">Informations</h4>
-                      <ul>
-                        <li><a href="#">About us</a></li>
-                          <li><a href="#">Careers</a></li>
-                          <li><a href="#">Privacy policy</a></li>
-                          <li><a href="#">Terms &amp; condition</a></li>
-                          <li><a href="#">My Account</a></li>
-                      </ul>
-                  </div>
-                  <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
-                    <h4 class="h4">Customer Services</h4>
-                      <ul>
-                        <li><a href="#">Request Personal Data</a></li>
-                          <li><a href="#">FAQ's</a></li>
-                          <li><a href="#">Contact Us</a></li>
-                          <li><a href="#">Orders and Returns</a></li>
-                          <li><a href="#">Support Center</a></li>
-                      </ul>
-                  </div>
-                  <div class="col-12 col-sm-12 col-md-3 col-lg-3 contact-box">
-                    <h4 class="h4">Contact Us</h4>
-                      <ul class="addressFooter">
-                        <li><i class="icon anm anm-map-marker-al"></i><p>55 Gallaxy Enque,<br>2568 steet, 23568 NY</p></li>
-                          <li class="phone"><i class="icon anm anm-phone-s"></i><p>(440) 000 000 0000</p></li>
-                          <li class="email"><i class="icon anm anm-envelope-l"></i><p>sales@yousite.com</p></li>
-                      </ul>
-                  </div>
-              </div>
-            </div> --}}
+            
           <!--End Footer Links-->
           <hr>
           <div class="footer-bottom">
@@ -496,34 +456,7 @@
 
 <!-- Newsletter Popup -->
 <div class="newsletter-wrap" id="popup-container">
-{{-- <div id="popup-window">
-  <a class="btn closepopup"><i class="icon icon anm anm-times-l"></i></a>
-  <!-- Modal content-->
-  <div class="display-table splash-bg">
-    <div class="display-table-cell width40"><img src="assets/images/newsletter-img.jpg" alt="Join Our Mailing List" title="Join Our Mailing List" /> </div>
-    <div class="display-table-cell width60 text-center">
-      <div class="newsletter-left">
-        <h2>Join Our Mailing List</h2>
-        <p>Sign Up for our exclusive email list and be the first to know about new products and special offers</p>
-        <form action="#" method="post">
-          <div class="input-group">
-            <input type="email" class="input-group__field newsletter__input" name="EMAIL" value="" placeholder="Email address" required="">
-            <span class="input-group__btn">
-            <button type="submit" class="btn newsletter__submit" name="commit" id="subscribeBtn"> <span class="newsletter__submit-text--large">Subscribe</span> </button>
-            </span> </div>
-        </form>
-        <ul class="list--inline site-footer__social-icons social-icons">
-          <li><a class="social-icons__link" href="#" title="Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
-          <li><a class="social-icons__link" href="#" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-          <li><a class="social-icons__link" href="#" title="Pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-          <li><a class="social-icons__link" href="#" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-          <li><a class="social-icons__link" href="#" title="YouTube"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
-          <li><a class="social-icons__link" href="#" title="Vimeo"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div> --}}
+
 </div>
 <!-- End Newsletter Popup -->
 

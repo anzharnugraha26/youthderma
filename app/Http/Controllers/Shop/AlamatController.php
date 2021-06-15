@@ -24,11 +24,11 @@ class AlamatController extends Controller
                     ->count();
         //cek jika user sudah mengatur alamat maka jalankan ini
         if($cekAlamat >0){
-            $data['alamats'] = DB::table('alamat')
-            ->join('cities','cities.city_id','=','alamat.cities_id')
+            $data['alamats'] = DB::table('alamats')
+            ->join('cities','cities.city_id','=','alamats.cities_id')
             ->join('provinces','provinces.province_id','=','cities.province_id')
-            ->select('provinces.title as prov','cities.title as kota','alamat.*')
-            ->where('alamat.user_id',$id_user)
+            ->select('provinces.name as prov','cities.name as kota','alamats.*')
+            ->where('alamats.user_id',$id_user)
             ->get();
             return view('shop.alamat.alamatada',$data);               
         }else{
@@ -58,7 +58,7 @@ class AlamatController extends Controller
             'user_id'   => Auth::user()->id,
             'phone' => $request->phone
         ]);
-        dd($alamat);
+        return redirect('shop/carts');
     }
 
    
