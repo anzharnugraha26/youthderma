@@ -7,7 +7,7 @@
             <div class="slide">
                 <div class="blur-up lazyload">
                     <img class="blur-up lazyload" data-src="{{asset('shop-new/assets/images/slideshow-banners/home11-grid-banner1.jpg')}}" src="{{asset('shop-new/assets/images/slideshow-banners/home11-grid-banner1.jpg')}}" alt="Summer Hot Collection" title="Summer Hot Collection" />
-                    <div class="slideshow__text-wrap slideshow__overlay classic middle">
+                    {{-- <div class="slideshow__text-wrap slideshow__overlay classic middle">
                         <div class="slideshow__text-content middle">
                             <div class="wrap-caption right">
                                 <h2 class="h1 mega-title slideshow__title">Summer Hot Collection</h2>
@@ -15,13 +15,13 @@
                                 <span class="btn">Shop now</span>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             <div class="slide">
                 <div class="blur-up lazyload">
                     <img class="blur-up lazyload" data-src="{{asset('shop-new/assets/images/slideshow-banners/home11-grid-banner2.jpg')}}" src="{{asset('shop-new/assets/images/slideshow-banners/home11-grid-banner2.jpg')}}" alt="Summer Bikini Collection" title="Summer Bikini Collection" />
-                    <div class="slideshow__text-wrap slideshow__overlay classic middle">
+                    {{-- <div class="slideshow__text-wrap slideshow__overlay classic middle">
                         <div class="slideshow__text-content middle">
                             <div class="wrap-caption left">
                                 <h2 class="h1 mega-title slideshow__title">Mid Season SAle</h2>
@@ -29,7 +29,7 @@
                                 <span class="btn">Shop now</span>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
@@ -43,8 +43,8 @@
                 <div class="row">
                     <div class="col-12 col-sm-12 col-md-12 col-lg-12">
                         <div class="section-header text-center">
-                            <h2 class="h2">SHOP BY Category</h2>
-                            <p>Shop the Nicest Deals on Best Prices in all category</p>
+                            <h2 class="h2">Gallery BY Youthderama Skincare </h2>
+                            {{-- <p>Shop the Nicest Deals on Best Prices in all category</p> --}}
                         </div>
                         
                     </div>
@@ -53,10 +53,10 @@
                     <div class="col-12 col-sm-12 col-md-12 col-lg-6 image-banner-1">
                         <div class="inner topright">
                             <a href="#">	
-                                   <img data-src="{{asset('image/gallery/1a.jpg')}}" src="{{asset('image/gallery/1a.jpg')}}" alt="Halloween Look" title="Halloween Look" class="blur-up lazyload" />
-                                <div class="ttl">
+                                   <img data-src="{{asset('image/gallery/1a.JPG')}}" src="{{asset('image/gallery/1a.JPG')}}" alt="Gallery" title="Gallery" class="blur-up lazyload" />
+                                {{-- <div class="ttl">
                                     Shop <h5>Halloween Look</h5>
-                                </div>
+                                </div> --}}
                             </a>
                          </div>
                     </div>
@@ -65,20 +65,20 @@
                             <div class="col-12 col-sm-6 col-md-6 col-lg-6 image-banner-3">
                                 <div class="inner topright">
                                     <a href="#">	
-                                        <img data-src="{{asset('shop-new/assets/images/collection/home11-grid-sm-banner2.jpg')}}" src="{{asset('shop-new/assets/images/collection/home11-grid-sm-banner2.jpg')}}" alt="Heeled Boots" title="Heeled Boots" class="blur-up lazyload" />
-                                        <div class="ttl">
+                                        <img data-src="{{asset('image/gallery/1b.jpg')}}" src="{{asset('image/gallery/1b.jpg')}}" alt="Gallery" title="Gallery" class="blur-up lazyload" />
+                                        {{-- <div class="ttl">
                                             Shop <h5>Heeled Boots</h5>
-                                        </div>
+                                        </div> --}}
                                     </a>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-6 col-md-6 col-lg-6">
                                 <div class="inner btmleft">
                                     <a href="#">	
-                                        <img data-src="{{asset('shop-new/assets/images/collection/home11-grid-sm-banner3.jpg')}}" src="{{asset('shop-new/assets/images/collection/home11-grid-sm-banner3.jpg')}}" alt="Caps" title="Caps" class="blur-up lazyload" />
-                                        <div class="ttl">
+                                        <img data-src="{{asset('image/gallery/1c.jpg')}}" src="{{asset('image/gallery/1c.jpg')}}" alt="Gallery" title="Gallery" class="blur-up lazyload" />
+                                        {{-- <div class="ttl">
                                             Shop Cool <h5>Caps</h5>
-                                        </div>
+                                        </div> --}}
                                     </a>
                                 </div>
                             </div>   
@@ -87,10 +87,10 @@
                             <div class="col-12 col-sm-12 col-md-12 col-lg-12 mt-4">
                                 <div class="inner center">
                                     <a href="#">	
-                                        <img data-src="{{asset('shop-new/assets/images/collection/home11-grid-sm-banner4.jpg')}}" src="{{asset('shop-new/assets/images/collection/home11-grid-sm-banner4.jpg')}}" alt="Sun Glasses, Shoes and more" title="Sun Glasses, Shoes and more" class="blur-up lazyload" />
-                                        <div class="ttl">
+                                        <img data-src="{{asset('image/gallery/1d.jpg')}}" src="{{asset('image/gallery/1d.jpg')}}" alt="Gallery" title="Gallery" class="blur-up lazyload" />
+                                        {{-- <div class="ttl">
                                             Hot Summer Collection <h5>Sun Glasses, Shoes and more</h5>
-                                        </div>
+                                        </div> --}}
                                     </a>
                                  </div>
                             </div>
@@ -101,29 +101,29 @@
                     <div class="col-12 col-sm-12 col-md-12 col-lg-5">
                         <div class="inner topleft">
                             <a href="#">	
-                                <img data-src="{{asset('shop-new/assets/images/collection/home11-grid-sm-banner5.jpg')}}" src="{{asset('shop-new/assets/images/collection/home11-grid-sm-banner5.jpg')}}" alt="Shop Jewelry" title="Shop Jewelry" class="blur-up lazyload" />
-                                <div class="ttl">
+                                <img data-src="{{asset('image/gallery/1e.jpg')}}" src="{{asset('image/gallery/1f.jpg')}}" alt="Gallery" title="Gallery" class="blur-up lazyload" />
+                                {{-- <div class="ttl">
                                     All the Shiniest <h5>Shop Jewelry</h5>
-                                </div>
+                                </div> --}}
                             </a>
                          </div>
                      
                         <div class="inner topright">
                             <a href="#">	
-                                <img data-src="{{asset('shop-new/assets/images/collection/home11-grid-sm-banner6.jpg')}}" src="{{asset('shop-new/assets/images/collection/home11-grid-sm-banner6.jpg')}}" alt="Heeled Boots" title="Heeled Boots" class="blur-up lazyload" />
-                                <div class="ttl">
+                                <img data-src="{{asset('image/gallery/1f.jpg')}}" src="{{asset('image/gallery/1f.jpg')}}" alt="Gallery" title="Gallery" class="blur-up lazyload" />
+                                {{-- <div class="ttl">
                                     Every Little Things <h5>Shop Cosmetics</h5>
-                                </div>
+                                </div> --}}
                             </a>
                         </div>
                     </div>
                     <div class="col-12 col-sm-12 col-md-12 col-lg-7 image-banner-2">
                         <div class="inner topleft">
                             <a href="#">	
-                                <img data-src="{{asset('shop-new/assets/images/collection/home11-grid-sm-banner7.jpg')}}" src="{{asset('shop-new/assets/images/collection/home11-grid-sm-banner7.jpg')}}" alt="Caps" title="Caps" class="blur-up lazyload" />
-                                <div class="ttl">
+                                <img data-src="{{asset('image/gallery/1g.jpg')}}" src="{{asset('image/gallery/1g.jpg')}}" alt="Gallery" title="Gallery" class="blur-up lazyload" />
+                                {{-- <div class="ttl">
                                     Elevate Every Look <h5>Shop Men's Clothing</h5>
-                                </div>
+                                </div> --}}
                             </a>
                         </div>
                     </div>
@@ -132,27 +132,27 @@
                     <div class="col-12 col-sm-12 col-md-12 col-lg-6 image-banner-2">
                         <div class="inner center">
                             <a href="#">	
-                                <img data-src="{{asset('shop-new/assets/images/collection/home11-grid-sm-banner8.jpg')}}" src="{{asset('shop-new/assets/images/collection/home11-grid-sm-banner8.jpg')}}" alt="Caps" title="Caps" class="blur-up lazyload" />
-                                <div class="ttl text-center">
+                                <img data-src="{{asset('image/gallery/1h.jpg')}}" src="{{asset('image/gallery/1h.jpg')}}" alt="Gallery" title="Gallery" class="blur-up lazyload" />
+                                {{-- <div class="ttl text-center">
                                     Shape Your look <h5>Shop Now</h5>
-                                </div>
+                                </div> --}}
                             </a>
                         </div>
                     </div>
                     <div class="col-12 col-sm-12 col-md-12 col-lg-6">
                         <div class="inner center">
                             <a href="#">	
-                                <img data-src="{{asset('shop-new/assets/images/collection/home11-grid-sm-banner9.jpg')}}" src="{{asset('shop-new/assets/images/collection/home11-grid-sm-banner9.jpg')}}" alt="Shop Jewelry" title="Shop Jewelry" class="blur-up lazyload" />
-                                <div class="ttl">Shop Kids</div>
+                                <img data-src="{{asset('image/gallery/1i.jpg')}}" src="{{asset('image/gallery/1i.jpg')}}" alt="Shop Jewelry" title="Shop Jewelry" class="blur-up lazyload" />
+                                {{-- <div class="ttl">Shop Kids</div> --}}
                             </a>
                          </div>
                      
                         <div class="inner topright">
                             <a href="#">	
-                                <img data-src="{{asset('shop-new/assets/images/collection/home11-grid-sm-banner10.jpg')}}" src="{{asset('shop-new/assets/images/collection/home11-grid-sm-banner10.jpg')}}" alt="Heeled Boots" title="Heeled Boots" class="blur-up lazyload" />
-                                <div class="ttl">
+                                <img data-src="{{asset('image/gallery/1j.jpg')}}" src="{{asset('image/gallery/1j.jpg')}}" alt="Gallery" title="Gallery" class="blur-up lazyload" />
+                                {{-- <div class="ttl">
                                     Shop <h5>Kids Accessories</h5>
-                                </div>
+                                </div> --}}
                             </a>
                         </div>
                     </div>

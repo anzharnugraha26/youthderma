@@ -328,7 +328,7 @@
           <div class="footer-bottom">
             <div class="row">
                 <!--Footer Copyright-->
-              <div class="col-12 col-sm-12 col-md-12 col-lg-12 order-1 order-md-0 order-lg-0 order-sm-1 copyright text-center"><span></span> &copy; 2021 . All Rights Reserved. <a href="{{url("/")}}" target="_blank">Youthderma Aesthetic Clinic</a></div>
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12 order-1 order-md-0 order-lg-0 order-sm-1 copyright text-center"><span></span> &copy; 2021 . All Rights Reserved. <a href="{{url("/shop")}}" target="_blank">Youthderma SkinCare</a></div>
                   <!--End Footer Copyright-->
               </div>
           </div>
