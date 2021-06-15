@@ -53,7 +53,7 @@
                     <div class="col-12 col-sm-12 col-md-12 col-lg-6 image-banner-1">
                         <div class="inner topright">
                             <a href="#">	
-                                   <img data-src="{{asset('shop-new/assets/images/collection/home11-grid-sm-banner1.jpg')}}" src="{{asset('shop-new/assets/images/collection/home11-grid-sm-banner1.jpg')}}" alt="Halloween Look" title="Halloween Look" class="blur-up lazyload" />
+                                   <img data-src="{{asset('image/gallery/1a.jpg')}}" src="{{asset('image/gallery/1a.jpg')}}" alt="Halloween Look" title="Halloween Look" class="blur-up lazyload" />
                                 <div class="ttl">
                                     Shop <h5>Halloween Look</h5>
                                 </div>
