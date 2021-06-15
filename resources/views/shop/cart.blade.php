@@ -72,7 +72,7 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <td colspan="3" class="text-left"><a href="http://annimexweb.com/" class="btn--link cart-continue"><i class="icon icon-arrow-circle-left"></i> Continue shopping</a></td>
+                                        <td colspan="3" class="text-left"><a href="{{url("shop/products")}}" class="btn--link cart-continue"><i class="icon icon-arrow-circle-left"></i> Continue shopping</a></td>
                                         <td colspan="3" class="text-right">Click For <button name="update" class="btn--link cart-update"><i class="fa fa-refresh"></i> Update</button></td>
                                     </tr>
                                 </tfoot>

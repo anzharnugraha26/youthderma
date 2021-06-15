@@ -3,7 +3,7 @@
 <div class="bg-light py-3">
     <div class="container">
     <div class="row">
-        <div class="col-md-12 mb-0"><a href="index.html">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Cart</strong></div>
+        <div class="col-md-12 mb-0"><a href="{{url("/shop/order")}}">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Detail Pesanan {{Auth::user()->name}}</strong></div>
     </div>
     </div>
 </div>
@@ -74,15 +74,33 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($detail as $o)
+                            <?php $subtotal=0;foreach($detail as $o): ?>
                             <tr>
                                 <td><img src="{{ asset('image/product/'.$o->image) }}" alt="" srcset="" width="50"></td>
                                 <td>{{ $o->nama_produk }}</td>
                                 <td>{{ $o->qty }}</td>
-                                <td> {{ 'Rp.' . number_format( $o->qty * $o->price) }}</td>
-                            </tr>
-                            @endforeach
+                                <td> {{ 'Rp.' . number_format( $o->qty * $o->price,2,',','.') }}</td>
+                            </tr> 
+                            <?php
+                                $total = $o->price * $o->qty;
+                                $subtotal = $subtotal + $total;
+                            ?> 
+                            <?php endforeach; ?>
                         </tbody>
+                        <tfoot class="font-weight-600">
+                            <tr>
+                                <td colspan="3" class="text-right">Total</td>
+                                <td>{{ 'Rp.' . number_format($subtotal,2,',','.') }}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" class="text-right">Biaya Ongkir (JNE)</td>
+                                <td>{{ 'Rp.' . number_format($o->ongkir,2,',','.') }}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" class="text-right">Grand Total</td>
+                                <td>{{ 'Rp.' . number_format($o->ongkir + $subtotal,2,',','.') }}</td>
+                            </tr>
+                        </tfoot>
                         </table>
                     
                 </div>
