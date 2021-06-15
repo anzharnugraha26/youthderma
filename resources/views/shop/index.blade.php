@@ -27,8 +27,8 @@
                         <div class="slideshow__text-content middle">
                             <div class="container">
                                 <div class="wrap-caption center">
-                                    <h2 class="h1 mega-title slideshow__title">Fashion &amp; Show</h2>
-                                    <span class="mega-subtitle slideshow__subtitle">A World Fashion and Trendy Fashion Clother's</span>
+                                    {{-- <h2 class="h1 mega-title slideshow__title">Fashion &amp; Show</h2>
+                                    <span class="mega-subtitle slideshow__subtitle">A World Fashion and Trendy Fashion Clother's</span> --}}
                                     <span class="btn">Shop now</span>
                                 </div>
                             </div>
@@ -102,18 +102,6 @@
                                <div class="product-price">
                                    <span class="price">{{ 'Rp.' . number_format($item->price) }}</span>
                                </div>
-
-                               <div class="product-price">
-                                   <span class="price">{{ $item->weight }}.gr</span>
-                               </div>
-                               
-                               <ul class="swatches">
-                                   <li class="swatch small rounded navy" rel="assets/images/product-images/product-image-stw1.jpg"></li>
-                                   <li class="swatch small rounded green" rel="assets/images/product-images/product-image-stw1-1.jpg"></li>
-                                   <li class="swatch small rounded gray" rel="assets/images/product-images/product-image-stw1-2.jpg"></li>
-                                   <li class="swatch small rounded aqua" rel="assets/images/product-images/product-image-stw1-3.jpg"></li>
-                                   <li class="swatch small rounded orange" rel="assets/images/product-images/product-image-stw1-4.jpg"></li>
-                               </ul>
                                <!-- End Variant -->
                            </div>
                            <!-- End product details -->
@@ -136,23 +124,90 @@
             <div class="hero__inner">
                 <div class="container">
                     <div class="wrap-text left text-small font-bold">
-                        <h2 class="h2 mega-title">Belle <br> The best choice for your store</h2>
-                        <div class="rte-setting mega-subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</div>
-                        <a href="#" class="btn">Purchase Now</a>
+                        <h2 class="h2 mega-title">Physician Formulated Skincare</h2>
+                        <div class="rte-setting mega-subtitle">Our Skincare essentials are designed to make you look and feel your glowy</div>
+                        <a href="{{url("shop/product")}}" class="btn">Shop Now</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!--End Parallax Section-->
+
+    <div class="section imgBanners pb-0">
+        <div class="imgBnrOuter">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="section-header text-center">
+                            {{-- <h2 class="h2">Gallery BY Youthderma Skincare </h2> --}}
+                            {{-- <p>Shop the Nicest Deals on Best Prices in all category</p> --}}
+                        </div>
+                        
+                    </div>
+                </div>    
+                <div class="row img-grid-banner1">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 image-banner-1">
+                        <div class="inner topright">
+                            <a href="#">	
+                                   <img data-src="{{asset('image/gallery/1a.JPG')}}" src="{{asset('image/gallery/1a.JPG')}}" alt="Gallery" title="Gallery" class="blur-up lazyload" />
+                                {{-- <div class="ttl">
+                                    Shop <h5>Halloween Look</h5>
+                                </div> --}}
+                            </a>
+                         </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 image-banner-2">
+                        <div class="row">
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 image-banner-3">
+                                <div class="inner topright">
+                                    <a href="#">	
+                                        <img data-src="{{asset('image/gallery/1b.jpg')}}" src="{{asset('image/gallery/1b.jpg')}}" alt="Gallery" title="Gallery" class="blur-up lazyload" />
+                                        {{-- <div class="ttl">
+                                            Shop <h5>Heeled Boots</h5>
+                                        </div> --}}
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+                                <div class="inner btmleft">
+                                    <a href="#">	
+                                        <img data-src="{{asset('image/gallery/1c.jpg')}}" src="{{asset('image/gallery/1c.jpg')}}" alt="Gallery" title="Gallery" class="blur-up lazyload" />
+                                        {{-- <div class="ttl">
+                                            Shop Cool <h5>Caps</h5>
+                                        </div> --}}
+                                    </a>
+                                </div>
+                            </div>   
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 mt-4">
+                                <div class="inner center">
+                                    <a href="#">	
+                                        <img data-src="{{asset('image/gallery/1d.jpg')}}" src="{{asset('image/gallery/1d.jpg')}}" alt="Gallery" title="Gallery" class="blur-up lazyload" />
+                                        {{-- <div class="ttl">
+                                            Hot Summer Collection <h5>Sun Glasses, Shoes and more</h5>
+                                        </div> --}}
+                                    </a>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             
+            </div>
+        </div>
+    </div>
+
+
     <!--New Arrivals-->
     <div class="product-rows section">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="section-header text-center">
-                        <h2 class="h2">New Arrivals</h2>
-                        <p>Grab these new items before they are gone!</p>
+                        <h2 class="h2">All Products</h2>
+                        {{-- <p>Grab these new items before they are gone!</p> --}}
                     </div>
                 </div>
             </div>
@@ -231,42 +286,9 @@
             </div>
        </div>
     </div>	
-    <!--End Featured Product-->
+
     
-    <!--Logo Slider-->
 
-    {{-- <div class="section logo-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="section-header text-center">
-                        <h2 class="h2">The Most Loved Brands</h2>
-                    </div>
-                    <div class="logo-bar">
-                        <div class="logo-bar__item">
-                            <img src="assets/images/logo/brandlogo1.png" alt="" title="" />
-                        </div>
-                        <div class="logo-bar__item">
-                            <img src="assets/images/logo/brandlogo2.png" alt="" title="" />
-                        </div>
-                        <div class="logo-bar__item">
-                            <img src="assets/images/logo/brandlogo3.png" alt="" title="" />
-                        </div>
-                        <div class="logo-bar__item">
-                            <img src="assets/images/logo/brandlogo4.png" alt="" title="" />
-                        </div>
-                        <div class="logo-bar__item">
-                            <img src="assets/images/logo/brandlogo5.png" alt="" title="" />
-                        </div>
-                        <div class="logo-bar__item">
-                            <img src="assets/images/logo/brandlogo6.png" alt="" title="" />
-                        </div>
-                        </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
 
-    <!--End Logo Slider-->
 </div>  
 @endsection

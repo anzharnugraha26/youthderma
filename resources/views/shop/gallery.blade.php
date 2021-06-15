@@ -43,7 +43,7 @@
                 <div class="row">
                     <div class="col-12 col-sm-12 col-md-12 col-lg-12">
                         <div class="section-header text-center">
-                            <h2 class="h2">Gallery BY Youthderama Skincare </h2>
+                            <h2 class="h2">Gallery BY Youthderma Skincare </h2>
                             {{-- <p>Shop the Nicest Deals on Best Prices in all category</p> --}}
                         </div>
                         
