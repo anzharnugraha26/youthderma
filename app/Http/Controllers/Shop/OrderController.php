@@ -73,13 +73,14 @@ class OrderController extends Controller
         $data = array(
             'invoice' => $order->invoice,
             'subtotal' => $order->subtotal,
+            'email' => Auth::user()->email,
             'date' => date('Ymd')
         );
-        // Mail::send('email', $data, function ($message) {
-        //     $message->from(Auth::user()->email, Auth::user()->email);
-        //     $message->to('youthderma@gmail.com', 'Youthderma aesthetic Clinic');
-        //     $message->subject('Pesanan dari  :' . Auth::user()->email, Auth::user()->email);
-        // });
+        Mail::send('emailorder', $data, function ($message) {
+            $message->from(Auth::user()->email, Auth::user()->email);
+            $message->to('youthderma@gmail.com', 'Youthderma aesthetic Clinic');
+            $message->subject('Pesanan dari  :' . Auth::user()->email, Auth::user()->email);
+        });
         return redirect('/shop/order');
         // dd($order);
     }
@@ -103,7 +104,16 @@ class OrderController extends Controller
         $order->status_order_id  = 2;
 
         $order->update();
-        // dd($order);
+        $data = array(
+            'invoice' => $order->invoice,
+            'email' => Auth::user()->email,
+            'date' => date('Ymd')
+        );
+        Mail::send('email.konfirmasi', $data, function ($message) {
+            $message->from(Auth::user()->email, Auth::user()->email);
+            $message->to('youthderma@gmail.com', 'Youthderma aesthetic Clinic');
+            $message->subject('Pesanan dari  :' . Auth::user()->email, Auth::user()->email);
+        });
         return redirect('/shop/order');
     }
 
@@ -136,6 +146,4 @@ class OrderController extends Controller
         $order->save();
         return redirect('shop/order');
     }
-
-
 }
