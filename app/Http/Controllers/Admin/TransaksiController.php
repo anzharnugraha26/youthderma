@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class TransaksiController extends Controller
 {
@@ -97,6 +98,16 @@ class TransaksiController extends Controller
         $order = Order::findOrFail($id);
         $order->status_order_id = 3;
         $order->save();
+        $data = array(
+            'invoice' => $order->invoice,
+            'subtotal' => $order->subtotal,
+            'email' => $order->email,
+            'date' => date('Y-m-d')
+        );
+        Mail::send('email.adminkonfirmasi', $data, function ($message) use ($order) {
+            $message->from('youthderma@gmail.com', 'YouthDerma Skincare');
+            $message->to($order->user_email, 'Cusstomer');
+        });
         // $kurangistok = DB::table('detail_order')->where('order_id',$id)->get();
         // foreach($kurangistok as $kurang){
         //     $ambilproduk = DB::table('products')->where('id',$kurang->product_id)->first();
@@ -118,6 +129,17 @@ class TransaksiController extends Controller
         $order->no_resi = $request->no_resi;
         $order->status_order_id = 4;
         $order->save();
+        $data = array(
+            'invoice' => $order->invoice,
+            'subtotal' => $order->subtotal,
+            'email' => $order->email,
+            'noresi' => $order->no_resi,
+            'date' => date('Y-m-d')
+        );
+        Mail::send('email.adminnoresi', $data, function ($message) use ($order) {
+            $message->from('youthderma@gmail.com', 'YouthDerma Skincare');
+            $message->to($order->user_email, 'Cusstomer');
+        });
         dd($order);
         // return redirect()->route('admin.transaksi.perludikirim')->with('status','Berhasil Menginput No Resi');
     }

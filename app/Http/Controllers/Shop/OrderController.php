@@ -50,6 +50,7 @@ class OrderController extends Controller
         $order =  Order::create([
             'invoice' => $request->invoice,
                 'user_id' => Auth::user()->id,
+                'user_email' => Auth::user()->email,
                 'phone' => $request->no_hp,
                 'subtotal'=> $request->subtotal,
                 'status_order_id' => 1,
