@@ -143,4 +143,19 @@ class TransaksiController extends Controller
         dd($order);
         // return redirect()->route('admin.transaksi.perludikirim')->with('status','Berhasil Menginput No Resi');
     }
+
+    public function selesai()
+    {
+        $order = DB::table('orders')
+        ->join('status_order', 'status_order.id', '=', 'orders.status_order_id')
+        ->join('users', 'users.id', '=', 'orders.user_id')
+        ->select('orders.*', 'status_order.name', 'users.name as nama_pemesan')
+        ->where('orders.status_order_id', 5)
+        ->orderBy('id', 'DESC')->get();
+        $data = array(
+                'orderbaru' => $order
+                );
+
+        return view('admin.transaksi.selesai', $data);
+    }
 }

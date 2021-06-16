@@ -163,7 +163,7 @@
               <p>
                 Transaksi 
                 <i class="fas fa-angle-left right"></i>
-                <?php $p = DB::table('orders')->count(); ?>
+                <?php $p = DB::table('orders')->whereIn('status_order_id', [1,2,3,4])->count(); ?>
                 @if($p > 0)
                 <span class="badge badge-info right"><?php echo $p ?></span>
                 @endif
@@ -207,6 +207,12 @@
                     @if($d > 0)  
                   <span class="badge badge-info right"><?php echo $d;?></span>
                   @endif
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url("admin/transaksi-selesai")}}" class="nav-link">
+                  <p> Transaksi Selesai 
                   </p>
                 </a>
               </li>

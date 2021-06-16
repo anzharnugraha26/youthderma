@@ -202,7 +202,12 @@
                                 </div>
                                  <div class="buttonSet text-center">
                                     <a href="{{url("shop/carts")}}" class="btn btn-secondary btn--small">View Cart</a>
+                                    <?php $alamat = DB::table('alamats')->where('user_id', Auth::user()->id)->first(); ?>
+                                    @if($alamat == null)
+                                    <a href="{{url("shop/add-address")}}" class="btn btn-secondary btn--small">Add-Address</a>
+                                    @else 
                                     <a href="{{url("shop/check-out")}}" class="btn btn-secondary btn--small">Checkout</a>
+                                    @endif
                                 </div>
                             </div>
                         </div>
