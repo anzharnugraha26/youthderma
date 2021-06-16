@@ -46,7 +46,7 @@
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Price</label>
-                            <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Enter Price" name="price">
+                            <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Enter Price" name="price" value="{{$product->price}}">
                         </div>
 
                         <div class="form-group">

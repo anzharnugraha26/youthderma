@@ -76,7 +76,7 @@
                                         <button class="btn btn-addto-cart" tabindex="0">View Detail</button>
                                </form>
                                 @endif
-                               <div class="button-set">
+                               {{-- <div class="button-set">
                                    <a href="javascript:void(0)" title="Quick View" class="quick-view-popup quick-view" data-toggle="modal" data-target="#content_quickview">
                                        <i class="icon anm anm-search-plus-r"></i>
                                    </a>
@@ -90,7 +90,7 @@
                                            <i class="icon anm anm-random-r"></i>
                                        </a>
                                    </div>
-                               </div>
+                               </div> --}}
                            </div>
 
                            <div class="product-details text-center">

@@ -57,12 +57,12 @@
 
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-12" style="margin-top: 15%">
                             <div class="product-single__meta">
                                 <h1 class="product-single__title">{{$product->name}}</h1>
-                                <div class="product-nav clearfix">					
+                                {{-- <div class="product-nav clearfix">					
                                     <a href="#" class="next" title="Next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                </div>
+                                </div> --}}
                                 <div class="prInfoRow">
                                     <div class="product-stock"> <span class="instock ">In Stock</span> <span class="outstock hide">Unavailable</span> </div>
                                     <div class="product-sku">SKU: <span class="variant-sku">19115-rdxs</span></div>
@@ -86,7 +86,16 @@
                                     <img src="assets/images/order-icon.jpg" alt="" /> <strong class="items">5</strong> sold in last <strong class="time">26</strong> hours</div>
                                 </div> --}}
                             <div class="product-single__description rte">
+                                <h5>Description</h5>
                                 <p>{{$product->description}}</p>
+                            </div>
+                            <div class="product-single__description rte">
+                                <h5>Suited To</h5>
+                                <p>{{$product->suitedto}}</p>
+                            </div>
+                            <div class="product-single__description rte">
+                                <h5>How To Use</h5>
+                                <p>{{$product->howtouse}}</p>
                             </div>
                             @if(Auth::check())
 
@@ -168,15 +177,15 @@
                                     </div>
                                 </div>
                                 
-                            <p id="freeShipMsg" class="freeShipMsg" data-price="199"><i class="fa fa-truck" aria-hidden="true"></i> GETTING CLOSER! ONLY <b class="freeShip"><span class="money" data-currency-usd="$199.00" data-currency="USD">$199.00</span></b> AWAY FROM <b>FREE SHIPPING!</b></p>
+                            {{-- <p id="freeShipMsg" class="freeShipMsg" data-price="199"><i class="fa fa-truck" aria-hidden="true"></i> GETTING CLOSER! ONLY <b class="freeShip"><span class="money" data-currency-usd="$199.00" data-currency="USD">$199.00</span></b> AWAY FROM <b>FREE SHIPPING!</b></p>
                             <p class="shippingMsg"><i class="fa fa-clock-o" aria-hidden="true"></i> ESTIMATED DELIVERY BETWEEN <b id="fromDate">Wed. May 1</b> and <b id="toDate">Tue. May 7</b>.</p>
-                            <div class="userViewMsg" data-user="20" data-time="11000"><i class="fa fa-users" aria-hidden="true"></i> <strong class="uersView">14</strong> PEOPLE ARE LOOKING FOR THIS PRODUCT</div>
+                            <div class="userViewMsg" data-user="20" data-time="11000"><i class="fa fa-users" aria-hidden="true"></i> <strong class="uersView">14</strong> PEOPLE ARE LOOKING FOR THIS PRODUCT</div> --}}
                         </div>
                 </div>
             </div>
             <!--End-product-single-->
             <!--Product Fearure-->
-            <div class="prFeatures">
+            {{-- <div class="prFeatures">
                 <div class="row">
                     <div class="col-12 col-sm-6 col-md-6 col-lg-3 feature">
                         <img src="{{asset('shop-new/assets/images/credit-card.png')}}" alt="Safe Payment" title="Safe Payment" />
@@ -195,7 +204,7 @@
                         <div class="details"><h3>Hotline</h3>Talk to help line for your question on 4141 456 789, 4125 666 888</div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <!--End Product Fearure-->
             <!--Product Tabs-->
             <div class="tabs-listing">
@@ -213,17 +222,17 @@
                     <li rel="tab3"><a class="tablink">Size Chart</a></li>
                     <li rel="tab4"><a class="tablink">Shipping &amp; Returns</a></li>
                 </ul> --}}
-                <div class="tab-container">
+                <div class="tab-container" style="margin-top: 40px">
                     <h2>Detail Product</h2>
                     <hr>
                     <div id="tab1" class="tab-content">
                         <div class="product-description rte">
-                            <h3>Description</h3>
+                            {{-- <h3>Description</h3>
                             <p>{{$product->description}}</p>
                             <h3>Suited To</h3>
                             <p>{{$product->suitedto}}</p>
                             <h3>How To Use </h3>
-                            <p>{{$product->howtouse}}</p>
+                            <p>{{$product->howtouse}}</p> --}}
                             <h3>Skin Feel</h3>
                             <p>{{$product->skinfeel}}</p>
                             <h3> Key Ingredients</h3>
