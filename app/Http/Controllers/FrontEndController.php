@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Booking;
 use App\Product;
+use App\ProductForProfile;
 use App\Treatment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -34,7 +35,7 @@ class FrontEndController extends Controller
 
     public function product()
     {
-        $product = Product::all();
+        $product = ProductForProfile::all();
         return view('front-end.product', compact('product'));
     }
 
