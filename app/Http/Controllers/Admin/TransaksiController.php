@@ -16,7 +16,7 @@ class TransaksiController extends Controller
         ->join('users', 'users.id', '=', 'orders.user_id')
         ->select('orders.*', 'status_order.name', 'users.name as nama_pemesan')
         ->where('orders.status_order_id', 1)
-        ->get();
+        ->orderBy('id', 'DESC')->get();
         $data = array(
             'orderbaru' => $order
             );
@@ -31,7 +31,7 @@ class TransaksiController extends Controller
         ->join('users', 'users.id', '=', 'orders.user_id')
         ->select('orders.*', 'status_order.name', 'users.name as nama_pemesan')
         ->where('orders.status_order_id', 2)
-        ->get();
+        ->orderBy('id', 'DESC')->get();
         $data = array(
             'orderbaru' => $order
         );
@@ -47,7 +47,7 @@ class TransaksiController extends Controller
                     ->join('users', 'users.id', '=', 'orders.user_id')
                     ->select('orders.*', 'status_order.name', 'users.name as nama_pemesan')
                     ->where('orders.status_order_id', 3)
-                    ->get();
+                    ->orderBy('id', 'DESC')->get();
         $data = array(
             'orderbaru' => $order
         );
@@ -62,7 +62,7 @@ class TransaksiController extends Controller
                     ->join('users', 'users.id', '=', 'orders.user_id')
                     ->select('orders.*', 'status_order.name', 'users.name as nama_pemesan')
                     ->where('orders.status_order_id', 4)
-                    ->get();
+                    ->orderBy('id', 'DESC')->get();
         $data = array(
             'orderbaru' => $order
         );

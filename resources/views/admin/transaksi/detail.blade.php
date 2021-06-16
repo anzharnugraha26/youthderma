@@ -91,7 +91,7 @@
                   <tr>
                       <td>Catatan Pelanggan</td>
                       <td>:</td>
-                      <td  class="p-2"></td>
+                      <td  class="p-2">{{ $order->notes }}</td>
                   </tr>
                   @if($order->bukti_bayar != null)
                   <tr>

@@ -230,7 +230,12 @@
                         </div>
                     </div>
                     
-                    <hr />
+                    <div class="your-payment">
+                        <h2 class="payment-title mb-3">Notes</h2>
+                        <div class="payment-method">
+                            <textarea name="notes"></textarea>
+                        </div>
+                    </div>
 
                     <div class="your-payment">
                         <h2 class="payment-title mb-3">payment method</h2>

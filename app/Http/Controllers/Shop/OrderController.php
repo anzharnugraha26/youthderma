@@ -20,14 +20,14 @@ class OrderController extends Controller
         ->join('status_order', 'status_order.id', '=', 'orders.status_order_id')
         ->select('orders.*', 'status_order.name')
         ->where('orders.status_order_id', 1)
-        ->where('orders.user_id', $userId)->get();
+        ->where('orders.user_id', $userId)->orderBy('id', 'DESC')->get();
         $dicek = DB::table('orders')
         ->join('status_order', 'status_order.id', '=', 'orders.status_order_id')
         ->select('orders.*', 'status_order.name')
         ->where('orders.status_order_id', '!=', 1)
         ->Where('orders.status_order_id', '!=', 5)
         ->Where('orders.status_order_id', '!=', 6)
-        ->where('orders.user_id', $userId)->get();
+        ->where('orders.user_id', $userId)->orderBy('id', 'DESC')->get();
         $histori = DB::table('orders')
         ->join('status_order', 'status_order.id', '=', 'orders.status_order_id')
         ->select('orders.*', 'status_order.name')
@@ -35,7 +35,7 @@ class OrderController extends Controller
         ->Where('orders.status_order_id', '!=', 2)
         ->Where('orders.status_order_id', '!=', 3)
         ->Where('orders.status_order_id', '!=', 4)
-        ->where('orders.user_id', $userId)->get();
+        ->where('orders.user_id', $userId)->orderBy('id', 'DESC')->get();
         $data = array(
                 'order' => $order,
                 'dicek' => $dicek,
@@ -55,7 +55,7 @@ class OrderController extends Controller
                 'status_order_id' => 1,
                 'metode_pembayaran' => "trf",
                 'ongkir' => $request->ongkir,
-                // 'pesan' => "test"
+                'notes' => $request->notes
         ]);
 
         $order = Order::where('invoice', $request->invoice)->first();
