@@ -6,7 +6,7 @@
         <div class="home-slideshow">
             <div class="slide">
                 <div class="blur-up lazyload">
-                    <img class="blur-up lazyload" data-src="{{asset('shop-new/assets/images/slideshow-banners/home11-grid-banner1.jpg')}}" src="{{asset('shop-new/assets/images/slideshow-banners/home11-grid-banner1.jpg')}}" alt="Summer Hot Collection" title="Summer Hot Collection" />
+                    <img class="blur-up lazyload" data-src="{{asset('image/shop-slider/1.jpg')}}" src="{{asset('image/shop-slider/1.jpg')}}" alt="Summer Hot Collection" title="Summer Hot Collection" />
                     {{-- <div class="slideshow__text-wrap slideshow__overlay classic middle">
                         <div class="slideshow__text-content middle">
                             <div class="wrap-caption right">
@@ -20,7 +20,7 @@
             </div>
             <div class="slide">
                 <div class="blur-up lazyload">
-                    <img class="blur-up lazyload" data-src="{{asset('shop-new/assets/images/slideshow-banners/home11-grid-banner2.jpg')}}" src="{{asset('shop-new/assets/images/slideshow-banners/home11-grid-banner2.jpg')}}" alt="Summer Bikini Collection" title="Summer Bikini Collection" />
+                    <img class="blur-up lazyload" data-src="{{asset('image/shop-slider/4.jpg')}}" src="{{asset('image/shop-slider/4.jpg')}}" alt="Summer Bikini Collection" title="Summer Bikini Collection" />
                     {{-- <div class="slideshow__text-wrap slideshow__overlay classic middle">
                         <div class="slideshow__text-content middle">
                             <div class="wrap-caption left">
