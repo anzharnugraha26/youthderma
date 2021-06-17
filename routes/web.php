@@ -26,6 +26,7 @@ Route::get('/product' ,'FrontEndController@product');
 Route::get('/about-us' ,'FrontEndController@about');
 Route::get('/product-detail/{id}' ,'FrontEndController@detailproduct');
 Route::post('/savebooking' ,'FrontEndController@saveBooking');
+Route::get('midtrans', 'MidtransController@index');
 
 
 Auth::routes(['verify' => true]);
