@@ -1,6 +1,5 @@
 @extends('layouts.shop')
-@section('content')
-    
+@section('content')    
 
 <div id="page-content">
     	<!--Page Title-->
@@ -120,7 +119,7 @@
         	<div class="row">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 main-col">
                 	<div class="alert alert-success text-uppercase" role="alert">
-						&nbsp;<strong>Congratulations!</strong> 
+						&nbsp;<strong>History Orders</strong> 
 					</div>
                     <div class="box-body table-responsive no-padding">
                 		<table class="table table-bordered table-striped">
