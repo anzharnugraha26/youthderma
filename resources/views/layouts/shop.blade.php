@@ -38,7 +38,7 @@
     @endif --}}
     <!--End Promotion Bar-->
 	<!--Search Form Drawer-->
-	<div class="search">
+	{{-- <div class="search">
         <div class="search__form">
             <form class="search-bar__form" action="#">
                 <button class="go-btn search__button" type="submit"><i class="icon anm anm-search-l"></i></button>
@@ -46,14 +46,14 @@
             </form>
             <button type="button" class="search-trigger close-btn"><i class="anm anm-times-l"></i></button>
         </div>
-    </div>
+    </div> --}}
     <!--End Search Form Drawer-->
     <!--Top Header-->
     <div class="top-header" style="background: white">
         <div class="container-fluid">
             <div class="row">
             	<div class="col-10 col-sm-8 col-md-5 col-lg-4">
-                    <div class="currency-picker">
+                    {{-- <div class="currency-picker">
                         <span class="selected-currency">USD</span>
                         <ul id="currencies">
                             <li data-currency="INR" class="">INR</li>
@@ -64,14 +64,14 @@
                             <li data-currency="EUR" class="">EUR</li>
                             <li data-currency="JPY" class="">JPY</li>
                         </ul>
-                    </div>
-                    <div class="language-dropdown">
+                    </div> --}}
+                    {{-- <div class="language-dropdown">
                         <span class="language-dd">English</span>
                         <ul id="language">
                             <li class="">German</li>
                             <li class="">French</li>
                         </ul>
-                    </div>
+                    </div> --}}
                     <p class="phone-no"><i class="anm anm-phone-s"></i> 0821 1210 0020</p>
                 </div>
                 <div class="col-sm-4 col-md-4 col-lg-4 d-none d-lg-none d-md-block d-lg-block">
@@ -104,7 +104,7 @@
             	<!--Desktop Logo-->
                 <div class="logo col-md-2 col-lg-2 d-none d-lg-block">
                     <a href="{{url("/shop")}}">
-                    	<img src="{{asset('image/logo/logo.png')}}" alt="Youthderma Aesthetic Clinic" title="Youthderma Aesthetic Clinic" />
+                    	<img src="{{asset('image/logo/shop.png')}}" alt="Youthderma Aesthetic Clinic" title="Youthderma Aesthetic Clinic" />
                     </a>
                 </div>
                 <!--End Desktop Logo-->
@@ -118,15 +118,15 @@
                 	<!--Desktop Menu-->
                 	<nav class="grid__item" id="AccessibleNav"><!-- for mobile -->
                         <ul id="siteNav" class="site-nav medium center hidearrow">
-                          <li class="lvl-2"><a href="{{url("/shop")}}" class="site-nav lvl-2" style="color: white">Home </a></li>
-                          <li class="lvl-2"><a href="{{url("shop/products")}}" class="site-nav lvl-2" style="color: white">Produk </a></li>
+                          <li><a href="{{url("/shop")}}" class="site-nav lvl-2" style="color: white;text-transform: capitalize;">Home </a></li>
+                          <li class="lvl-2"><a href="{{url("shop/products")}}" class="site-nav lvl-2" style="color: white;text-transform: capitalize;">Produk </a></li>
                           @if (Auth::check()) 
-                          <li class="lvl-2"><a href="{{url("shop/carts")}}" class="site-nav lvl-2" style="color: white">Carts |
+                          <li class="lvl-2"><a href="{{url("shop/carts")}}" class="site-nav lvl-2" style="color: white;text-transform: capitalize;">Carts |
                             <span><?php $p = DB::table('keranjangs')->where('user_id', Auth::user()->id)->count(); echo $p;?></span></a></li>
-                            <li class="lvl-2"><a href="{{url("shop/order")}}" class="site-nav lvl-2" style="color: white">Order</a></li>
+                            <li class="lvl-2"><a href="{{url("shop/order")}}" class="site-nav lvl-2" style="color: white;text-transform: capitalize;">Order</a></li>
                           @endif
-                          <li class="lvl-2"><a href="{{url("shop/gallery")}}" class="site-nav lvl-2" style="color: white">Gallery</a></li>
-                          <li class="lvl-2"><a href="{{url("shop/contact-us")}}" class="site-nav lvl-2" style="color: white">Kontak</a></li>
+                          <li class="lvl-2"><a href="{{url("shop/gallery")}}" class="site-nav lvl-2" style="color: white;text-transform: capitalize;">Gallery</a></li>
+                          <li class="lvl-2"><a href="{{url("shop/contact-us")}}" class="site-nav lvl-2" style="color: white;text-transform: capitalize;">Kontak</a></li>
                       </ul>
                     </nav>
                     <!--End Desktop Menu-->
@@ -214,9 +214,9 @@
                         @endif
                         <!--End Minicart Popup-->
                     </div>
-                    <div class="site-header__search">
+                    {{-- <div class="site-header__search">
                     	<button type="button" class="search-trigger"><i class="icon anm anm-search-l"></i></button>
-                    </div>
+                    </div> --}}
                 </div>
         	</div>
         </div>
@@ -313,8 +313,8 @@
                               {{-- <li><a class="social-icons__link" href="#" target="_blank" title="Belle Multipurpose Bootstrap 4 Template on Facebook"><i class="icon icon-facebook"></i></a></li>
                               <li><a class="social-icons__link" href="#" target="_blank" title="Belle Multipurpose Bootstrap 4 Template on Twitter"><i class="icon icon-twitter"></i> <span class="icon__fallback-text">Twitter</span></a></li>
                               <li><a class="social-icons__link" href="#" target="_blank" title="Belle Multipurpose Bootstrap 4 Template on Pinterest"><i class="icon icon-pinterest"></i> <span class="icon__fallback-text">Pinterest</span></a></li> --}}
-                              <li><a class="social-icons__link" href="https://www.instagram.com/youthdermaclinic/" target="_blank" title="Youthderma Skincare on Instagram"><i class="icon icon-instagram"></i> <span class="icon__fallback-text">Instagram</span></a></li>
-                              Oficial Account Instagram :<a class="social-icons__link" href="https://www.instagram.com/youthdermaclinic/" target="_blank" title="Youthderma Skincare on Instagram"> @youthdermaclinic</a>
+                              <li><a class="social-icons__link" href="https://www.instagram.com/youthderma_id/" target="_blank" title="Youthderma Skincare on Instagram"><i class="icon icon-instagram"></i> <span class="icon__fallback-text">Instagram</span></a></li>
+                              Oficial Account Instagram :<a class="social-icons__link" href="https://www.instagram.com/youthderma_id/" target="_blank" title="Youthderma Skincare on Instagram"> @youthdermaclinic</a>
                               {{-- <li><a class="social-icons__link" href="#" target="_blank" title="Belle Multipurpose Bootstrap 4 Template on Tumblr"><i class="icon icon-tumblr-alt"></i> <span class="icon__fallback-text">Tumblr</span></a></li>
                               <li><a class="social-icons__link" href="#" target="_blank" title="Belle Multipurpose Bootstrap 4 Template on YouTube"><i class="icon icon-youtube"></i> <span class="icon__fallback-text">YouTube</span></a></li>
                               <li><a class="social-icons__link" href="#" target="_blank" title="Belle Multipurpose Bootstrap 4 Template on Vimeo"><i class="icon icon-vimeo-alt"></i> <span class="icon__fallback-text">Vimeo</span></a></li> --}}
