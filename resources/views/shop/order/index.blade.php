@@ -11,6 +11,52 @@
         <!--End Page Title-->
         
         <div class="container">
+            <div class="col-md-12 text-center" style="margin-bottom: 40px">
+                <h2 class="display-5">Silahkan Lakukan Pembayaran Lewat No Rekening Berikut</h2>
+            </div>
+            <div class="row  mb-2 text-center">
+                       
+                <div class="col-md-4">
+                <div style="max-width: 18rem;">
+                
+                <div class="card-body">
+                    <img src="{{asset('image/logo/bca.png')}}">
+                <h5 class="card-title">ATM BCA</h5>
+                <p class="card-text">Atas Nama </p>
+                </div>
+                </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div style="max-width: 18rem;">
+                        <img src="{{asset('image/logo/bri.png')}}">
+                    <div class="card-body">
+                    <h5 class="card-title">ATM BRI</h5>
+                    <p class="card-text">Atas Nama </p>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div style="max-width: 18rem;">
+                        <img src="{{asset('image/logo/mandiri.png')}}">
+                    <div class="card-body">
+                    <h5 class="card-title">ATM MANDIRI</h5>
+                    <p class="card-text">Atas Nama </p>
+                    </div>
+                    </div>
+                </div>
+
+                {{-- <div class="col-md-3">
+                    <div style="max-width: 18rem;">
+                    
+                    <div class="card-body">
+                    <h5 class="card-title">GOPAY</h5>
+                    <p class="card-text">Atas Nama </p>
+                    </div>
+                    </div>
+                </div> --}}
+            </div>
         	<div class="row">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 main-col">
                 	<div class="alert alert-success text-uppercase" role="alert">
