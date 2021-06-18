@@ -47,7 +47,7 @@
                             </tbody>
                     		<tfoot>
                                 <tr>
-                                    <td colspan="3" class="text-left"><a href="http://annimexweb.com/" class="btn btn-secondary btn--small cart-continue">Continue shopping</a></td>
+                                    <td colspan="3" class="text-left"><a href="{{url("shop/products")}}" class="btn btn-secondary btn--small cart-continue">Continue shopping</a></td>
                                     <td colspan="3" class="text-right">
 	                        
                                     </td>
@@ -101,14 +101,7 @@
                                 </tr>
                                 @endforeach
                             </tbody>
-                    		<tfoot>
-                                <tr>
-                                    <td colspan="3" class="text-left"><a href="http://annimexweb.com/" class="btn btn-secondary btn--small cart-continue">Continue shopping</a></td>
-                                    <td colspan="3" class="text-right">
-	                        
-                                    </td>
-                                </tr>
-                            </tfoot>
+                    		
                     </table> 
                    
                     </div>                   
@@ -154,14 +147,7 @@
                                     </tr>
                                 @endforeach
                             </tbody>
-                    		<tfoot>
-                                <tr>
-                                    <td colspan="3" class="text-left"><a href="http://annimexweb.com/" class="btn btn-secondary btn--small cart-continue">Continue shopping</a></td>
-                                    <td colspan="3" class="text-right">
-	                        
-                                    </td>
-                                </tr>
-                            </tfoot>
+
                     </table> 
                     </div>                 
                	</div>
