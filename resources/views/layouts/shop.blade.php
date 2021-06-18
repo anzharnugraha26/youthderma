@@ -6,8 +6,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>Youthderma Clinic | Online Store</title>
-<meta name="description" content="description">
+<title>Youthderma Skincare | Online Store</title>
+<meta name="description" content="youthdermaskincare">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Favicon -->
 <link rel="shortcut icon" href="{{asset('image/logo/logo3.png')}}" />
