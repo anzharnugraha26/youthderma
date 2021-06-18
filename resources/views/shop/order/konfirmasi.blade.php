@@ -15,13 +15,47 @@
                        
                         <div class="col-md-3">
                         <div class="card text-white bg-info mb-3 " style="max-width: 18rem;">
-                        <div class="card-header"></div>
+                        
                         <div class="card-body">
-                        <h5 class="card-title"></h5>
+                        <h5 class="card-title">ATM BCA</h5>
                         <p class="card-text">Atas Nama </p>
                         </div>
                         </div>
                         </div>
+
+                        <div class="col-md-3">
+                            <div class="card text-white bg-info mb-3 " style="max-width: 18rem;">
+                            
+                            <div class="card-body">
+                            <h5 class="card-title">ATM BRI</h5>
+                            <p class="card-text">Atas Nama </p>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card text-white bg-info mb-3 " style="max-width: 18rem;">
+                            <div class="card-body">
+                            <h5 class="card-title">ATM MANDIRI</h5>
+                            <p class="card-text">Atas Nama </p>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card text-white bg-info mb-3 " style="max-width: 18rem;">
+                            
+                            <div class="card-body">
+                            <h5 class="card-title">GOPAY</h5>
+                            <p class="card-text">Atas Nama </p>
+                            </div>
+                            </div>
+                        </div>
+
+                        
+
+
+
                         
                     </div>
                     <div class="row  mb-4">
