@@ -140,7 +140,8 @@ class TransaksiController extends Controller
             $message->from('youthderma@gmail.com', 'YouthDerma Skincare');
             $message->to($order->user_email, 'Cusstomer');
         });
-        dd($order);
+        return redirect('/admin');
+        // dd($order);
         // return redirect()->route('admin.transaksi.perludikirim')->with('status','Berhasil Menginput No Resi');
     }
 

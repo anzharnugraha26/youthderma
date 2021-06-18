@@ -34,7 +34,8 @@ class GoogleController extends Controller
                      'name' => $user->name,
                      'email' => $user->email,
                      'google_id' => $user->id,
-                     'password' => bcrypt('${1:my-secret-password')
+                     'password' => bcrypt('${1:my-secret-password'),
+                     'email_verified_at' => date('Y-m-d H:i:s')
             ]);
             Auth::login($new);
             return redirect('/shop')->with('with','aa');
