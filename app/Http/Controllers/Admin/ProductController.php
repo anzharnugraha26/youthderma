@@ -53,9 +53,9 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         if ($request->hasFile('image')) {
-            if (file_exists('image/product/' . $product->image)) {
-                unlink('image/product/' . $product->image);
-            }
+            // if (file_exists('image/product/' . $product->image)) {
+            //     unlink('image/product/' . $product->image);
+            // }
             $file = str_replace(' ', '', $request->image->getClientOriginalName());
             $fileName = date('mYdHs') . rand(1, 999) . '_' . $file;
             $request->image->move('image/product/', $fileName);
