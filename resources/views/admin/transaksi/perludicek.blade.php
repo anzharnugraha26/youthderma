@@ -1,6 +1,6 @@
 @extends('layouts.back-end')
 @section('title')
-  Transaksi
+  Transaksi perlu di cek
 @endsection
 @section('content')
 
@@ -10,7 +10,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Daftar Transaksi</h1>
+            <h1>Daftar Transaksi perlu di cek</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">

@@ -21,6 +21,12 @@ class AdminController extends Controller
         return view('admin.booking.index', compact('booking'));
     }
 
+    public function detailbooking($id)
+    {
+        $booking = Booking::where('id', $id)->first();
+        return view('admin.booking.detail', compact('booking'));
+    }
+
    
     public function store(Request $request)
     {

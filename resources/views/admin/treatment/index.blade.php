@@ -10,12 +10,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Product</h1>
+            <h1>Daftar Treatment</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Product</li>
+              <li class="breadcrumb-item active">Daftar Treatment</li>
             </ol>
           </div>
         </div>
@@ -27,7 +27,7 @@
           <div class="card">
             <div class="card-header">
               <div class="card-body pad table-responsive">
-              <a href="{{url("/admin/product/create")}}" class="btn block btn-primary btn-lg" style="margin-top: 20px">Tambah Product</a>
+              {{-- <a href="{{url("/admin/product/create")}}" class="btn block btn-primary btn-lg" style="margin-top: 20px">Tambah Product</a> --}}
               </div>
             </div>
             <div class="card-body">
@@ -51,7 +51,7 @@
                  
                   <td><img src="{{asset('image/services/'. $item->image)}}" style="width: 100px;height: 100px;"></td>
                   <td>
-                    <a class="btn btn-info btn-sm" href="{{url('admin/treatment/edit/'.$item->id )}}" style="margin-top: 10px"> <i class="fas fa-pencil-alt edit"></i> Edit</a>  <a class="btn btn-info btn-sm" href="{{url("/product-detail/$item->id")}}" style="background:blue;margin-top: 10px"  target="_blank"><i class="fas fa-eye"></i> View</a>
+                    <a class="btn btn-info btn-sm" href="{{url('admin/treatment/edit/'.$item->id )}}" style="margin-top: 10px"> <i class="fas fa-pencil-alt edit"></i> Edit</a>  <a class="btn btn-info btn-sm" href="{{url("/detail-treatment/$item->id")}}" style="background:blue;margin-top: 10px"  target="_blank"><i class="fas fa-eye"></i> View</a>
                     <a class="btn btn-danger btn-sm delete" href="{{url('admin/product/destroy/'.$item->id)}}" onclick="return confirm('Anda Yakin akan menghapus data ini ?')" style="margin-top: 10px" id="{{$item->id}}"><i class="far fa-trash-alt" ></i> Delete</a>
                   </td>
                 </tr>

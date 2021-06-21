@@ -93,6 +93,15 @@
                       <td>:</td>
                       <td  class="p-2">{{ $order->notes }}</td>
                   </tr>
+                  @if($order->status_order_id == 1)
+                  <tr>
+                      <td></td>
+                      <td></td>
+                      <td  class="p-2"><a href="{{url('admin/transaksi/konfirmasi/'. $order->id)}}" onclick="return confirm('Yakin ingin mengonfirmasi pesanan ini?')" class="btn btn-primary mt-1">Konfirmasi Telah Bayar</a><br>
+                      <small>Klik tombol ini jika pembeli sudah terbukti melakukan pembayaran</small>
+                      </td>
+                  </tr>
+                  @endif
                   @if($order->bukti_bayar != null)
                   <tr>
                       <td>Bukti Pembayaran</td>
