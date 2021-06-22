@@ -253,7 +253,8 @@
                                                     <img src="{{asset('image/bank/bca.png')}}" style="width: 250px;height: 150px;">
                                                     </div> --}}
                                                     <p>Transfer Sebesar {{'Rp.' . number_format($ongkir + $subtotal)}}  </p>
-                                                    <p>No Rek : 123121212121</p>
+                                                    <p style="font-size: 20px">No Rek : <b>6044611222</b></p>
+                                                    <p style="font-size: 20px">Atas Nama : <b>pt citra utama andalan</b></p>
                                                 </div>
                                             </div>
                                         </div>

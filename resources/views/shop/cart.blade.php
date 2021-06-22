@@ -79,7 +79,7 @@
                             </table>
                        
                     
-                    <div class="currencymsg">We processes all orders in USD. While the content of your cart is currently displayed in USD, the checkout will use USD at the most current exchange rate.</div>
+                    {{-- <div class="currencymsg">We processes all orders in USD. While the content of your cart is currently displayed in USD, the checkout will use USD at the most current exchange rate.</div> --}}
                     <hr>
                     {{-- <button>Update</button> --}}
 
