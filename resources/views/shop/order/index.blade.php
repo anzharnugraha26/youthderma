@@ -16,18 +16,20 @@
             </div>
             <div class="row  mb-2 text-center">
                        
-                <div class="col-md-4">
+                <div class="col-md-4" style="margin-left: 35%">
                 <div style="max-width: 18rem;">
                 
                 <div class="card-body">
                     <img src="{{asset('image/logo/bca.png')}}">
-                <h5 class="card-title">ATM BCA</h5>
-                <p class="card-text">Atas Nama </p>
+                <p>ATM BCA</p>
+                <h5 class="card-title">6044611222</h5>
+                <p class="card-text" style="font-size: 20px">Atas Nama : </p>
+                <p class="card-text" style="font-size: 20px">pt citra utama andalan </p>
                 </div>
                 </div>
                 </div>
 
-                <div class="col-md-4">
+                {{-- <div class="col-md-4">
                     <div style="max-width: 18rem;">
                         <img src="{{asset('image/logo/bri.png')}}">
                     <div class="card-body">
@@ -45,7 +47,7 @@
                     <p class="card-text">Atas Nama </p>
                     </div>
                     </div>
-                </div>
+                </div> --}}
 
                 {{-- <div class="col-md-3">
                     <div style="max-width: 18rem;">
