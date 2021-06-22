@@ -3,14 +3,14 @@
 
 
 <div class="home d-flex flex-column align-items-start justify-content-end">
-    <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{{asset('image/slider/st.jpg')}}" data-speed="0.8"></div>
+    <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{{asset('image/slider/doctorback.jpg')}}" data-speed="0.8"></div>
     <div class="home_overlay"><img src="{{asset('image/slider/home_overlay.png')}}" alt=""></div>
     <div class="home_container">
         <div class="container">
             <div class="row">
                 <div class="col">
                     <div class="home_content">
-                        <div class="home_title">Meet Our Doctors</div>
+                        <!--<div class="home_title">Meet Our Doctors</div>-->
                         </div>
                     </div>
                 </div>
@@ -42,9 +42,9 @@
                         <p>1. Restylane Dermal Filler Master Class Galderma 2019 </p>
                         <p>2. IMCAS CONGRESS ACADEMY 2020  </p>
                         <p>3. Neuvia Dermal Filler Face Contouring Workshop 2019 </p>
-                        <p>4. Professional Aesthetic Medical Jakarta, Esthetico Derma Institute 2018</p>
-                        <p>5. CIBTAC Diploma in Facial Applications 2018 UK.</p>
-                        <p>6. Participant BIOTEC Italia, Multi Laser to treat Different Case & True Body Liposclupture, Carla Aesthetic Institute 2018.</p>
+                        <p>4. Professional Aesthetic Medical Jakarta, Esthetico Derma Institute 2015</p>
+                        <p>5. CIBTAC Diploma in Facial Applications 2014 UK.</p>
+                        <p>6. Participant BIOTEC Italia, Multi Laser to treat Different Case & True Body Liposclupture, Carla Aesthetic Institute 2014.</p>
                     </div>
                     <div style="margin-top: 30px">
                         DOCTOR SCHEDULE 
