@@ -79,6 +79,7 @@
 	<title>Youthderma Loggin</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="{{asset('image/logo/logo3.png')}}" />
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 <!--===============================================================================================-->
@@ -185,6 +186,12 @@
 					<div class="container-login100-form-btn" >
 						<a href="{{url("/auth/google")}}" class="login100-form-btn" >
 							<i class="fa fa-google" aria-hidden="true"></i>  | Login With Google
+						</a>
+					</div>
+
+					<div class="container-login100-form-btn" style="margin-top: 40px">
+						<a href="{{url("/register")}}" class="login100-form-btn" >
+							 Register
 						</a>
 					</div>
 
