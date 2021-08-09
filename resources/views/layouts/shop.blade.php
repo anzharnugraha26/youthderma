@@ -78,7 +78,7 @@
                     @if(Auth::Check())
                 	<div class="text-center"><p class="top-header_middle-text"> Welcome {{Auth::user()->name}}</p></div>
                     @else
-                	<div class="text-center"><p class="top-header_middle-text"> Youthderma Aesthetic Clinic</p></div>
+                	<div class="text-center"><p class="top-header_middle-text"> Youthderma Skincare</p></div>
                     @endif
                 </div>
                 <div class="col-2 col-sm-4 col-md-3 col-lg-4 text-right">
@@ -98,7 +98,7 @@
     </div>
     <!--End Top Header-->
     <!--Header-->
-    <div class="header-wrap animated d-flex border-bottom" style="background: #7C7C7C">
+    <div class="header-wrap animated d-flex border-bottom" style="background: #8AA385">
     	<div class="container-fluid">        
             <div class="row align-items-center">
             	<!--Desktop Logo-->

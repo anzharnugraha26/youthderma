@@ -63,11 +63,11 @@
                                 {{-- <div class="product-nav clearfix">					
                                     <a href="#" class="next" title="Next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                 </div> --}}
-                                <div class="prInfoRow">
+                                {{-- <div class="prInfoRow">
                                     <div class="product-stock"> <span class="instock ">In Stock</span> <span class="outstock hide">Unavailable</span> </div>
                                     <div class="product-sku">SKU: <span class="variant-sku">19115-rdxs</span></div>
                                     <div class="product-review"><a class="reviewLink" href="#tab2"><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star-o"></i><i class="font-13 fa fa-star-o"></i><span class="spr-badge-caption">6 reviews</span></a></div>
-                                </div>
+                                </div> --}}
                                 <p class="product-single__price product-single__price-product-template">
                                     <span class="visually-hidden">Regular price</span>
                                    
@@ -116,8 +116,8 @@
                                             </div>
                                         </div>
                                     </div>                                
-                                    <div class="product-form__item--submit">
-                                        <button class="btn product">
+                                    <div class="product-form__item--submit" >
+                                        <button class="btn product" style="background-color: #8AA385">
                                             Add to cart
                                         </button>
                                     </div>
@@ -208,31 +208,16 @@
             <!--End Product Fearure-->
             <!--Product Tabs-->
             <div class="tabs-listing">
-                {{-- <div>
-                    <li rel="tab1"><a class="tablink">Product Details</a></li>
-                </div>
-                <div>
-                    <li rel="tab1"><a class="tablink">Product Details</a></li>
-                </div>
-                <div>
-                    <li rel="tab1"><a class="tablink">Product Details</a></li>
-                </div>
                 <ul class="product-tabs">
-                    <li rel="tab2"><a class="tablink">Product Reviews</a></li>
+                    <li rel="tab1"><a class="tablink">Product Reviews</a></li>
                     <li rel="tab3"><a class="tablink">Size Chart</a></li>
                     <li rel="tab4"><a class="tablink">Shipping &amp; Returns</a></li>
-                </ul> --}}
+                </ul>
                 <div class="tab-container" style="margin-top: 40px">
-                    <h2>Detail Product</h2>
+                    <h2>Detail Product</h2><a href="#tab1" class="tablink">Product Reviews</a>
                     <hr>
                     <div id="tab1" class="tab-content">
                         <div class="product-description rte">
-                            {{-- <h3>Description</h3>
-                            <p>{{$product->description}}</p>
-                            <h3>Suited To</h3>
-                            <p>{{$product->suitedto}}</p>
-                            <h3>How To Use </h3>
-                            <p>{{$product->howtouse}}</p> --}}
                             <h3>Skin Feel</h3>
                             <p>{{$product->skinfeel}}</p>
                             <h3> Key Ingredients</h3>
@@ -242,7 +227,7 @@
                         </div>
                     </div>
                     
-                    {{-- <div id="tab2" class="tab-content">
+                    <div id="tab2" class="tab-content">
                         <div id="shopify-product-reviews">
                             <div class="spr-container">
                                 <div class="spr-header clearfix">
@@ -439,7 +424,7 @@
                         <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. In blandit nunc enim, sit amet pharetra erat aliquet ac.</p>
                         <h4>Shipping</h4>
                         <p>Pellentesque ultrices ut sem sit amet lacinia. Sed nisi dui, ultrices ut turpis pulvinar. Sed fringilla ex eget lorem consectetur, consectetur blandit lacus varius. Duis vel scelerisque elit, et vestibulum metus.  Integer sit amet tincidunt tortor. Ut lacinia ullamcorper massa, a fermentum arcu vehicula ut. Ut efficitur faucibus dui Nullam tristique dolor eget turpis consequat varius. Quisque a interdum augue. Nam ut nibh mauris.</p>
-                    </div> --}}
+                    </div>
                 </div>
             </div>
             <!--End Product Tabs-->
